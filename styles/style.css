@@ -3,3 +3,15 @@ h1 {
   font-weight: bold;
   text-align: center;
 }
+
+li .date {
+  font-weight: bold;
+}
+
+li .texte {
+  padding-left: 1rem;
+}
+
+li .author {
+  font-style: italic;
+}
