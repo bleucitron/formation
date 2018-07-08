@@ -14,77 +14,81 @@
         .then(function(resp){return resp.json()})
         .then(function(tweets){
           console.log('Le tableau de tweet', tweets)
+/*
 
-          // pour le premier tweet
-          // - l'afficher
-          // - afficher son texte dans la console
-          // - créer une div qui contient le texte du tweet et ajouter la div au <body>
+Pense-bête DOM
+  // créer un nouvel élément 'div'
+  var x = document.createElement('div');
 
-          /* Pense-bête DOM
-            // créer un nouvel élément 'div'
-            var x = document.createElement('div');
+  // rajouter un enfant
+  parentEl.append(enfantEl);
 
-            // rajouter un enfant
-            parentEl.append(enfantEl);
+  // accéder au <body>
+  document.body
 
-            // accéder au <body>
-            document.body
-
-            // ajouter un texte à un élément
-            element.append('le texte yo !');
-          */
+  // ajouter un texte à un élément
+  element.append('le texte yo !');
 
 
-          // afficher dans la console les text de tous les tweets du tableau en utilisant .forEach
+          ### 1/ Manipulations de base ###
 
-          // créer un tableau avec seulement tous les textes des tweets
+          * pour le premier tweet
+            - l'afficher
+            - afficher son texte dans la console
+            - créer une div qui contient le texte du tweet et ajouter la div au <body>
 
-          // créer un tableau avec seulement les dates de publication (created_at)
+          * afficher dans la console les text de tous les tweets du tableau en utilisant .forEach
 
-          // créer un tableau avec seulement les tweets en français
+          * créer un tableau avec seulement tous les textes des tweets
 
-          // créer un <ol>
+          * créer un tableau avec seulement les dates de publication (created_at)
 
-          // [1] pour chaque tweet, créer un <li>, mettre le texte dedans, mettre le <li> dans le <ol>
+          * créer un tableau avec seulement les tweets en français
 
-          // mettre le <ol> dans le <body>
+          * créer un <ol>
 
-          // (pause)
-          // créer une fonction, qui pour un objet tweet créé et retourne un <li> et l'utiliser à [1]
-          // (séparation de la phase de création des éléments et de composition)
+          *[1] pour chaque tweet, créer un <li>, mettre le texte dedans, mettre le <li> dans le <ol>
 
-          // (pause)
-          // [2] Créer et ajouter un <button> qui quand on clique dessus affiche 'click' dans la console.
-          // -- qui quand on clique ne garde que les tweets en français
-          // (et quand on reclique re-affiche tout)
+          * mettre le <ol> dans le <body>
 
-          // (pause)
-          // Faites un bouton (un peu gros) qui écoute mousedown/click/dblclick et mesure le temps de click et de doubleclick
-          // et affiche tempsClic1, tempsClic2, tempsDoubleClic
 
-          // créer une fonction, qui pour un tableau tweet créé et retourne un <ol> et l'utiliser à [1] et [2]
-          // (séparation de la phase de création des éléments et de composition)
+          ### 2/ Manipulations avancées ###
 
-          // Créer plusieurs fichiers avec du code
-          // * createTweetLi.js
-          // * createTweetsOl.js
-          // * createClickTimeButton.js
-          // * main.js
+          * créer une fonction, qui pour un objet tweet créé et retourne un <li> et l'utiliser à [1]
+          (séparation de la phase de création des éléments et de composition)
 
-          // charger tout ça via des <script defer src="..."> dans le <head>
+          * [2] Créer et ajouter un <button> qui quand on clique dessus affiche 'click' dans la console.
+          Quand on clique ne garde que les tweets en français (et quand on reclique re-affiche tout)
 
-          // Ecrire une fonction 'jsonGet' qui a comme paramètre une url et qui retourne une promesses pour des tweets en utilisant fetch
+          * Créer un bouton qui active le tracking de la position de la souris (event.clientX, event.clientY), et le désactive quand on reclique dessus
 
-          // charger et afficher les tweets de
-          // 'https://rawgit.com/DavidBruant/contenu-formations-web/master/js/data/tweets2.json'
+          * Créer une fonction, qui pour un tableau tweet créé et retourne un <ol> et l'utiliser à [1] et [2]
+          (séparation de la phase de création des éléments et de composition)
 
-          /* BONUS
-            Exo (localStorage) :
-              1) Rajouter un bouton "fav" à chaque li
-              2) quand le bouton est cliqué, changer le style du li (rajouter une classe 'fav')
-              + et stocker l'ensemble des id_str fav dans le localStorage
-              3) au chargement de la page, lire le localStorage pour favoriser les favoris.
-          */
+          * Créer plusieurs fichiers avec du code
+            - createTweetLi.js
+            - createTweetsOl.js
+            - createClickTimeButton.js
+            - main.js
+
+          * charger tout ça via des <script defer src="..."> dans le <head>
+
+          * Ecrire une fonction 'jsonGet' qui a comme paramètre une url et qui retourne une promesses pour des tweets en utilisant fetch
+
+          * charger et afficher les tweets de
+          'https://rawgit.com/DavidBruant/contenu-formations-web/master/js/data/tweets2.json'
+
+
+          ### BONUS 1: LOCALSTORAGE ###
+            1) Rajouter un bouton "fav" à chaque li
+            2) quand le bouton est cliqué, changer le style du li (rajouter une classe 'fav')
+            + et stocker l'ensemble des id_str fav dans le localStorage
+            3) au chargement de la page, lire le localStorage pour favoriser les favoris.
+
+          ### BONUS 2: TIMING EVENEMENTS ###
+            Faites un bouton (un peu gros) qui écoute mousedown/click/dblclick et mesure le temps de click et de doubleclick
+            et affiche tempsClic1, tempsClic2, tempsDoubleClic
+*/
 
         })
         .catch(function(e){ console.error(e) });
