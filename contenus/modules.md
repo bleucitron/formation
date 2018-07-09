@@ -123,10 +123,10 @@ On utilise un outil qui s'appelle browserify afin de créer un "bundle" qui sera
 npm init -y
 npm install browserify -g
 # npm install watchify -g
-npm i babel-core babelify babel-preset-es2015 --save 
+npm i babel-core babelify babel-preset-env --save-dev
 
-browserify main.js -o bundle.js -t [ babelify --presets [ es2015 ] ] -d
-# watchify main.js -o bundle.js -t [ babelify --presets [ es2015 ] ] -d -v
+browserify main.js -o bundle.js -t [ babelify --presets [ env ] ] -d
+# watchify main.js -o bundle.js -t [ babelify --presets [ env ] ] -d -v
 ```
 
 ## changer le HTML
@@ -163,7 +163,7 @@ export default function(tweets){
 https://www.npmjs.com/
 
 ```bash
-npm install moment --save 
+npm install moment
 # regarder package.json
 ```
 
