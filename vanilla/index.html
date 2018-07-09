@@ -13,7 +13,7 @@
         fetch('https://rawgit.com/DavidBruant/contenu-formations-web/master/js/data/tweets.json')
         .then(function(resp){return resp.json()})
         .then(function(tweets){
-          console.log('Le tableau de tweet', tweets)
+          console.log('Le tableau de tweet', tweets);
 /*
 
 Pense-bête DOM
@@ -27,7 +27,7 @@ Pense-bête DOM
   document.body
 
   // ajouter un texte à un élément
-  element.append('le texte yo !');
+  element.textContent = 'le texte yo !';
 
 
           ### 1/ Manipulations de base ###
@@ -68,7 +68,7 @@ Pense-bête DOM
           * Créer plusieurs fichiers avec du code
             - createTweetLi.js
             - createTweetsOl.js
-            - createClickTimeButton.js
+            - createTrackingButton.js
             - main.js
 
           * charger tout ça via des <script defer src="..."> dans le <head>
