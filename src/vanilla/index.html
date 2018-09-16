@@ -10,7 +10,7 @@
       "use strict";
 
       document.addEventListener('DOMContentLoaded', function(e){
-        fetch('https://raw.githubusercontent.com/iOiurson/formation/corrig%C3%A9/tweets.json')
+        fetch('https://raw.githubusercontent.com/iOiurson/formation/corrig%C3%A9/data/tweets.json')
         .then(function(resp){return resp.json()})
         .then(function(tweets){
           console.log('Le tableau de tweet', tweets);
