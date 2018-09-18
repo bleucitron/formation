@@ -24,7 +24,7 @@ Problèmes :
 
 Les différents morceaux de code d'une application dépendent les uns des autres. Mais en JavaScript, ces dépendances étaient **implicites**.
 On rend les dépendances explicites afin de savoir exactement quel est le code qu'on doit chargé dans la page.
-Ce n'est pas une liste de fichiers. C'est l'ensemble des fichiers que l'on peut atteindre par lien de dépendance à partir du point d'entrée. 
+Ce n'est pas une liste de fichiers. C'est l'ensemble des fichiers que l'on peut atteindre par lien de dépendance à partir du point d'entrée.
 
 
 
@@ -73,17 +73,17 @@ module.exports = function(){
 define(
     ["helper/util", "jQuery.js", "http://momentjs.org/moment.js"],
     function(util, jQuery, moment) {
-    
+
         // export
         return function(){
-        
+
         }
     }
 );
 ````
 // https://github.com/MapContrib/MapContrib/blob/1f33a525fbc95fe0bb82fe86da517be5e0760ee6/src/public/js/view/main.js
 
-Problème : 
+Problème :
 * Nombre d'A/R égal à la profondeur de l'arbre.
 
 Solution : r.js https://github.com/requirejs/r.js
@@ -94,7 +94,7 @@ Solution : r.js https://github.com/requirejs/r.js
 C'est comme ça qu'on définit un module
 
 ````js
-// un module importe d'autres modules 
+// un module importe d'autres modules
 import React from 'React';
 import createTweetsOl from './createTweetsOl';
 import {arc, pie} from 'd3-shape'; // arc
@@ -123,10 +123,10 @@ On utilise un outil qui s'appelle browserify afin de créer un "bundle" qui sera
 npm init -y
 npm install browserify -g
 # npm install watchify -g
-npm i babel-core babelify babel-preset-env --save-dev
+npm i @babel/core babelify @babel/preset-env --save-dev
 
-browserify main.js -o bundle.js -t [ babelify --presets [ env ] ] -d
-# watchify main.js -o bundle.js -t [ babelify --presets [ env ] ] -d -v
+browserify main.js -o bundle.js -t [ babelify --presets [ @babel/env ] ] -d
+# watchify main.js -o bundle.js -t [ babelify --presets [ @babel/env ] ] -d -v
 ```
 
 ## changer le HTML
