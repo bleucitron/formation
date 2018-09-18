@@ -1,4 +1,6 @@
-"use strict";
+import createOl from './createOl';
+import jsonGet from './jsonGet';
+import { isFr } from './utils';
 
 document.addEventListener('DOMContentLoaded', () => {
   const url = 'https://raw.githubusercontent.com/iOiurson/formation/corrig%C3%A9/data/tweets.json';
@@ -6,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const myP = jsonGet(url);
   const myP2 = jsonGet(url2);
+
+
 
   Promise.all([ myP, myP2 ])
   .then(([ tweets1, tweets2 ]) => {
@@ -24,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
       let tempTweets = tweets;
 
       if (!isFr)
-        tempTweets = tweets.filter(tweet => tweet.lang === 'fr');
+        tempTweets = tweets.filter(isFr);
 
       const newOl = createOl(tempTweets);
 

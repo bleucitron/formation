@@ -1,0 +1,27 @@
+{
+  "name": "formation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bundle.js",
+  "scripts": {
+    "test": "jest .",
+    "precommit": "npm run test",
+    "build": "browserify src/vanilla/main.js -o bundle.js -t [ babelify --presets [ env ] ] -d",
+    "watch": "watchify src/vanilla/main.js -o bundle.js -t [ babelify --presets [ env ] ] -d -v"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babelify": "^8.0.0",
+    "husky": "^0.14.3",
+    "jest": "^23.6.0"
+  }
+}

@@ -1,10 +1,9 @@
-"use strict";
 
 const favs = new Set(
   JSON.parse(localStorage.getItem('favs'))
 );
 
-function createLi(tweet) {
+export default function (tweet) {
   const tweetLi = document.createElement('li');
   tweetLi.textContent = tweet.text;
 

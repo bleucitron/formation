@@ -1,6 +1,6 @@
-"use strict";
+import createLi from './createLi';
 
-function createOl(tweets) {
+export default function(tweets) {
   const tweetOl = document.createElement('ol');
 
   tweets
