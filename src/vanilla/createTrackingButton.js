@@ -10,7 +10,7 @@ function track(event) {
   console.log('X', event.clientX, 'Y', event.clientY);
 }
 
-trackingButton.addEventListener('click', function () {
+trackingButton.addEventListener('click', () => {
   if (!isTracking)
     window.addEventListener('mousemove', track);
   else

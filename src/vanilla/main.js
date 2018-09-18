@@ -1,37 +1,41 @@
 "use strict";
 
-document.addEventListener('DOMContentLoaded', function (e) {
-  fetch('https://raw.githubusercontent.com/iOiurson/formation/corrig%C3%A9/data/tweets.json')
-    .then(function (resp) { return resp.json() })
-    .then(function (tweets) {
-      console.log('Le tableau de tweet', tweets);
+document.addEventListener('DOMContentLoaded', () => {
+  const url = 'https://raw.githubusercontent.com/iOiurson/formation/corrig%C3%A9/data/tweets.json';
+  const url2 = 'https://rawgit.com/DavidBruant/contenu-formations-web/master/js/data/tweets2.json';
 
-      const filterButton = document.createElement('button');
-      filterButton.textContent = 'Filtrer';
-      document.body.append(filterButton);
+  const myP = jsonGet(url);
+  const myP2 = jsonGet(url2);
 
-      let isFr = false;
+  Promise.all([ myP, myP2 ])
+  .then(([ tweets1, tweets2 ]) => {
 
-      filterButton.addEventListener('click', function () {
-        let tempTweets = tweets;
+    const tweets = tweets1.concat(tweets2);
 
-        if (!isFr) {
-          tempTweets = tweets.filter(function (tweet) {
-            return tweet.lang === 'fr';
-          });
-        }
+    console.log('Le tableau de tweet', tweets);
 
-        const newOl = createOl(tempTweets);
+    const filterButton = document.createElement('button');
+    filterButton.textContent = 'Filtrer';
+    document.body.append(filterButton);
 
-        originalOl.replaceWith(newOl);
-        originalOl = newOl;
-        isFr = !isFr;
-      });
+    let isFr = false;
 
-      let originalOl = createOl(tweets);
-      document.body.append(originalOl);
-    })
+    filterButton.addEventListener('click', () => {
+      let tempTweets = tweets;
 
-    .catch(function (e) { console.error(e) });
+      if (!isFr)
+        tempTweets = tweets.filter(tweet => tweet.lang === 'fr');
+
+      const newOl = createOl(tempTweets);
+
+      originalOl.replaceWith(newOl);
+      originalOl = newOl;
+      isFr = !isFr;
+    });
+
+    let originalOl = createOl(tweets);
+    document.body.append(originalOl);
+  })
+  .catch(e => console.error(e));
 
 }, { once: true });
