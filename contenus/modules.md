@@ -123,7 +123,7 @@ On utilise un outil qui s'appelle browserify afin de créer un "bundle" qui sera
 npm init -y
 npm install browserify -g
 # npm install watchify -g
-npm i @babel/core babelify @babel/preset-env --save-dev
+npm i babelify @babel/core @babel/preset-env --save-dev
 
 browserify main.js -o bundle.js -t [ babelify --presets [ @babel/env ] ] -d
 # watchify main.js -o bundle.js -t [ babelify --presets [ @babel/env ] ] -d -v
