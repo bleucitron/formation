@@ -12,15 +12,12 @@ export default function (tweet) {
   let isFav = favs.has(tweet.id);
   fav.textContent = isFav ? 'Supprimer des favs' : 'Ajouter aux favs';
 
-  if (isFav)
-    tweetLi.classList.add('fav');
+  if (isFav) { tweetLi.classList.add('fav'); }
 
   fav.addEventListener('click', () => {
-
     if (isFav) {
       favs.delete(tweet.id);
-    }
-    else {
+    } else {
       favs.add(tweet.id);
     }
 
@@ -32,7 +29,6 @@ export default function (tweet) {
     const updatedFavs = JSON.stringify(Array.from(favs));
 
     localStorage.setItem('favs', updatedFavs);
-
   });
 
   tweetLi.append(fav);

@@ -9,37 +9,32 @@ document.addEventListener('DOMContentLoaded', () => {
   const myP = jsonGet(url);
   const myP2 = jsonGet(url2);
 
-
-
   Promise.all([ myP, myP2 ])
-  .then(([ tweets1, tweets2 ]) => {
+    .then(([ tweets1, tweets2 ]) => {
+      const tweets = tweets1.concat(tweets2);
 
-    const tweets = tweets1.concat(tweets2);
+      console.log('Le tableau de tweet', tweets);
 
-    console.log('Le tableau de tweet', tweets);
+      const filterButton = document.createElement('button');
+      filterButton.textContent = 'Filtrer';
+      document.body.append(filterButton);
 
-    const filterButton = document.createElement('button');
-    filterButton.textContent = 'Filtrer';
-    document.body.append(filterButton);
+      let isLangFr = false;
 
-    let isFr = false;
+      filterButton.addEventListener('click', () => {
+        let tempTweets = tweets;
 
-    filterButton.addEventListener('click', () => {
-      let tempTweets = tweets;
+        if (!isLangFr) { tempTweets = tweets.filter(isFr); }
 
-      if (!isFr)
-        tempTweets = tweets.filter(isFr);
+        const newOl = createOl(tempTweets);
 
-      const newOl = createOl(tempTweets);
+        originalOl.replaceWith(newOl);
+        originalOl = newOl;
+        isLangFr = !isLangFr;
+      });
 
-      originalOl.replaceWith(newOl);
-      originalOl = newOl;
-      isFr = !isFr;
-    });
-
-    let originalOl = createOl(tweets);
-    document.body.append(originalOl);
-  })
-  .catch(e => console.error(e));
-
+      let originalOl = createOl(tweets);
+      document.body.append(originalOl);
+    })
+    .catch(e => console.error(e));
 }, { once: true });

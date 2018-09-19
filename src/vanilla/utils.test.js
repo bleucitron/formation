@@ -12,5 +12,4 @@ describe('isFr', () => {
       () => isFr()
     ).toThrow();
   });
-
-})
+});
