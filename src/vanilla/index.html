@@ -23,16 +23,48 @@
           // [2] ajouter les tweets à la page en utilisant [1]
 
 
-          // créer et ajouter un <button> qui quand on clique dessus affiche 'click' dans la console.
+// ### 1/ Manipulations de base ###
 
+          /* pour le premier tweet
+            - l'afficher dans la console
+            - afficher son texte dans la console
+            - créer une div qui contient le texte du tweet et ajouter la div au <body>
+          */
+          console.log('Mon premier tweet', tweets[0]);
+          console.log('Le texte de mon premier tweet', tweets[0].text);
+
+          const maDiv = document.createElement('div');
+          maDiv.textContent = tweets[0].text;
+          document.body.append(maDiv);
+
+          // afficher dans la console les text de tous les tweets du tableau en utilisant .forEach()
+
+          tweets.forEach(function(tweet) {
+            console.log(tweet.text);
+          });
 
           /* modifier le bouton pour que,
             quand on clique dessus, ne garde que les tweets en français (et quand on reclique re-affiche tout) */
 
+          const texts = tweets.map(function (tweet) {
+            return tweet.text;
+          });
+          console.log('Tous les textes', texts);
 
-          /* créer une fonction, qui pour un tableau tweets en entrée, crée et retourne un <ol> rempli de <li>
-          et l'utiliser à [2] */
+          // créer un tableau avec seulement les dates de publication (created_at)
 
+          const dates = tweets.map(function (tweet) {
+            return tweet.created_at;
+          });
+          console.log('Tous les dates', dates);
+
+          // créer un tableau avec seulement les tweets en français en utilisant .filter()
+
+          const frTweets = tweets.filter(function (tweet) {
+            return tweet.lang === 'fr';
+          });
+
+          console.log('FR tweets', frTweets);
 
           // Créer un bouton qui active le tracking de la position de la souris (event.clientX, event.clientY), et le désactive quand on reclique dessus
 
