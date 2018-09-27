@@ -1,120 +1,86 @@
-# DOM (Document Object Model)
+# [DOM (Document Object Model)](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
 
-API pour manipuler un document HTML ou XML (arbre)
+C'est une API pour manipuler un document HTML ou XML (arbre).
+
+Grosso modo composée de noeuds, d'élements et d'évènements.
+
+[L'essentiel](https://developer.mozilla.org/fr/docs/Web/API/Document_Object_Model/Introduction#Interfaces_essentielles_du_DOM)
 
 
-# Node
+# [Node](https://developer.mozilla.org/fr/docs/Web/API/Node)
 
-- n.children
-- n.parentNode
-- parent.append(enfant)
-- (anciennement) parent.appendChild(enfant)
-- n.remove()
-- n.replaceWith(n2)
+Représentent les noeuds de l'arbre.
 
 ```js
-Node.prototype.remove = Node.prototype.remove || function(){
-    this.parentNode.removeChild(this);
-}
+n.children
+n.parentNode
+parent.append(enfant)
+n.remove()
+n.replaceWith(n2)
 ```
+
 
 # Document + HTMLDocument
 
-- document.createElement('div')
-    - créé une div orpheline
-- document.createElementNS('http://www.w3.org/2000/svg', 'g')
-    - Pour le SVG
+Le document est un noeud spécial.
 
 ```js
-function svgElement(name){
-    return document.createElementNS('http://www.w3.org/2000/svg', name)
-}
+document.createElement('div'); // crée une div orpheline
+document.createElementNS('http://www.w3.org/2000/svg', 'g'); // pour le SVG
+
+document.querySelector(selector) // renvoie le premier élément correspondant
+document.querySelectorAll(selector) // renvoie un iterateur
 ```
 
-- document.querySelector(selector)
-- document.querySelectorAll(selector)
+# [Element](https://developer.mozilla.org/en-US/docs/Web/API/element)
 
-`Array.from(document.querySelectorAll('section h1')).map(...)`
+Tous les éléments sont des noeuds, mais pas l'inverse.
 
+Il existe notamment des `HTMLElement`, des `SVGElement`.
 
-# Element + HTMLElement
-
-- e.getAttribute(key)
-    a.getAttribute('href')
-- e.setAttribute(key, value)
-- e.removeAttribute(key)
-    - e.removeAttribute('hidden')
-
-- e.textContent
-    - e.textContent = ...
-
-- e.querySelector(selector)
-- e.querySelectorAll(selector)
-    - document.body.querySelectorAll()
-    - var foot = document.querySelector('footer');
-    foot.querySelector('.mentions-légales');
-    
-- /!\ e.innerHTML (getter/setter)
-- (moderne) e.classList (pour changer les styles)
-    - e.classList.add/remove/contains/toggle?
-- (ancien, ne pas utiliser) e.className
-<div class="yo hyz"></div>
-    - .yo.hyz{}
-    - .yo .hyz{}
-    - .yo, .hyz{}
-
-- e.style.backgroundColor
-- maDiv.style.height = x+"%";
-
-.yo{
-    background-color: red;
-}
-
-- vider un élément
-    - `el.innerHTML = '';`
-
-
-# EventTarget
-
-- n.addEventListener(type, listener, options)
 ```js
+e.getAttribute(key);
+a.getAttribute('href');
+e.setAttribute(key, value);
+e.removeAttribute(key);
+e.removeAttribute('hidden');
+
+e.textContent = 'Blablabla...';
+
+e.querySelector(selector);
+e.querySelectorAll(selector);
+
+/!\ e.innerHTML = ... // DANGEREUX, à éviter
+e.innerHTML = ''; // pour vider un élément
+
+e.className // ancien, à éviter
+e.classList // moderne, pour accéder aux styles
+e.classList.add/remove/contains/toggle
+
+e.style.backgroundColor = ... // l'équivalent CSS est background-color
+```
+
+# [EventTarget](https://developer.mozilla.org/fr/docs/Web/API/EventTarget)
+
+Tout est un `EventTarget`.
+
+```js
+n.addEventListener(type, listener, options);
+n.removeEventListener(type, listener); // attention, comparaison par référence
+n.dispatchEvent(e); // génére un évènement custom
+// Exemple
 monElement.addEventListener('click', function(){
     console.log('yo');
-})
+}, {once: true});
 ```
 
-options: 
+Éviter les `onclick`, `onmousemove`...
+Ils sont uniques par élément.
 
-- `once`
-
-```js
-monElement.addEventListener('click', function(){
-    console.log('yo');
-}, {once: true})
-```
-
-- `passive`
-```js
-monElement.addEventListener('touchstart', function(){
-    console.log('fib');
-}, {passive: true})
-```
-
-Autre : 
-
-- n.removeEventListener(type, listener)
-    - Attention, comparaison par référence
-    - var listener = function(){...}.bind(this);
-    
-- n.dispatchEvent(e)
-
-- /!\ attributs on- interdits ! (onclick, etc.)
-    - unique par élémént
-
-# Evènements
+# [Evènements](https://developer.mozilla.org/en-US/docs/Web/Events)
 
 - DOMContentLoaded
-    - Quand le HTML est chargée et que l'arbre DOM est construit 
+    - Quand le HTML est chargée et que l'arbre DOM est construit
 - load
     - Quand la page entière est chargée (CSS, fonts, images, etc.)
 - click (mousedown/mouseup/dblclick)
@@ -129,22 +95,10 @@ Autre :
 
 ## Event properties
 
-````js
-el.addEventListener('click', function(e){
-    // Event e
-})
-````
-
-- e.target
-- e.preventDefault()
-
 ```js
-form.addEventListener('submit', function(e){
-    e.preventDefault();
+element.addEventListener('click', function(e){
+    e.target // renvoie l'élément qui a généré l'évènement
+    e.timestamp // renvoie la date de l'évènement en ms depuis le chargement de la page
+    e.preventDefault() // empêche les comportements par défaut
 })
 ```
-
-- e.timeStamp
-
-
-# Layout tree
