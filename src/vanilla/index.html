@@ -6,108 +6,14 @@
     <meta description="">
     <link rel="stylesheet" type="text/css" href="../../style.css">
 
+    <script defer src='./createLi.js'></script>
+    <script defer src='./createOl.js'></script>
+    <script defer src='./createTrackingButton.js'></script>
+    <script defer src='./fetchJson.js'></script>
+    <script defer src='./main.js'></script>
+
     <script>
-      "use strict";
-
-      document.addEventListener('DOMContentLoaded', function(e){
-        fetch('https://raw.githubusercontent.com/iOiurson/formation/correction/data/tweets.json')
-        .then(function(resp){return resp.json()})
-        .then(function(tweets){
-          console.log('Le tableau de tweet', tweets);
-
-// ### 2/ Twitter ###
-
-          // [1] créer une fonction, qui pour un tweet en entrée, créé et retourne un <li> contenant le texte du tweet
-
-
-          // [2] ajouter les tweets à la page en utilisant [1]
-
-
-// ### 1/ Manipulations de base ###
-
-          /* pour le premier tweet
-            - l'afficher dans la console
-            - afficher son texte dans la console
-            - créer une div qui contient le texte du tweet et ajouter la div au <body>
-          */
-          console.log('Mon premier tweet', tweets[0]);
-          console.log('Le texte de mon premier tweet', tweets[0].text);
-
-          const maDiv = document.createElement('div');
-          maDiv.textContent = tweets[0].text;
-          document.body.append(maDiv);
-
-          // afficher dans la console les text de tous les tweets du tableau en utilisant .forEach()
-
-          tweets.forEach(function(tweet) {
-            console.log(tweet.text);
-          });
-
-          /* modifier le bouton pour que,
-            quand on clique dessus, ne garde que les tweets en français (et quand on reclique re-affiche tout) */
-
-          const texts = tweets.map(function (tweet) {
-            return tweet.text;
-          });
-          console.log('Tous les textes', texts);
-
-          // créer un tableau avec seulement les dates de publication (created_at)
-
-          const dates = tweets.map(function (tweet) {
-            return tweet.created_at;
-          });
-          console.log('Tous les dates', dates);
-
-          // créer un tableau avec seulement les tweets en français en utilisant .filter()
-
-          const frTweets = tweets.filter(function (tweet) {
-            return tweet.lang === 'fr';
-          });
-
-          console.log('FR tweets', frTweets);
-
-          // Créer un bouton qui active le tracking de la position de la souris (event.clientX, event.clientY), et le désactive quand on reclique dessus
-
-
-// Présentation Asynchronicité
-
-          // Ecrire une fonction 'fetchJson' qui a comme paramètre une url et qui retourne une promesses pour des tweets en utilisant fetch
-
-
-          /* charger et afficher les tweets de
-          'https://raw.githubusercontent.com/iOiurson/formation/correction/data/tweets2.json'*/
-
-
-
-
-          /* Créer plusieurs fichiers avec du code
-            - createTweetLi.js
-            - createTweetsOl.js
-            - createTrackingButton.js
-            - fetchJson.js
-            - main.js
-          */
-
-
           // charger tout ça via des <script defer src="..."> dans le <head>
-
-
-// Présentation Modules
-
-          /* utiliser import et export pour mettre les différents fichiers en lien, et créer le bundle.js
-            Utiliser le bundle.js comme <script src=""> dans le html */
-
-
-          // Ajouter les infos de la date à nos <li>
-
-
-          // Ajouter les infos de l'auteur à nos <li>
-
-
-          // Donner des classes à la date ainsi qu'à l'auteur pour les styliser
-
-
-          // Faire un module qui contient une fonction qui crée le bouton de filtre
 
 
 // ### BONUS 1: LOCALSTORAGE ###
@@ -127,10 +33,7 @@
             et affiche tempsClic1, tempsClic2, tempsDoubleClic */
 
 
-        })
-        .catch(function(e){ console.error(e) });
 
-      }, {once: true})
     </script>
 
     <title>yo</title>
