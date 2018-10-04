@@ -1,6 +1,4 @@
-'use strict';
-
-function createTrackingButton() {
+export default function() {
   const trackingButton = document.createElement('button');
   trackingButton.textContent = 'Tracking';
   document.body.append(trackingButton);
@@ -9,10 +7,9 @@ function createTrackingButton() {
 
   function trackMe(event) {
     console.log('X:', event.clientX, '//', 'Y:', event.clientY);
-
   }
 
-  trackingButton.addEventListener('click', function () {
+  trackingButton.addEventListener('click', () => {
     if (!isTracking) {
       window.addEventListener('mousemove', trackMe);
     }

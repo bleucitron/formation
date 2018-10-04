@@ -1,17 +1,19 @@
-"use strict";
+import fetchJson from './fetchJson';
+import createOl from './createOl';
+import createTrackingButton from './createTrackingButton';
 
-document.addEventListener('DOMContentLoaded', function (e) {
+document.addEventListener('DOMContentLoaded', e => {
 
-  fetchJson('https://raw.githubusercontent.com/iOiurson/formation/correction/data/tweets.json')
-  .then(function (tweets) {
+  const url1 = 'https://raw.githubusercontent.com/iOiurson/formation/correction/data/tweets.json';
+  const url2 = 'https://raw.githubusercontent.com/iOiurson/formation/correction/data/tweets2.json';
+
+  Promise.all([url1, url2].map(fetchJson))
+  .then(([tweets1, tweets2]) => {
+
+    let tweets = tweets1.concat(tweets2);
     console.log('Le tableau de tweet', tweets);
 
-    let myOl = createOl(tweets);
-    document.body.append(myOl);
-
-    function isTweetFr(tweet) {
-      return tweet.lang === 'fr';
-    }
+    createTrackingButton();
 
     const filterButton = document.createElement('button');
     filterButton.textContent = 'to Fr';
@@ -19,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
 
     let isFr = false;
 
-    filterButton.addEventListener('click', function () {
+    filterButton.addEventListener('click', () => {
       const newOl = isFr
         ? createOl(tweets)
         : createOl(tweets.filter(isTweetFr));
@@ -30,9 +32,18 @@ document.addEventListener('DOMContentLoaded', function (e) {
       myOl = newOl;
     });
 
-    createTrackingButton();
+    tweets = tweets.sort((first, second) => Date.parse(second.created_at) - Date.parse(first.created_at));
+
+    console.log('Le tableau de tweet trié', tweets);
+
+    let myOl = createOl(tweets);
+    document.body.append(myOl);
+
+    function isTweetFr(tweet) {
+      return tweet.lang === 'fr';
+    }
 
   })
-  .catch(function (e) { console.error(e) });
+  .catch(e => console.error(e));
 
 }, { once: true })
