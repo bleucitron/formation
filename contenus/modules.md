@@ -1,4 +1,6 @@
-# A l'ancienne
+# Modules
+
+## À l'ancienne
 
 ````html
 <!doctype html>
@@ -17,57 +19,41 @@
 
 Problèmes :
 
-* Performance (limite de nombre de requêtes HTTP en parallèle (6))
-* Dépendances entre les scripts sont implicites
+* Performance (6 requêtes HTTP max en parallèle)
+* Dépendances entre scripts implicites
 
-## Aparté
+## Dépendances explicites
 
-Les différents morceaux de code d'une application dépendent les uns des autres. Mais en JavaScript, ces dépendances étaient **implicites**.
-On rend les dépendances explicites afin de savoir exactement quel est le code qu'on doit chargé dans la page.
-Ce n'est pas une liste de fichiers. C'est l'ensemble des fichiers que l'on peut atteindre par lien de dépendance à partir du point d'entrée.
+Les différents morceaux de code d'une application dépendent les uns des autres. Mais en JavaScript, ces dépendances sont par défaut **implicites**.
+
+On souhaite rendre claires les relations entre fichiers, afin de savoir sans équivoque quel fichier nécessite quels autres fichiers.
+
+On veut donc rendre les dépendances entre fichiers **explicites**.
+
+# Tentatives
 
 
 
-# CommonJS (Node.js)
-
-Un seul `<script>`
+## CommonJS (Node.js)
 
 ````js
 "use strict";
 
-var dep1 = require('dep1.js')
-var dep2 = require('dep2.js')
+var dep1 = require('module') // module natif Node ou installé
+var dep2 = require('./fichier.js') // fichier local au projet
 
 // code
 
-module.exports = function(a){
+module.exports = function (a){
     var h = dep1(48);
     return h + dep2(a);
 };
 ````
 
-Problème :
-* require synchrone
-
-https://github.com/substack/browserify-handbook#bundling-commonjs-server-side
+Problème: `require` synchrone
 
 
-## Noms des modules CJS
-
-````js
-"use strict";
-
-var dep1 = require('blabla') // module natif node ou installé
-var dep2 = require('./blabla.js') // fichier local au projet
-
-module.exports = function(){
-
-}
-````
-
-
-
-# AMD (Asynchronous Module Definition)
+## AMD (Asynchronous Module Definition)
 
 ````js
 define(
@@ -81,42 +67,87 @@ define(
     }
 );
 ````
-// https://github.com/MapContrib/MapContrib/blob/1f33a525fbc95fe0bb82fe86da517be5e0760ee6/src/public/js/view/main.js
 
-Problème :
-* Nombre d'A/R égal à la profondeur de l'arbre.
+Problème: nb d'A/R égal à la profondeur de l'arbre.
 
-Solution : r.js https://github.com/requirejs/r.js
+Solution: [r.js](https://github.com/requirejs/r.js)
 
 
-# ES6/2015
-
-C'est comme ça qu'on définit un module
-
-````js
-// un module importe d'autres modules
-import React from 'React';
-import createTweetsOl from './createTweetsOl';
-import {arc, pie} from 'd3-shape'; // arc
-// import * as d3 from 'd3-shape'; // d3.arc
-
-
-// ...
-
-// un module exporte quelque chose
-export default function(){
-    // ....
-}
-````
+# Modules ES6
 
 Quand on importe un module, on "récupère" ce que ce module exporte.
 Le module "point d'entrée" n'exporte rien. Les modules "feuilles" n'importe rien.
 
+## [`import`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Instructions/import)
+
+On peut importer depuis un module natif ou installé, ou depuis les fichiers locaux du projet.
+
+````js
+// un module importe d'autres modules
+
+
+import monModule from 'monModule'; // import externe
+import maFonction from './monFichierLocal'; // import local
+
+import { pikachu, charmander as salameche } from 'pokemons'; // on importe seulement "pikachu" et "charmander", que je renomme en "salameche"
+
+console.log(pikachu);
+
+import * as pokemons from 'pokemons'; // on importe tous les exports
+
+console.log(pokemons.pikachu)
+
+// ...
+````
+
+## [`export`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Instructions/export)
+
+On peut exporter des valeurs, des objets, des fonctions...
+
+````js
+// export par défaut, n'a pas besoin de nom
+export default function(){
+    // ....
+}
+
+export const maConst = 5; // export
+
+````
+
+**Les modules sont par défaut en mode strict !**
+
+
+# Bundling
+
+On "compile" tout le code en 1 seul (gros) fichier bien construit pour le charger dans le Html.
+
+Il y a plusieurs alternatives disponibles.
+
+- [`browserify`](http://browserify.org/)
+- [`webpack`](https://webpack.js.org/)
+- [`rollup`](https://rollupjs.org/guide/en)
+- [`parcel`](https://parceljs.org/)
+
+Ces outils nécessitent de travailler dans un environnement Node, puis de transformer le code Node en un code compatible navigateur.
+
+
+Pour utiliser ces outils, il faut donc [installer Node](https://nodejs.org/en/) et un gestionnaire de paquets, [NPM](https://www.npmjs.com/) ou [Yarn](https://yarnpkg.com/en/).
+
+
 # TODO
 
-On utilise un outil qui s'appelle browserify afin de créer un "bundle" qui sera le seul (gros) script qu'on l'on charge (script@src) à partir du module d'entrée.
+On va utiliser [`browserify`](http://browserify.org/).
 
-* installer Node.js (installe npm aussi)
+
+## Étape 1: [installer NodeJS](https://nodejs.org/en/)
+
+```bash
+# vérifier la version
+node -v
+npm -v
+```
+
+## Étape 2: installer Browserify et Babel
 
 ```bash
 # dans le dossier projet :
@@ -125,15 +156,15 @@ npm install browserify -g
 # npm install watchify -g
 npm i babelify @babel/core @babel/preset-env --save-dev
 
-browserify main.js -o bundle.js -t [ babelify --presets [ @babel/env ] ] -d
-# watchify main.js -o bundle.js -t [ babelify --presets [ @babel/env ] ] -d -v
+browserify src/vanilla/main.js -o bundle.js -t [ babelify --presets [ @babel/env ] ] -d
+# watchify src/vanilla/main.js -o bundle.js -t [ babelify --presets [ @babel/env ] ] -d -v
 ```
 
-## changer le HTML
+## Étape 3: changer le HTML
 
-Enlever tous les <script> et les remplacer par `<script defer src="bundle.js"></script>`
+Enlever tous les `<script>` et les remplacer par `<script defer src="bundle.js"></script>`
 
-## Etape 2
+## Étape 4: utiliser `import`/`export` dans nos scripts
 
 `main.js`
 
@@ -155,60 +186,19 @@ export default function(tweets){
 }
 ````
 
+## Étape 5: en profiter pour écrire avec la syntaxe ES6 partout
 
-## Etape 3
 
-(rajouter la date dans l'affichage)
-
-https://www.npmjs.com/
+## Étape 6: ajouter les infos de la date avec [MomentJS](https://momentjs.com/)
 
 ```bash
 npm install moment
-# regarder package.json
 ```
 
 ```js
 import moment from 'moment';
 
+// chercher dans la doc pour afficher depuis quand le tweet a été envoyé
 // ...
-
-moment(t.created_at, 'dd MMM DD HH:mm:ss ZZ YYYY', 'en').fromNow()
-```
-
-
-# NPM tasks
-
-Remplace grunt/gulp la plupart du temps
-
-* http://substack.net/task_automation_with_npm_run
-* https://gist.github.com/oncletom/1e233f2100c4e0877922
-* http://naholyr.fr/2015/11/ecrire-des-scripts-npm-multi-plateforme/
-
-```bash
-npm run build:dev
-npm run build:prod
-```
-
-* https://www.npmjs.com/package/npm-run-all
-* https://www.npmjs.com/package/watch-exec
-
-Exemple : https://github.com/dtc-innovation/dataviz-finances-gironde/blob/master/package.json
-
-## Minifier
-
-```bash
-npm install minifyify --save
-browserify -p [minifyify --no-map] main.js -o bundle.js
-
-export NODE_ENV="production"
-```
-
-```json
-{
-    "scripts": {
-        "build:dev": "browserify main.js > bundle.js",
-        "build:prod": "browserify -p [minifyify --no-map] main.js > bundle.js"
-    }
-}
 ```
 

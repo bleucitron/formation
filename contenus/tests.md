@@ -1,119 +1,112 @@
-# Tests
+# Linting
 
-`npm i mocha chai karma karma-chai karma-mocha karma-firefox-launcher karma-chrome-launcher karma-browserify --save-dev`
+Sert à écrire du code propre, selon les conventions que l'on choisit.
 
+On va utiliser [Eslint](https://eslint.org/).
 
-Créer un fichier `karma.conf.js`
-```js
-module.exports = karma =>
-  karma.set({
-    singleRun: true,
-    frameworks: ['mocha', 'chai', 'browserify'],
-    files: ['test/**/*.js'],
-    colors: true,
-    browsers: ['Firefox'],
-    preprocessors: {
-      'test/**/*.js': [ 'browserify' ]
-    },
-    browserify: {
-      debug: true,
-      transform: [ ['babelify', {presets: ['es2015']}] ]
-    }
-})
+```bash
+npm i eslint --save-dev
+
+# on initialise les règles
+npx eslint --init
 ```
 
 Dans `package.json`
 ```json
 {
     "scripts": {
-        "test": "karma start"
-    },
-    "devDependencies": {
-        // ...
-        "chai": "^4.1.2",
-        "karma": "^1.7.1"
-        // ...
+        //...
+        "lint": "eslint ."
+        //...
     }
 }
 ```
 
-Créer un module qui exporte une fonction qui ...
+Lancer le linter.
+```bash
+npm run lint
+```
 
-`./isFrenchTweet.js`
-```js
-export default function isFrenchTweet(tweet){
-    return tweet.lang === 'fr';
+.eslintrc
+
+.eslintignore
+
+
+
+## Tests
+
+Plusieurs frameworks sont disponibles:
+- [Jest](https://jestjs.io/)
+- [Jasmine](https://jasmine.github.io/)
+- [Mocha](https://mochajs.org/) + [Chai](https://www.chaijs.com/)
+
+Pour lancer des tests dans un vrai navigateur, utiliser [Karma](https://karma-runner.github.io/2.0/index.html).
+
+
+
+```bash
+npm i jest --save-dev
+```
+
+Dans `package.json`
+```json
+{
+    "scripts": {
+        //...
+        "test": "jest ."
+        //...
+    }
 }
 ```
 
-
-`test/isFrenchTweet.test.js`
-```js
-import {expect} from 'chai'
-import isFrenchTweet from '../isFrenchTweet.js'
-
-describe('isFrenchTweet', () => {
-    it('should return true if tweet.lang is fr', () => {
-        const tw = {
-            text: 'salut !',
-            lang: 'fr'
-        }
-
-        expect( isFrenchTweet(tw) ).to.be.true
-    })
-    it('should return false if tweet has no lang', () => {
-        const tw = {
-            text: 'salut !'
-        }
-
-        expect( isFrenchTweet(tw) ).to.be.false
-    })
-    it('should return false if tweet.lang is en', () => {
-        const tw = {
-            text: 'salut !',
-            lang: 'en'
-        }
-
-        expect( isFrenchTweet(tw) ).to.be.false
-    })
-    it('should return true if tweet.lang is fr_ca', () => {
-        const tw = {
-            text: 'salut !',
-            lang: 'fr_ca'
-        }
-
-        expect( isFrenchTweet(tw) ).to.be.true // oops
-    })
-})
+Lancer les tests.
+```bash
+npm run test
 ```
 
-`npm test`
+Jest va chercher tous les fichiers en `*.test.js`, et les exécuter.
 
-
-Test de DOM
 
 ```js
-import createTweetLi from '../createTweetLi'
+import maFonction from './maFonction';
 
-describe('createTweetLi', () => {
-    it('should throw when no argument is passed', () => {
-        expect( 
-            () => createTweetLi(); 
-        ).to.throw();
-    })
+describe('la fonction que l\'on veut tester', () => {
 
-    it('should create an empty <li> if an empty object is passed', () => {
-        const li = createTweetLi({});
+  it('ce que cette fonction doit faire dans un cas précis', () => {
+    var maValeur = maFonction();
 
-        expect( li ).to.be.an.instanceof(HTMLLIElement)
-        expect( li.textContent ).to.equal('');
-    })
+    expect(maFonction()).toBe... // chercher dans la doc de Jest
 
-})
+  });
+});
 ```
 
 
 
+## Automatisation
+
+On veut s'assurer que les tests sont lancés systématiquement.
+
+```bash
+npm i husky lint-staged --save-dev
+```
+
+```json
+// package.json
+{
+    "scripts": {
+        "precommit": "lint-staged"
+    },
+    // ...
+    "lint-staged": {
+        "*.js": [
+            "eslint",
+            "jest --findRelatedTests"
+        ]
+    },
+    // ...
+}
+```
 
 ## Code coverage
 
@@ -129,3 +122,32 @@ Attention ! Métrique dangereuse !
 ## Tests automatisés sur vrais navigateurs
 
 https://developers.google.com/web/updates/2017/06/headless-karma-mocha-chai
+
+
+
+
+# TODO
+
+Créer un module qui exporte une fonction qui ...
+
+Test de DOM
+
+```js
+import createTweetLi from '../createTweetLi'
+
+describe('createTweetLi', () => {
+    it('should throw when no argument is passed', () => {
+        expect(
+            () => createTweetLi();
+        ).to.throw();
+    })
+
+    it('should create an empty <li> if an empty object is passed', () => {
+        const li = createTweetLi({});
+
+        expect( li ).to.be.an.instanceof(HTMLLIElement)
+        expect( li.textContent ).to.equal('');
+    })
+
+})
+```
