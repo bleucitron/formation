@@ -1,4 +1,4 @@
-# Bases
+# Javascript
 
 - S'execute dans le navigateur, côté client.
 - A quoi sert JavaScript ?
@@ -6,11 +6,11 @@
 - ... et ne [sera jamais réparé](https://www.youtube.com/watch?v=7eNFQqMSxtU)
 - [Rapide survol par MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/JavaScript_technologies_overview)
 
-# Standards
+## Standards
 
-## Fonctionnement des standards
+### Fonctionnement des standards
 
-## Historique succinct
+### Historique succinct
 
 - ECMAScript 3 (1999)
     - IE8+
@@ -34,7 +34,7 @@
     - BigInt ?
 - ...
 
-### Ce qui nous intéresse: compatibilité des navigateurs
+#### Ce qui nous intéresse: compatibilité des navigateurs
 - [Navigateurs](https://kangax.github.io/compat-table/es6/)
 - [Node](http://node.green/)
 
@@ -43,7 +43,7 @@
 *Les versions de JavaScript (1.7, 1.7.5, 1.8, etc.) n'existent pas (ce sont numéros de version du moteur JS de Firefox)*
 
 
-# Syntaxe
+## Syntaxe
 
 * not : `!x`
 * et : `a && b`
@@ -65,7 +65,7 @@ else {
 ````
 
 
-# Variables
+## Variables
 
 Une variable c'est une **boîte avec une étiquette** qui contient une valeur.
 
@@ -116,7 +116,7 @@ console.log(b); // undefined
 console.log(c); // 3
 ````
 
-## [Mode strict](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
+### [Mode strict](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
 
 - Toujours utiliser le mode strict en ajoutant `"use strict";` en haut de TOUS vos fichiers
 
@@ -156,7 +156,7 @@ console.log(myFavoriteSinger) // 'Taylor Swift'
 
 
 
-# Fonctions
+## Fonctions
 
 - Définition d'une fonction
 - Arguments
@@ -183,19 +183,19 @@ console.log(maChocolatine) // painchocolat
 // WhaaaAAaAaaaAAAaaat ?!?
 ````
 
-# Retour vers le futur
+## Retour vers le futur
 
 Écrire le code du futur dans les navigateurs du présent (ou du passé)
 
 
-## Syntaxe
+### Syntaxe
 C'est la façon d'écrire le code, comprise (ou pas) par les navigateurs.
 
 En gros, ce sont les **règles de grammaire**.
 
  Pour utiliser la syntaxe du futur, utiliser [Babel](https://babeljs.io/).
 
-## Runtime
+### Runtime
 
 On parle ici de **sémantique**, des mots standards du langage fournis par le navigateur (ou Node).
 
@@ -225,7 +225,7 @@ maFonctionDuFuture() // ok
 ````
 
 
-# Valeurs
+## Valeurs
 
 Une valeur est le **résultat d'une opération**.
 
@@ -244,9 +244,9 @@ Une valeur est le **résultat d'une opération**.
 | symbol |                               | "symbol"    |                   |
 
 
-## Comparaison
+### Comparaison
 
-### Égalité stricte
+#### Égalité stricte
 
 Toujours utiliser === et !==
 
@@ -256,7 +256,7 @@ Toujours utiliser === et !==
 
 [Pourquoi `==` est différent de `===` ?](http://dorey.github.io/JavaScript-Equality-Table/)
 
-### Valeur vs Référence
+#### Valeur vs Référence
 
 Comparaison par référence pour les objets et fonctions, par valeur pour le reste.
 
@@ -285,7 +285,7 @@ o2.b = 24;
 console.log(o.b) // 24
 ````
 
-### L'exception NaN
+#### L'exception NaN
 
 ````js
 'use strict';
@@ -296,7 +296,7 @@ console.log(o.b) // 24
 Pour tester la valeur `NaN`, utiliser `Number.isNaN()`.
 
 
-## Strings
+### Strings
 
 * `'Yo'.slice(start, end)`
 * `'Yo'.substring(start, end)`
@@ -312,7 +312,7 @@ Pour tester la valeur `NaN`, utiliser `Number.isNaN()`.
 
 [Comment enlever les accents ?](https://stackoverflow.com/questions/990904/remove-accents-diacritics-in-a-string-in-javascript/37511463#37511463)
 
-## Number
+### Number
 
 * `NaN`, `Infinity`
     * `NaN !== NaN`
@@ -327,7 +327,7 @@ console.log( e.toFixed(3) )
 console.log( e.toString(36) )
 ```
 
-### La librairie standard Math
+#### La librairie standard Math
 Une collection de fonctions pour faire des maths.
 - `Math.random()`
 - `Math.round/floor/ceil`
@@ -335,9 +335,9 @@ Une collection de fonctions pour faire des maths.
 - ...
 
 
-## Booleans
+### Booleans
 
-## "Falsy values"
+#### "Falsy values"
 
 ```js
 false
@@ -350,7 +350,7 @@ undefined
 
 `!!maValeur` transforme une valeur en vrai booléen.
 
-## Objects
+### Objects
 
 Un objet c'est une **armoire avec des tiroirs**.
 
@@ -368,7 +368,7 @@ Un objet c'est une **armoire avec des tiroirs**.
 - Tester si une propriété est dans un objet `'yo' in obj`
 
 
-## JSON
+#### JSON
 
 JSON : JavaScript Object Notation
 
@@ -397,7 +397,7 @@ console.log(JSON.stringify(o));
 ⚠ C'est un format fragile ⚠, vérifier avec [JSON Lint](https://jsonlint.com/)
 
 
-## Array
+### Array
 
 ```js
 "use strict";
@@ -482,9 +482,7 @@ const found = arr.sort(function(a, b){
 ````
 
 
-
-
-## `Set` / `Map` (ES6)
+### `Set` / `Map` (ES6)
 
 Un `Set` ressemble à une liste, avec des éléments uniques.
 
@@ -515,9 +513,8 @@ map.keys() // iterator
 - ... sauf `.keys()` et `.values()`
 - leurs clés **doivent** être des objets
 
+# À vos claviers
 
-
-
-
+Ouvrir le fichier `./src/exercice.html`, et suivre les indications.
 
 

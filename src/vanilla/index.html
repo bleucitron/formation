@@ -14,89 +14,51 @@
         .then(function(resp){return resp.json()})
         .then(function(tweets){
           console.log('Le tableau de tweet', tweets);
-/*
 
-Pense-bête DOM
-  // créer un nouvel élément 'div'
-  var x = document.createElement('div');
+// ### 2/ Twitter ###
 
-  // rajouter un enfant
-  parentEl.append(enfantEl);
-
-  // accéder au <body>
-  document.body
-
-  // ajouter un texte à un élément
-  element.textContent = 'le texte yo !';
-
-*/
-
-// ### 1/ Manipulations de base ###
-
-          /* pour le premier tweet
-            - l'afficher dans la console
-            - afficher son texte dans la console
-            - créer une div qui contient le texte du tweet et ajouter la div au <body>
-          */
+          // [1] créer une fonction, qui pour un tweet en entrée, créé et retourne un <li> contenant le texte du tweet
 
 
-          // afficher dans la console les text de tous les tweets du tableau en utilisant .forEach()
+          // [2] ajouter les tweets à la page en utilisant [1]
 
 
-          // créer un tableau avec seulement tous les textes des tweets en utilisant .map()
+          // créer et ajouter un <button> qui quand on clique dessus affiche 'click' dans la console.
 
 
-          // créer un tableau avec seulement les dates de publication (created_at)
-
-
-          // créer un tableau avec seulement les tweets en français en utilisant .filter()
-
-
-          // créer un <ol>
-
-
-          // [1] pour chaque tweet, créer un <li>, mettre le texte dedans, mettre le <li> dans le <ol>
-
-
-          // mettre le <ol> dans le <body>
-
-
-// ### 2/ Manipulations avancées ###
-
-          /* créer une fonction, qui pour un tweet en entrée, créé et retourne un <li> contenant le texte du tweet,
-          et l'utiliser à [1] */
-
-
-          /* [2] Créer et ajouter un <button> qui quand on clique dessus affiche 'click' dans la console.
-          Quand on clique ne garde que les tweets en français (et quand on reclique re-affiche tout) */
+          /* modifier le bouton pour que,
+            quand on clique dessus, ne garde que les tweets en français (et quand on reclique re-affiche tout) */
 
 
           /* créer une fonction, qui pour un tableau tweets en entrée, crée et retourne un <ol> rempli de <li>
-          et l'utiliser à [1] et [2] */
+          et l'utiliser à [2] */
 
 
           // Créer un bouton qui active le tracking de la position de la souris (event.clientX, event.clientY), et le désactive quand on reclique dessus
 
 
-          // Ecrire une fonction 'jsonGet' qui a comme paramètre une url et qui retourne une promesses pour des tweets en utilisant fetch
+// Présentation Asynchronicité
+
+          // Ecrire une fonction 'fetchJson' qui a comme paramètre une url et qui retourne une promesses pour des tweets en utilisant fetch
 
 
           /* charger et afficher les tweets de
           'https://raw.githubusercontent.com/iOiurson/formation/correction/data/tweets2.json'*/
 
 
-// ### 3/ Modules ###
-
           /* Créer plusieurs fichiers avec du code
             - createTweetLi.js
             - createTweetsOl.js
             - createTrackingButton.js
+            - fetchJson.js
             - main.js
           */
 
 
           // charger tout ça via des <script defer src="..."> dans le <head>
 
+
+// Présentation Modules
 
 // ### BONUS 1: LOCALSTORAGE ###
             // 1) Rajouter un bouton "fav" à chaque li
@@ -125,6 +87,7 @@ Pense-bête DOM
   </head>
 
   <body>
+    <div>COUCOU</div>
   </body>
 
 </html>

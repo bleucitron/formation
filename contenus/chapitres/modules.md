@@ -30,11 +30,11 @@ On souhaite rendre claires les relations entre fichiers, afin de savoir sans éq
 
 On veut donc rendre les dépendances entre fichiers **explicites**.
 
-# Tentatives
+## Tentatives
 
 
 
-## CommonJS (Node.js)
+### CommonJS (Node.js)
 
 ````js
 "use strict";
@@ -53,7 +53,7 @@ module.exports = function (a){
 Problème: `require` synchrone
 
 
-## AMD (Asynchronous Module Definition)
+### AMD (Asynchronous Module Definition)
 
 ````js
 define(
@@ -73,12 +73,12 @@ Problème: nb d'A/R égal à la profondeur de l'arbre.
 Solution: [r.js](https://github.com/requirejs/r.js)
 
 
-# Modules ES6
+## Modules ES6
 
 Quand on importe un module, on "récupère" ce que ce module exporte.
 Le module "point d'entrée" n'exporte rien. Les modules "feuilles" n'importe rien.
 
-## [`import`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Instructions/import)
+### [`import`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Instructions/import)
 
 On peut importer depuis un module natif ou installé, ou depuis les fichiers locaux du projet.
 
@@ -100,7 +100,7 @@ console.log(pokemons.pikachu)
 // ...
 ````
 
-## [`export`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Instructions/export)
+### [`export`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Instructions/export)
 
 On peut exporter des valeurs, des objets, des fonctions...
 
@@ -117,7 +117,7 @@ export const maConst = 5; // export
 **Les modules sont par défaut en mode strict !**
 
 
-# Bundling
+## Bundling
 
 On "compile" tout le code en 1 seul (gros) fichier bien construit pour le charger dans le Html.
 
@@ -134,12 +134,12 @@ Ces outils nécessitent de travailler dans un environnement Node, puis de transf
 Pour utiliser ces outils, il faut donc [installer Node](https://nodejs.org/en/) et un gestionnaire de paquets, [NPM](https://www.npmjs.com/) ou [Yarn](https://yarnpkg.com/en/).
 
 
-# TODO
+# À vos claviers !!!
 
 On va utiliser [`browserify`](http://browserify.org/).
 
 
-## Étape 1: [installer NodeJS](https://nodejs.org/en/)
+### Étape 1: [installer NodeJS](https://nodejs.org/en/)
 
 ```bash
 # vérifier la version
@@ -147,7 +147,7 @@ node -v
 npm -v
 ```
 
-## Étape 2: installer Browserify et Babel
+### Étape 2: installer Browserify et Babel
 
 ```bash
 # dans le dossier projet :
@@ -160,11 +160,11 @@ browserify src/vanilla/main.js -o bundle.js -t [ babelify --presets [ @babel/env
 # watchify src/vanilla/main.js -o bundle.js -t [ babelify --presets [ @babel/env ] ] -d -v
 ```
 
-## Étape 3: changer le HTML
+### Étape 3: changer le HTML
 
 Enlever tous les `<script>` et les remplacer par `<script defer src="bundle.js"></script>`
 
-## Étape 4: utiliser `import`/`export` dans nos scripts
+### Étape 4: utiliser `import`/`export` dans nos scripts
 
 `main.js`
 
@@ -186,10 +186,10 @@ export default function(tweets){
 }
 ````
 
-## Étape 5: en profiter pour écrire avec la syntaxe ES6 partout
+### Étape 5: en profiter pour écrire avec la syntaxe ES6 partout
 
 
-## Étape 6: ajouter les infos de la date avec [MomentJS](https://momentjs.com/)
+### Étape 6: ajouter les infos de la date avec [MomentJS](https://momentjs.com/)
 
 ```bash
 npm install moment

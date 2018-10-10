@@ -115,13 +115,13 @@ Attention ! Métrique dangereuse !
 ## Tests de non-régression
 
 1. on a observé un bug
-2. on écrit un test qui échoue et démontre le bug
-3. on corrige le bug (et le test passe)
+2. on écrit un test qui décrit le comportement correct
+3. on lance le test, il échoue
+4. on corrige le bug
+5. on lance le test, il passe
 
 
-## Tests automatisés sur vrais navigateurs
-
-https://developers.google.com/web/updates/2017/06/headless-karma-mocha-chai
+## Tests automatisés sur vrais navigateurs: [Karma](https://developers.google.com/web/updates/2017/06/headless-karma-mocha-chai)
 
 
 

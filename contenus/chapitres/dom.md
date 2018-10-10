@@ -7,7 +7,7 @@ Grosso modo composée de noeuds, d'élements et d'évènements.
 [L'essentiel](https://developer.mozilla.org/fr/docs/Web/API/Document_Object_Model/Introduction#Interfaces_essentielles_du_DOM)
 
 
-# [Node](https://developer.mozilla.org/fr/docs/Web/API/Node)
+## [Node](https://developer.mozilla.org/fr/docs/Web/API/Node)
 
 Représentent les noeuds de l'arbre.
 
@@ -20,7 +20,7 @@ n.replaceWith(n2)
 ```
 
 
-# Document + HTMLDocument
+### Document + HTMLDocument
 
 Le document est un noeud spécial.
 
@@ -32,7 +32,7 @@ document.querySelector(selector) // renvoie le premier élément correspondant
 document.querySelectorAll(selector) // renvoie un iterateur
 ```
 
-# [Element](https://developer.mozilla.org/en-US/docs/Web/API/element)
+## [Element](https://developer.mozilla.org/en-US/docs/Web/API/element)
 
 Tous les éléments sont des noeuds, mais pas l'inverse.
 
@@ -60,7 +60,7 @@ e.classList.add/remove/contains/toggle
 e.style.backgroundColor = ... // l'équivalent CSS est background-color
 ```
 
-# [EventTarget](https://developer.mozilla.org/fr/docs/Web/API/EventTarget)
+## [EventTarget](https://developer.mozilla.org/fr/docs/Web/API/EventTarget)
 
 Tout est un `EventTarget`.
 
@@ -77,7 +77,7 @@ monElement.addEventListener('click', function(){
 Éviter les `onclick`, `onmousemove`...
 Ils sont uniques par élément.
 
-# [Evènements](https://developer.mozilla.org/en-US/docs/Web/Events)
+## [Evènements](https://developer.mozilla.org/en-US/docs/Web/Events)
 
 - DOMContentLoaded
     - Quand le HTML est chargée et que l'arbre DOM est construit
@@ -93,7 +93,7 @@ Ils sont uniques par élément.
 - touchstart
     - le listener bloque touchstart
 
-## Event properties
+### Event properties
 
 ```js
 element.addEventListener('click', function(e){
@@ -102,3 +102,7 @@ element.addEventListener('click', function(e){
     e.preventDefault() // empêche les comportements par défaut
 })
 ```
+
+# À vos claviers !!!
+
+Ouvrir le fichier `./src/vanilla/index.html`, et suivre les indications.
