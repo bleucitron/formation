@@ -1,0 +1,172 @@
+body {
+  font-family: Arial;
+  padding: 3rem;
+}
+
+h1, h2 {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.top section {
+  width: 40%;
+  height: 22vh;
+  margin-top: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.top section img {
+  width: 100%;
+}
+
+.sante h2 {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+article div {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: .2rem;
+}
+
+aside {
+  font-size: .8rem;
+}
+
+aside ul {
+  display: flex;
+}
+
+header {
+  width: 60%;
+  background-color: #00974f;
+  color: white;
+}
+
+header aside {
+  height: 1.5rem;
+  padding: .4rem;
+  background-color: white;
+  color: #00974f;
+}
+
+header aside li {
+  width: 25%;
+  font-size: .7rem;
+  text-align: center;
+  border-right: 1px solid #00974f;
+}
+
+header aside li:last-child {
+  border: none;
+}
+
+h1 {
+  text-align: center;
+  padding: .5rem;
+  font-size: 7rem;
+  height: 22vh;
+  box-sizing: border-box;
+}
+
+h1 div {
+  font-size: .6rem;
+  text-align: right;
+}
+
+article {
+  position: relative;
+}
+
+.divers {
+  display: flex;
+  padding: 1rem;
+  font-style: italic;
+  background-color: #e6f4eb;
+}
+
+.divers b, .divers div {
+  font-family: 'Times';
+  font-weight: bold;
+  color: #00974f;
+  font-style: normal;
+}
+
+.divers b {
+  text-transform: uppercase;
+}
+
+.divers article {
+  flex: 1 0;
+  height: 10vh;
+  padding: 0 1rem;
+  border-right: 1px solid #00974f;
+}
+
+.divers article div {
+  right: .5rem;
+}
+
+.divers article:last-child {
+  border-right: none;
+}
+
+.sante {
+  display: flex;
+  height: 25vh;
+  margin-top: 1rem;
+  overflow: hidden;
+}
+
+.sante article {
+  flex: 1 0;
+  height: 100%;
+  border: 1px solid #f6a183;
+}
+
+.sante article:first-child {
+  flex-grow: 2;
+}
+
+.sante article:last-child {
+  flex-grow: 3;
+  margin-left:1rem;
+}
+
+.sante article:last-child .right {
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 30%;
+  text-align: center;
+}
+
+.sante article img {
+  width: 100%;
+}
+
+.sante article h2 {
+  padding: .3rem;
+  font-weight: normal;
+  background-color: #f6a183;
+  color: white;
+  font-size: 1rem;
+}
+
+
+
