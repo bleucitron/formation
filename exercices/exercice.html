@@ -5,7 +5,7 @@
   <meta charset="utf-8">
 
   <meta description="">
-  <link rel="stylesheet" type="text/css" href="../../style.css">
+  <link rel="stylesheet" type="text/css" href="../style.css">
 
   <script>
     "use strict";
@@ -35,24 +35,45 @@
 // ### 0/ Pour se chauffer ###
 
           // créer une variable x, et lui assigner un nombre
-
+          const x = 3;
 
           // logguer cette variable dans la console avec console.log()
-
+          console.log('X', x);
 
           /* créer une fonction qui en entrée pend un nombre et en sortie renvoie le nombre multiplié par 10
               et logguez f(x)
           */
+          function f(x) {
+            return x * 10;
+          }
 
+          console.log('f(3)', f(x));
 
           // créer un tableau de 10 valeurs aléatoires entières, et logguer chacune des valeurs dans la console, avec .forEach()
+          function aleatoire() {
+            return Math.floor((Math.random() * 10));
+          }
 
+          const t = [aleatoire(), aleatoire(), aleatoire(), aleatoire(), aleatoire(), aleatoire()];
+
+          t.forEach(function(element) {
+            console.log('Element', element);
+          });
 
           // créer un nouveau tableau avec seulement les entiers pairs, avec .filter()
+          function isEven(e) {
+            return e % 2 === 0;
+          }
 
+          const pairs = t.filter(isEven);
+
+          console.log('Pairs', pairs);
 
           // créer un nouveau tableau à partir du précédent contenant les valeurs multipliées par 10, avec .map()
 
+          const fois10 = t.map(f);
+
+          console.log('fois10', fois10);
 
 // ### 1/ On commence avec les tweets ###
 
@@ -62,26 +83,50 @@
             - créer une div qui contient le texte du tweet et ajouter la div au <body>
           */
 
+          console.log('Mon premier tweet', tweets[0]);
+          console.log('Le texte de mon premier tweet', tweets[0].text);
+
+          const premier = document.createElement('div');
+          document.body.append(premier);
+          premier.textContent = tweets[0].text;
+
+
           // observer la structure des données des tweets dans la console du navigateur
 
 
           // afficher dans la console les textes de tous les tweets du tableau en utilisant .forEach()
-
+          tweets.forEach(function(tweet) {
+            console.log('Tweet', tweet);
+          });
 
           // créer un tableau avec seulement tous les textes des tweets en utilisant .map()
-
+          const textes = tweets.map(function(tweet) {
+            return tweet.text;
+          });
+          console.log('Textes', textes);
 
           // créer un tableau avec seulement les dates de publication
-
+          const dates = tweets.map(function (tweet) {
+            return tweet.created_at;
+          });
+          console.log('Dates', dates);
 
           // créer un tableau avec seulement les tweets en français en utilisant .filter()
-
+          const frTweets = tweets.filter(function(tweet) {
+            return tweet.lang === 'fr';
+          });
+          console.log('Fr', frTweets);
 
           // créer un <ol> et l'ajouter au le <body>
-
+          const ol = document.createElement('ol');
+          document.body.append(ol);
 
           // pour chaque tweet, créer un <li>, mettre le texte dedans, mettre le <li> dans le <ol>
-
+          tweets.forEach(function(tweet) {
+            const li = document.createElement('li');
+            li.textContent = tweet.text;
+            ol.append(li);
+          });
 
         })
         .catch(function (e) { console.error(e) });
