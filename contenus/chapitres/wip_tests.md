@@ -1,4 +1,6 @@
-# Linting
+# Tests
+
+## Linting
 
 Sert à écrire du code propre, selon les conventions que l'on choisit.
 
@@ -94,9 +96,6 @@ npm i husky lint-staged --save-dev
 ```json
 // package.json
 {
-    "scripts": {
-        "precommit": "lint-staged"
-    },
     // ...
     "lint-staged": {
         "*.js": [
@@ -104,6 +103,11 @@ npm i husky lint-staged --save-dev
             "jest --findRelatedTests"
         ]
     },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    }
     // ...
 }
 ```
@@ -126,9 +130,12 @@ Attention ! Métrique dangereuse !
 
 
 
-# TODO
+# À vos claviers !!!
 
-Créer un module qui exporte une fonction qui ...
+Isoler la fonction `isFrenchTweet` dans un module, et la tester:
+* doit renvoyer `true` pour un tweet en français
+* doit renvoyer `false` pour un tweet en anglais
+
 
 Test de DOM
 

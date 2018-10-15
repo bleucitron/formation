@@ -17,6 +17,33 @@
 </html>
 ````
 
+### Defer
+
+````html
+<!doctype html>
+<html>
+    <head>
+        <script src="code1.js" defer></script>
+        <script src="code2.js" defer></script>
+    </head>
+    <body></body>
+</html>
+````
+
+### Async
+
+````html
+<!doctype html>
+<html>
+    <head>
+        <script src="code1.js" async></script>
+        <script src="code2.js" async></script>
+    </head>
+    <body></body>
+</html>
+````
+
+
 Problèmes :
 
 * Performance (6 requêtes HTTP max en parallèle)
@@ -154,7 +181,7 @@ npm -v
 npm init -y
 npm install browserify -g
 # npm install watchify -g
-npm i babelify @babel/core @babel/preset-env --save-dev
+npm i babelify @babel/core babel-core@7.0.0-bridge.0 @babel/preset-env --save-dev
 
 browserify src/vanilla/main.js -o bundle.js -t [ babelify --presets [ @babel/env ] ] -d
 # watchify src/vanilla/main.js -o bundle.js -t [ babelify --presets [ @babel/env ] ] -d -v

@@ -55,11 +55,11 @@ Les scripts NPM permettent d'automatiser certaines tâches. Ils remplacent les o
 
 ```json
 {
-    "scripts": {
-        "build": "my build script",
-        "prebuild": "this will be executed before 'build'",
-        "postbuild": "this will be executed after 'build'"
-    }
+  "scripts": {
+    "build": "my build script",
+    "prebuild": "this will be executed before 'build'",
+    "postbuild": "this will be executed after 'build'"
+  }
 }
 ```
 
@@ -67,7 +67,26 @@ Les scripts NPM permettent d'automatiser certaines tâches. Ils remplacent les o
 npm run build
 ```
 
-Quelques outils
+### Aparté Babel
+
+On va à partir de maintenant utiliser Babel globalement dans le projet.
+
+Enlever les `presets` des scripts
+```json
+{
+  "scripts": {
+    "build": "browserify src/vanilla/main.js -o bundle.js -t [ babelify ] -d",
+  }
+}
+
+et rajouter un `.babelrc` à la racine du projet
+```json
+{
+  "presets": ["@babel/preset-env"]
+}
+```
+
+### Quelques outils
 * [`npm-run-all`](https://www.npmjs.com/package/npm-run-all)
 * [`watch-exec`](https://www.npmjs.com/package/watch-exec)
 * [`npx`](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b)
