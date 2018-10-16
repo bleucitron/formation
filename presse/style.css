@@ -1,0 +1,137 @@
+body {
+  font-family: "Verdana";
+  padding: 2.5rem;
+}
+
+h2 {
+  margin: 0;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.en-tete {
+  display: flex;
+}
+
+p {
+  margin: 0;
+}
+
+.multi-column {
+  column-count: 2;
+}
+
+h1 {
+  margin: 0;
+  padding: .5rem;
+  background-color: green;
+  color: white;
+  font-size: 6rem;
+  text-transform: lowercase;
+  text-align: center;
+}
+
+h1 p {
+  font-size: .7rem;
+  text-transform: none;
+  text-align: right;
+  font-weight: normal;
+}
+
+header section {
+  padding-top: .5rem;
+  font-size: .4rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+header section a {
+  color: green;
+  border-right: 1px solid green;
+  text-align: center;
+  flex: 1 0;
+  padding: 0 0.4rem;
+}
+
+header section a:first-child {
+  padding: 0;
+  text-align: left;
+}
+
+header section a:last-child {
+  padding: 0;
+  border: none;
+  text-align: right;
+}
+
+main section {
+  font-family: "Times";
+}
+
+main section {
+  margin: .5rem 0;
+}
+
+section:nth-child(odd) {
+  position: relative;
+  background-color: #d5e7d5;
+  padding: .5rem;
+}
+
+section:first-child p {
+  font-size: .6rem;
+}
+section:nth-child(odd) span {
+  font-style: normal;
+  position: absolute;
+  right: .5rem;
+  bottom: .5rem;
+  font-size: .6rem;
+  color: green;
+  font-weight: bold;
+}
+
+section:nth-child(2) {
+  position: relative;
+}
+
+section:nth-child(2) article {
+  position: absolute;
+  top: .5rem;
+  left: .5rem;
+  background-color: white;
+  width: 30%;
+  padding: .5rem;
+  font-size: .6rem;
+  opacity: 0.7;
+}
+
+article b {
+  text-transform: uppercase;
+}
+
+section:last-child {
+  display: flex;
+}
+
+section:last-child a {
+  position: relative;
+  font-style: italic;
+  border-right: 1px dotted green;
+  flex: 1 0;
+  padding: 0 .5rem;
+}
+
+section:last-child a:last-child {
+  border: none;
+}
+
+a b {
+  color: green;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
