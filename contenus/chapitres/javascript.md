@@ -412,6 +412,8 @@ arr.length // 3
 ````js
 ## Itérer sur un tableau
 
+const arr = [1, 2, 3];
+
 for (let i = 0; i < arr.length; i++) { // à l'ancienne
     console.log(arr[i]);
 }
@@ -435,6 +437,7 @@ arr.forEach(function(element) { // beaucoup mieux !
 
 ````js
 const arr = [1, 2, 3, 4];
+
 arr.forEach(function(e, i, a) {
     console.log(e * i);
 });
@@ -449,14 +452,20 @@ arr.forEach(function(e, i, a) {
 
 ````js
 const arr = [1, 2, 3];
-const arr2 = arr.map(function(e) { return e * 10; }); // [10, 20, 30]
+
+const arr2 = arr.map(function(e) {
+    return e * 10;
+}); // [10, 20, 30]
 ````
 
 * `a.filter(f)`
 
 ````js
 const arr = [1, 2, 3, 4, 5, 6, 7, 8];
-const arr2 = arr.filter(function(e) { return e % 2 === 0; }); // [2, 4, 6, 8]
+
+const arr2 = arr.filter(function(e) {
+    return e % 2 === 0;
+}); // [2, 4, 6, 8]
 ````
 
 * `a.slice(debut, fin)`
@@ -468,6 +477,8 @@ arr.slice(0, 5); // [1, 2, 3, 4, 5]
 * `a.find(pred)`
 
 ````js
+const arr = [1, 2, 3, 4, 5, 6, 7, 8];
+
 const found = arr.find(function(e){
     return e >= 4 && e % 4 === 2; // 6
 });
@@ -515,6 +526,6 @@ map.keys() // iterator
 
 # À vos claviers
 
-Ouvrir le fichier `./src/exercice.html`, et suivre les indications.
+Ouvrir le fichier `./exercices/exo.html`, et suivre les indications.
 
 
