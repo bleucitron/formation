@@ -15,11 +15,63 @@
         .then(function (resp) { return resp.json() })
         .then(function (tweets) {
           console.log('Le tableau de tweet', tweets);
+
+// ### 0/ Pour se chauffer ###
+
+          // créer une variable x, et lui assigner un nombre
+
+          const x = 1;
+
+          // logguer cette variable dans la console avec console.log()
+
+          console.log('Mon nombre', x);
+
+          /* créer une fonction qui en entrée prend un nombre et en sortie renvoie le nombre multiplié par 10
+              et logguez f(x)
+          */
+          function x10(x) {
+            return x * 10;
+          }
+
+          console.log('f(x)', x10(x));
+
+
+          // créer un tableau de 5 valeurs aléatoires entières, et logguer chacune des valeurs dans la console, avec .forEach()
+
+          const t = [
+            Math.floor(Math.random() * 10),
+            Math.floor(Math.random() * 10),
+            Math.floor(Math.random() * 10),
+            Math.floor(Math.random() * 10),
+            Math.floor(Math.random() * 10)
+          ];
+          console.log('t', t);
+
+          t.forEach(function(element) {
+            console.log('element', element);
+          });
+
+          // créer un nouveau tableau avec seulement les entiers pairs, avec .filter()
+
+          const tPair = t.filter(function(e) {
+            return e % 2 === 0;
+          });
+
+          console.log('tPair', tPair);
+
+          // créer un nouveau tableau à partir du précédent contenant les valeurs multipliées par 10, avec .map()
+
+          const tPairX10 = tPair.map(x10);
+
+          console.log('tPairX10', tPairX10);
+
+// ### 1/ On commence avec les tweets ###
+
           /*
 
           Pense-bête DOM
             // créer un nouvel élément 'div'
-            var x = document.createElement('div');
+            const x = document.createElement('div');
 
             // rajouter un enfant
             parentEl.append(enfantEl);
@@ -32,55 +84,59 @@
 
           */
 
-// ### 0/ Pour se chauffer ###
-
-          // créer une variable x, et lui assigner un nombre
-
-
-          // logguer cette variable dans la console avec console.log()
-
-
-          /* créer une fonction qui en entrée pend un nombre et en sortie renvoie le nombre multiplié par 10
-              et logguez f(x)
-          */
-
-
-          // créer un tableau de 10 valeurs aléatoires entières, et logguer chacune des valeurs dans la console, avec .forEach()
-
-
-          // créer un nouveau tableau avec seulement les entiers pairs, avec .filter()
-
-
-          // créer un nouveau tableau à partir du précédent contenant les valeurs multipliées par 10, avec .map()
-
-
-// ### 1/ On commence avec les tweets ###
-
           /* pour le premier tweet
             - l'afficher dans la console
             - afficher son texte dans la console
             - créer une div qui contient le texte du tweet et ajouter la div au <body>
           */
 
+         console.log('Mon premier tweet', tweets[0]);
+         console.log('Le texte de mon premier tweet', tweets[0].text);
+
+         const monTweet = document.createElement('div');
+         monTweet.textContent = tweets[0].text;
+         document.body.append(monTweet);
+
           // observer la structure des données des tweets dans la console du navigateur
 
 
           // afficher dans la console les textes de tous les tweets du tableau en utilisant .forEach()
-
+          tweets.forEach(function(tweet) {
+            console.log('Tweet text:', tweet.text);
+          });
 
           // créer un tableau avec seulement tous les textes des tweets en utilisant .map()
+          const texts = tweets.map(function(tweet) {
+            return tweet.text;
+          });
 
+          console.log('Texts:', texts);
 
           // créer un tableau avec seulement les dates de publication
+          const dates = tweets.map(function (tweet) {
+            return tweet.created_at;
+          });
 
+          console.log('Dates:', dates);
 
           // créer un tableau avec seulement les tweets en français en utilisant .filter()
+          const frTweets = tweets.filter(function(tweet) {
+            return tweet.lang == 'fr';
+          });
 
+          console.log('Fr:', frTweets);
 
           // créer un <ol> et l'ajouter au le <body>
-
+          const ol = document.createElement('ol');
+          document.body.append(ol);
 
           // pour chaque tweet, créer un <li>, mettre le texte dedans, mettre le <li> dans le <ol>
+          tweets.forEach(function(tweet){
+            const li = document.createElement('li');
+            li.textContent = tweet.text;
+            ol.append(li);
+          });
+
 
 
         })

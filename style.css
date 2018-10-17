@@ -54,7 +54,7 @@ fairly classic thing to do
 .table-layout > *, .table-row-layout {
     display: table-row;
 }
-.table-layout > * > *, table-row-layout > * {
+.table-layout > * > *, .table-row-layout > * {
     display: table-cell;
     vertical-align: top; /* because otherwise text blobs appear at the bottom which is not what people want */
 }

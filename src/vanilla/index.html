@@ -18,23 +18,75 @@
 // ### 2/ Twitter ###
 
           // [1] créer une fonction, qui pour un tweet en entrée, créé et retourne un <li> contenant le texte du tweet
-
+          function createLi(tweet) {
+            const li = document.createElement('li');
+            li.textContent = tweet.text;
+            return li;
+          }
 
           // [2] ajouter les tweets à la page en utilisant [1]
-
+          let ol = createOl(tweets);
+          document.body.append(ol);
 
           // créer et ajouter un <button> qui quand on clique dessus affiche 'click' dans la console.
-
+          const button = document.createElement('button');
+          button.textContent = 'Filtrer';
+          document.body.append(button);
 
           /* modifier le bouton pour que,
             quand on clique dessus, ne garde que les tweets en français (et quand on reclique re-affiche tout) */
+          let isFr = false;
 
+          button.addEventListener('click', function() {
+            let tweetsToDisplay = tweets;
+
+            if (!isFr) {
+              tweetsToDisplay = tweets.filter(function (tweet) {
+                return tweet.lang == 'fr';
+              });
+            }
+
+            const newOl = createOl(tweetsToDisplay);
+
+            ol.replaceWith(newOl);
+            ol = newOl;
+            isFr = !isFr;
+          });
 
           /* créer une fonction, qui pour un tableau tweets en entrée, crée et retourne un <ol> rempli de <li>
           et l'utiliser à [2] */
+          function createOl(tweets) {
+            const ol = document.createElement('ol');
+
+            tweets.map(createLi)
+            .forEach(function(li) {
+              ol.append(li);
+            });
+
+            return ol;
+          }
+
 
 
           // Créer un bouton qui active le tracking de la position de la souris (event.clientX, event.clientY), et le désactive quand on reclique dessus
+          const trackingButton = document.createElement('button');
+          trackingButton.textContent = 'Activer le track';
+          document.body.append(trackingButton);
+
+          let isTracking = false;
+
+          function track(event) {
+            console.log('X:', event.clientX, 'Y:', event.clientY);
+          }
+
+          trackingButton.addEventListener('click', function() {
+            if (!isTracking)
+              window.addEventListener('mousemove', track);
+            else
+              window.removeEventListener('mousemove', track);
+
+            isTracking = !isTracking;
+          });
 
 
 // Présentation Asynchronicité
@@ -87,7 +139,7 @@
   </head>
 
   <body>
-    <div>COUCOU</div>
+    <div>Twitter</div>
   </body>
 
 </html>
