@@ -81,3 +81,28 @@ li .extra{
 li.expanded .extra{
     display: block;
 }
+
+ol {
+    padding: 1rem;
+}
+
+li {
+    margin: .5rem 0;
+}
+
+li .author {
+    font-style: italic;
+}
+
+li .text {
+    padding-left: .5rem;
+}
+
+li .date {
+    font-weight: bold;
+}
+
+li.truncated {
+    color: blue;
+}
+
