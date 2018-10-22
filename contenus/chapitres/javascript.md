@@ -78,7 +78,7 @@ let b = 2;
 a = 3 // Error
 b = 4 // Ok
 ````
-- `const` et `var` sont "block scoped", `var` est "function scoped"
+- `const` et `let` sont "block scoped", `var` est "function scoped"
 
 ````js
 ## Function scope
