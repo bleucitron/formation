@@ -9,43 +9,44 @@
 
   <script>
     "use strict";
-/*
-
-Pense-bête DOM
-  // créer un nouvel élément 'div'
-  const x = document.createElement('div');
-
-  // rajouter un enfant
-  parentEl.append(enfantEl);
-
-  // accéder au <body>
-  document.body
-
-  // ajouter un texte à un élément
-  element.textContent = 'le texte yo !';
-
-*/
 
 // ### 0/ Pour se chauffer ###
 
   // créer une variable x, et lui assigner un nombre
-
+  const x = 10;
 
   // logguer cette variable dans la console avec console.log()
-
+  console.log('X', x);
 
   /* créer une fonction qui en entrée pend un nombre et en sortie renvoie le nombre multiplié par 10
       et logguez f(x)
   */
-
+  function x10 (x) {
+    return x * 10;
+  }
 
   // créer un tableau de 10 valeurs aléatoires entières, et logguer chacune des valeurs dans la console, avec .forEach()
 
+  const numbers = [Math.floor(Math.random() * 10), Math.floor(Math.random() * 10), Math.floor(Math.random() * 10), Math.floor(Math.random() * 10), Math.floor(Math.random() * 10)];
+
+  console.log('Numbers', numbers);
+
+  numbers.forEach(function(number) {
+    console.log('Number', number);
+  });
 
   // créer un nouveau tableau avec seulement les entiers pairs, avec .filter()
 
+  const evens = numbers.filter(function(number) {
+    return number % 2 === 0;
+  });
+
+  console.log('evens', evens);
 
   // créer un nouveau tableau à partir du précédent contenant les valeurs multipliées par 10, avec .map()
+  const final = evens.map(x10);
+
+  console.log('final', final);
 
 
   </script>
