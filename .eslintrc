@@ -1,0 +1,12 @@
+{
+  "extends": "standard",
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "rules": {
+    "semi": [2, "always"],
+    "space-before-function-paren": ["error", "never"],
+    "curly": ["error","multi-or-nest"]
+  }
+}

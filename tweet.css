@@ -1,0 +1,19 @@
+ol {
+  margin: 1rem;
+}
+
+li {
+  margin: 1rem 0;
+}
+
+.text {
+  padding-left: .5rem;
+}
+
+.date {
+  font-weight: bold;
+}
+
+.author {
+  font-style: italic;
+}

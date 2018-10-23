@@ -2,7 +2,7 @@ function track(event) {
   console.log('X:', event.clientX, 'Y:', event.clientY);
 }
 
-export default function () {
+export default function() {
   const trackingButton = document.createElement('button');
   trackingButton.textContent = 'Track';
 
