@@ -27,7 +27,7 @@ C'est le fichier de configuration du projet NPM. Il est créé par `npm init`.
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 1",
   },
   "keywords": [],
   "author": "",
@@ -78,8 +78,10 @@ Enlever les `presets` des scripts
     "build": "browserify src/vanilla/main.js -o bundle.js -t [ babelify ] -d",
   }
 }
+```
 
 et rajouter un `.babelrc` à la racine du projet
+
 ```json
 {
   "presets": ["@babel/preset-env"]
