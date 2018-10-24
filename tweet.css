@@ -17,3 +17,13 @@ li {
 .author {
   font-style: italic;
 }
+
+.hashtags {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.hashtags li {
+  margin: 0 .5rem;
+}
