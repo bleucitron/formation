@@ -133,8 +133,11 @@ Attention ! Métrique dangereuse !
 # À vos claviers !!!
 
 Isoler la fonction `isFrenchTweet` dans un module, et la tester:
-* doit renvoyer `true` pour un tweet en français
-* doit renvoyer `false` pour un tweet en anglais
+* 1) tester que isTweetFr renvoie vrai pour un tweet en francais
+* 2) tester que isTweetFr renvoie false pour un tweet en anglais
+* 2bis) tester que isTweetFr renvoie faux pour un tweet sans langue
+* 3) tester que isTweetFr renvoie vrai pour un tweet en francais canadien (fr-ca)
+* 4) tester que isTweetFr jette une exception pour un tweet undefined
 
 
 Test de DOM
