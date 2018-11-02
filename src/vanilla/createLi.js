@@ -13,4 +13,4 @@ export default tweet => {
   li.append(dateDiv);
 
   return li;
-}
+};

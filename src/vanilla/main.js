@@ -1,15 +1,14 @@
 import fetchJson from './fetchJson';
+import { isTweetFr } from './utils';
 import createOl from './createOl';
 import createTrackingButton from './createTrackingButton';
 
 document.addEventListener('DOMContentLoaded', e => {
-
   const url1 = 'https://raw.githubusercontent.com/iOiurson/formation/correction/data/tweets.json';
   const url2 = 'https://raw.githubusercontent.com/iOiurson/formation/correction/data/tweets2.json';
 
   Promise.all([url1, url2].map(fetchJson))
   .then(([tweets1, tweets2]) => {
-
     let tweets = tweets1.concat(tweets2);
     console.log('Le tableau de tweet', tweets);
 
@@ -38,12 +37,6 @@ document.addEventListener('DOMContentLoaded', e => {
 
     let myOl = createOl(tweets);
     document.body.append(myOl);
-
-    function isTweetFr(tweet) {
-      return tweet.lang === 'fr';
-    }
-
   })
   .catch(e => console.error(e));
-
-}, { once: true })
+}, { once: true });

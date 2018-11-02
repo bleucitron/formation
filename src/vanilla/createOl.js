@@ -7,4 +7,4 @@ export default tweets => {
   .forEach(li => ol.append(li));
 
   return ol;
-}
+};
