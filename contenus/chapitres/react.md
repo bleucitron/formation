@@ -59,6 +59,7 @@ Tous les éléments HTML standards ont leur composant associé fourni par React.
 
 ⚠ Il faut avoir importé React dans tous les fichiers qui utilisent du JSX. ⚠
 
+---
 
 # À vos claviers !!!
 

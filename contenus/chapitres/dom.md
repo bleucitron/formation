@@ -103,6 +103,8 @@ element.addEventListener('click', function(e){
 })
 ```
 
+---
+
 # À vos claviers !!!
 
 Ouvrir le fichier `./src/vanilla/index.html`, et suivre les indications.

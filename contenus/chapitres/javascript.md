@@ -524,6 +524,8 @@ map.keys() // iterator
 - ... sauf `.keys()` et `.values()`
 - leurs clés **doivent** être des objets
 
+---
+
 # À vos claviers
 
 Ouvrir le fichier `./exercices/exo.html`, et suivre les indications.

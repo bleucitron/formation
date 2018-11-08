@@ -76,6 +76,7 @@ Promise.all([promesse1, promesse2])
 
 Permet d'écrire du code asynchrone comme s'il était synchrone.
 
+---
 
 # À vos claviers !!!
 

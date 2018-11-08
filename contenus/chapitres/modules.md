@@ -160,6 +160,7 @@ Ces outils nécessitent de travailler dans un environnement Node, puis de transf
 
 Pour utiliser ces outils, il faut donc [installer Node](https://nodejs.org/en/) et un gestionnaire de paquets, [NPM](https://www.npmjs.com/) ou [Yarn](https://yarnpkg.com/en/).
 
+---
 
 # À vos claviers !!!
 
