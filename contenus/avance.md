@@ -5,8 +5,8 @@
 * ## [Asynchronicité](./chapitres/asynchrone.md)
 * ## [Modules](./chapitres/modules.md)
 * ## [NPM](./chapitres/npm.md)
-* ## [WIP] [Tests](./chapitres/wip_tests.md)
-* ## [TODO] React
+* ## [Tests](./chapitres/tests.md)
+* ## [WIP] [React](./chapitres/tests.md)
 * ## [TODO] State Management
 * ## [TODO] Outillage
 

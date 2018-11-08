@@ -17,9 +17,9 @@ Dans `package.json`
 ```json
 {
     "scripts": {
-        //...
+        // ...
         "lint": "eslint ."
-        //...
+        // ...
     }
 }
 ```
@@ -29,9 +29,28 @@ Lancer le linter.
 npm run lint
 ```
 
-.eslintrc
+### Ignorer les fichiers superflus
 
-.eslintignore
+Définir une liste de fichiers dans un `.eslintignore`.
+
+### Règles
+
+À l'initialisation, on choisit (ou pas) des règles par défaut.
+
+On peut choisir d'ajuster les règles dans `.eslintrc`.
+
+Les règles peuvent être désactivées (`"off"`), définies en avertissement (`"warn"`) ou erreur (`"error"`). Elles peuvent également être [configurées](https://eslint.org/docs/rules/).
+
+```json
+{
+    "extends": "eslint:recommended", // pas obligatoire
+    "rules": {
+        "ma-règle": "off" // (0) ou "warn" (1) ou "error" (2)
+    }
+    // ...
+}
+```
+
 
 
 
@@ -54,9 +73,9 @@ Dans `package.json`
 ```json
 {
     "scripts": {
-        //...
+        // ...
         "test": "jest ."
-        //...
+        // ...
     }
 }
 ```
@@ -133,31 +152,9 @@ Attention ! Métrique dangereuse !
 # À vos claviers !!!
 
 Isoler la fonction `isFrenchTweet` dans un module, et la tester:
-* 1) tester que isTweetFr renvoie vrai pour un tweet en francais
-* 2) tester que isTweetFr renvoie false pour un tweet en anglais
-* 2bis) tester que isTweetFr renvoie faux pour un tweet sans langue
-* 3) tester que isTweetFr renvoie vrai pour un tweet en francais canadien (fr-ca)
-* 4) tester que isTweetFr jette une exception pour un tweet undefined
+* (1) tester que isTweetFr renvoie vrai pour un tweet en francais
+* (2) tester que isTweetFr renvoie false pour un tweet en anglais
+* (2bis) tester que isTweetFr renvoie faux pour un tweet sans langue
+* (3) tester que isTweetFr renvoie vrai pour un tweet en francais canadien (fr-ca)
+* (4) tester que isTweetFr jette une exception pour un tweet undefined
 
-
-Test de DOM
-
-```js
-import createTweetLi from '../createTweetLi'
-
-describe('createTweetLi', () => {
-    it('should throw when no argument is passed', () => {
-        expect(
-            () => createTweetLi();
-        ).to.throw();
-    })
-
-    it('should create an empty <li> if an empty object is passed', () => {
-        const li = createTweetLi({});
-
-        expect( li ).to.be.an.instanceof(HTMLLIElement)
-        expect( li.textContent ).to.equal('');
-    })
-
-})
-```
