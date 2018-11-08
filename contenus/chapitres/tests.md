@@ -17,9 +17,7 @@ Dans `package.json`
 ```json
 {
     "scripts": {
-        // ...
         "lint": "eslint ."
-        // ...
     }
 }
 ```
@@ -43,11 +41,13 @@ Les règles peuvent être désactivées (`"off"`), définies en avertissement (`
 
 ```json
 {
-    "extends": "eslint:recommended", // pas obligatoire
+    "extends": "eslint:recommended",
     "rules": {
-        "ma-règle": "off" // (0) ou "warn" (1) ou "error" (2)
+        "ma-règle": "off",
+        "ma-règle-1": "warn",
+        "ma-règle-2": "error",
+        "ma-règle-3": ["error", options]
     }
-    // ...
 }
 ```
 
@@ -73,9 +73,7 @@ Dans `package.json`
 ```json
 {
     "scripts": {
-        // ...
         "test": "jest ."
-        // ...
     }
 }
 ```
@@ -115,7 +113,6 @@ npm i husky lint-staged --save-dev
 ```json
 // package.json
 {
-    // ...
     "lint-staged": {
         "*.js": [
             "eslint",
@@ -127,7 +124,6 @@ npm i husky lint-staged --save-dev
             "pre-commit": "lint-staged"
         }
     }
-    // ...
 }
 ```
 
