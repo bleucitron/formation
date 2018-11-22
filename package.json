@@ -8,8 +8,8 @@
     "lint": "eslint .",
     "build": "browserify src/vanilla/main.js -o bundle.js -t [ babelify ] -d",
     "watch": "watchify src/vanilla/main.js -o bundle.js -t [ babelify ] -d -v",
-    "build:jsx": "browserify src/react/main.jsx -o bundle.js -t [ babelify ] -d",
-    "watch:jsx": "watchify src/react/main.jsx -o bundle.js -t [ babelify ] -d -v"
+    "build:jsx": "browserify src/react/main.jsx -o bundle.js -t [ babelify ] -d --extension=jsx",
+    "watch:jsx": "watchify src/react/main.jsx -o bundle.js -t [ babelify ] -d -v --extension=jsx"
   },
   "dependencies": {
     "moment": "^2.22.2",

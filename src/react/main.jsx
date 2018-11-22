@@ -1,33 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import tweets from '../../data/tweets.json';
+import { isTweetFr } from '../vanilla/utils';
+import fetchJson from '../vanilla/fetchJson';
 
-console.log('Tweets', tweets);
-
-function Tweet (props) {
-  return (
-    <div>
-      {props.tweet.text}
-      {props.tweet.created_at}
-    </div>
-  );
-}
-
-function Filter(props) {
-  return (
-    <button onClick={props.filter}>
-      Filtrer
-    </button>
-  );
-}
+import Filter from './Filter';
+import TweetList from './TweetList';
 
 class Root extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      isFr: false
+      isFr: false,
+      tweets: []
     };
 
     this.filter = this.filter.bind(this);
@@ -39,29 +25,36 @@ class Root extends React.Component {
     });
   }
 
+  componentDidMount() {
+    const url1 = 'https://raw.githubusercontent.com/iOiurson/formation/correction/data/tweets.json';
+    const url2 = 'https://raw.githubusercontent.com/iOiurson/formation/correction/data/tweets2.json';
+
+    Promise.all([url1, url2].map(fetchJson))
+      .then(([tweets1, tweets2]) => {
+        const tweets = tweets1.concat(tweets2);
+        this.setState({
+          tweets: tweets
+        })
+        console.log(tweets);
+      });
+  }
+
   render() {
+    const tweetsToDisplay = this.state.isFr ? this.state.tweets.filter(isTweetFr) : this.state.tweets;
     return (
       <div>
         <Filter filter={this.filter} />
-        <TweetList tweets={this.props.tweets} />
+        <TweetList tweets={tweetsToDisplay} />
       </div>
     );
   }
 }
 
-function TweetList(props) {
-  const myTweets = props.tweets.map(tweet => <Tweet key={tweet.id} tweet={tweet}/>);
 
-  return (
-    <div>
-      {myTweets}
-    </div>
-  );
-}
 
 
 ReactDOM.render(
-  <Root tweets={tweets} />,
+  <Root />,
   document.getElementById('root')
 );
 
