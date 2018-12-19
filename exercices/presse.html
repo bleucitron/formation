@@ -7,84 +7,76 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css">
+  <link rel="stylesheet" href="../presse.css">
 
-  <style>
-    h1 {
-      color: green;
-    }
-
-    h1:hover {
-      background-color: yellow;
-    }
-  </style>
-
-
-  <title>Exemple HTML </title>
+  <title>Exercice Presse</title>
 </head>
-
-<!-- Commentaire -->
-
-<!--
-  Commentaire
-  sur plusieurs lignes
--->
-
 <body>
-  <h1>Formation Javascript</h1>
-  <h2>Exemple HTML</h2>
-
-  <a target="_blank" href="https://www.youtube.com/watch?v=2zNSgSzhBfM ">cette vidéo est géniale !</a>
-
-  <button style="color: red;"">Go !</button>
-
-  <div>
-    <label>J'accepte les CGU<input type="checkbox"></label>
-  </div>
-
+  <header>
+    <h1>
+      <div>
+        <img src="https://newrelic.cdn.prismic.io/newrelic/4c3a6a4f005e78d97aeac8671c1a2ed52e84d143_logo-20minutes-bleucertis.jpg"
+          alt="Logo 20 minutes">
+      </div>
+      <span hidden>20 minutes</span>
+    </h1>
+    <div>
+      <div>
+        <article>
+          <img src="http://cdn2-europe1.new2.ladmedia.fr/var/europe1/storage/images/europe1/culture/rolling-stones-le-rock-n-roll-c-est-maintenant-192150/4061714-1-fre-FR/Rolling-Stones-le-rock-n-roll-c-est-maintenant.jpg"
+            alt="Illustration Europe 1">
+          <div>
+            <h3>Radio</h3>
+            <p>Même en perte d'audiences, certaines stations conservent une belle côte de popularité<span>p.14</span></p>
+          </div>
+        </article>
+        <img src="https://s2.dmcdn.net/pzRvG.jpg" alt="Pub pour 20 minutes">
+      </div>
+      <aside>
+        <time dateime="2018-12-19">Mercredi 19 décembre 2018</time>
+        <span>https://www.20minutes.fr</span>
+        <span>nº 3369</span>
+      </aside>
+    </div>
+  </header>
   <main>
+    <div>
+      <h2>Grand Paris</h2>
+      <section>
+        <article>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Grand_H%C3%B4tel_Paris_depuis_le_carrefour_rue_Scribe_boulevard_des_Capucines.jpg" alt="Carrefour à Paris">
+          <h3>Ecologie</h3>
+          <p>La rue de Paradis a tout d'un enfer pour les déchets<span>p.3</span></p>
+        </article>
+        <article>
+          <h3>Participatif</h3>
+          <p>Des drôles de sites pour venir en aide aux animaux<span>p.8</span></p>
+        </article>
+        <article>
+          <img src="http://www.premiere.fr/sites/default/files/styles/scale_crop_1280x720/public/2018-10/Capture%20d%E2%80%99e%CC%81cran%202018-10-25%20a%CC%80%2012.09.18.png" alt="Vidocq le film">
+          <h3>Vincent Cassel</h3>
+          <p>"Vidocq fait partie de ces figures de la culture populaire"<span>p.12</span></p>
+        </article>
+        <article>
+          <h3>Football</h3>
+          <p>Le futur d'Adrien Rabiot s'écrira loin du PSG<span>p.18</span></p>
+        </article>
+      </section>
+    </div>
     <article>
-      <h2>Mon article</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris viverra libero nibh, id aliquet turpis mattis eget.
-      Suspendisse lacinia vestibulum ipsum at suscipit. Quisque et convallis felis. Integer justo nulla, imperdiet at feugiat
-      non, posuere malesuada nisl. Nullam velit ipsum, molestie et nisi ut, ultricies feugiat arcu. Nunc tristique volutpat
-      purus. Ut sollicitudin vel orci vitae ultricies.</p>
+      <figure>
+        <img src="https://static.lexpress.fr/medias_1865/w_420,c_limit,g_north/v1406729372/policiers-en-colere-greve-4_955146.jpg" alt="Manifestation de policiers">
+        <figcaption>A Champigny-sur-Marne, le 9 janvier</figcaption>
+      </figure>
+      <div>
+        <p>Les policiers devraient manifester jeudi, afin de dénoncer leurs conditions de travail. A la différence du dernier
+          mouvement, en 2016, les syndicats sont à la manoeuvre.<span>p.6</span></p>
+      </div>
     </article>
   </main>
-
-  <p>J'aime</p>
-  <ol>
-    <li>les pâtes
-    <li>les Dinosaurus
-    <li>Ringo
-  </ol>
-
-  <p>Je n'aime pas</p>
-  <ol>
-    <li>le beurre doux
-    <li>les cravates Pluto
-    <li>la guerre
-  </ol>
-
-  <form action="http://www.monUrl.com" method="POST">
-    <label for="nom">Nom</label>
-    <input id="nom" name="nom" type="text" />
-
-    <label>
-      Etes-vous cool ?
-      <input name="cool" type="checkbox" />
-    </label>
-
-    <label for="history">Votre histoire</label>
-    <textarea id="history" name="histoire"></textarea>
-
-    <input type="submit" value="Envoyer">
-  </form>
-
-  <img height="500" width="500" src="https://static.pokemonpets.com/images/monsters-images-800-800/2025-Shiny-Pikachu.png" alt="pikachu" />
-
-  <div>
-    <iframe height="500" width="500" src="https://www.lemonde.fr/"></iframe>
-  </div>
+  <footer>
+    <img src="https://www.lesangles.com/sites/lesangles.com/files/styles/slider_article/public/field/pages/images/event-lesangles-v1.jpg?itok=WsK2fD7v" alt="Garosnow">
+  </footer>
 </body>
 
 </html>
