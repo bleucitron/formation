@@ -25,7 +25,7 @@ HTML est un langage de [balises](https://developer.mozilla.org/fr/docs/Web/Guide
 <monTag monAttribut="maValeur" />
 ```
 
-### Balises classiques
+### [Balises classiques](https://developer.mozilla.org/fr/docs/Web/HTML/Element)
 
 * [`<meta>`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/meta) : Informations sur le document
 
@@ -126,6 +126,7 @@ HTML est un langage de [balises](https://developer.mozilla.org/fr/docs/Web/Guide
 
 
 Pour creuser plus profond
+* [Tutoriel MDN](https://developer.mozilla.org/fr/docs/Apprendre/HTML/Balises_HTML)
 * http://www.html5rocks.com/en/tutorials/speed/script-loading/
 * https://www.igvita.com/2014/05/20/script-injected-async-scripts-considered-harmful/
 
