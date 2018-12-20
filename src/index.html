@@ -19,22 +19,56 @@
 
           // [1] créer une fonction, qui pour un tweet en entrée, créé et retourne un <li> contenant le texte du tweet
 
+          function createLi(tweet) {
+            const li = document.createElement('li');
+            li.textContent = tweet.text;
+            return li;
+          }
 
           // [2] créer et ajouter un ol à la page, puis y ajouter les <li> de tweets en utilisant [1]
 
+          let ol = createOl(tweets);
+          document.body.append(ol);
 
           // créer et ajouter un <button> qui quand on clique dessus affiche 'click' dans la console.
 
 
-          // [3] modifier le bouton pour que quand on clique dessus, ne garde que les tweets en français
+          const filtreFr = document.createElement('button');
+          filtreFr.textContent = 'Filtrer';
+          document.body.append(filtreFr);
 
+          let isFr = false;
 
-          // [4] modifier le bouton de filtre pour pouvoir réafficher tous les tweets quand on reclique dessus
+          filtreFr.addEventListener('click', function() {
+            const newTweets = isFr
+              ? tweets
+              : tweets.filter(function (tweet) {
+                return tweet.lang === 'fr';
+              });
+
+            const newOl = createOl(newTweets);
+            ol.replaceWith(newOl);
+            ol = newOl;
+            isFr = !isFr;
+          });
+
+          /* modifier le bouton pour que,
+            quand on clique dessus, ne garde que les tweets en français (et quand on reclique re-affiche tout) */
 
 
           /* créer une fonction, qui pour un tableau tweets en entrée, crée et retourne un <ol> rempli de <li>
           et l'utiliser à [2], [3], [4] */
 
+          function createOl(tweets) {
+            const ol = document.createElement('ol');
+
+            const lis = tweets.map(createLi);
+            lis.forEach(function(li) {
+              ol.append(li);
+            });
+
+            return ol;
+          }
 
           // Créer un bouton qui active le tracking de la position de la souris (event.clientX, event.clientY), et le désactive quand on reclique dessus
 
