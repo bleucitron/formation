@@ -154,3 +154,4 @@ Isoler la fonction `isFrenchTweet` dans un module, et la tester:
 * (3) tester que isTweetFr renvoie vrai pour un tweet en francais canadien (fr-ca)
 * (4) tester que isTweetFr jette une exception pour un tweet undefined
 
+## [À suivre] [React](./react.md)

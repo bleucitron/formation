@@ -528,6 +528,6 @@ map.keys() // iterator
 
 # À vos claviers
 
-Ouvrir le fichier `./exercices/exo.html`, et suivre les indications.
+Ouvrir le fichier `./exercices/début.html`, et suivre les indications.
 
-
+## [À suivre] [DOM](./dom.md)

@@ -107,4 +107,6 @@ element.addEventListener('click', function(e){
 
 # À vos claviers !!!
 
-Ouvrir le fichier `./src/vanilla/index.html`, et suivre les indications.
+Ouvrir le fichier `./src/index.html`, et suivre les indications.
+
+## [À suivre] [Asynchrone](./asynchrone.md)
