@@ -230,5 +230,5 @@ import moment from 'moment';
 // ...
 ```
 
-## [À suivre] [NPM](./NPM.md)
+## [À suivre] [NPM](./npm.md)
 
