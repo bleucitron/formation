@@ -100,6 +100,8 @@ element.addEventListener('click', function(e){
     e.target // renvoie l'élément qui a généré l'évènement
     e.timestamp // renvoie la date de l'évènement en ms depuis le chargement de la page
     e.preventDefault() // empêche les comportements par défaut
+    e.bubbles // renvoie true si l'évènement remonte l'arbre, false s'il descend
+    e.stopPropagation() // arrête la propagation de l'évènement
 })
 ```
 
