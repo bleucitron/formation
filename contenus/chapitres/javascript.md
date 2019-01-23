@@ -13,26 +13,12 @@
 ### Historique succinct
 
 - ECMAScript 3 (1999)
-    - IE8+
 - Pas de ECMAScript 4 !
 - ECMAScript 5 (2009)
-    - strict mode
-    - JSON
 - ECMAScript 6 / 2015
-    - Destructuring
-    - Modules standards
-    - Arrow function
-    - Map/Set/WeakMap/WeakSet
-    - Promise
-    - Array.prototype.find
 - ECMAScript 2016
-    - Array.prototype.includes
 - ECMAScript 2017
-    - async/await
-- ECMAScript un jour
-    - SharedArrayBuffer ?
-    - BigInt ?
-- ...
+- ECMAScript ...
 
 #### Ce qui nous intéresse: compatibilité des navigateurs
 - [Navigateurs](https://kangax.github.io/compat-table/es6/)
