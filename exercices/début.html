@@ -14,23 +14,32 @@
 
   // créer une variable x, et lui assigner un nombre
 
+  const x = 10;
 
   // logguer cette variable dans la console avec console.log()
-
+  console.log('x', x);
 
   /* créer une fonction x10 qui en entrée prend un nombre et en sortie renvoie le nombre multiplié par 10
       puis logguez x10(x)
   */
 
+  function x10(x) {
+    return x * 10;
+  }
 
   // créer un tableau de 10 valeurs entières au pif, et logguer chacune des valeurs dans la console, avec .forEach()
-
+  const arr = [2, 4, 25, 31, 564, 123, 545, 7567, 21];
+  console.log('Arr', arr);
 
   // créer un nouveau tableau avec seulement les entiers pairs, avec .filter()
-
+  const filtered = arr.filter(function(e) {
+    return e % 2 === 0;
+  });
+  console.log('Pairs', filtered);
 
   // créer un nouveau tableau à partir du précédent contenant les valeurs multipliées par 10, avec .map()
-
+  const final = filtered.map(x10);
+  console.log('Final', final);
 
   </script>
 

@@ -81,3 +81,7 @@ li .extra{
 li.expanded .extra{
     display: block;
 }
+
+.fav {
+    font-weight: bold;
+}
