@@ -57,11 +57,7 @@ On souhaite rendre claires les relations entre fichiers, afin de savoir sans éq
 
 On veut donc rendre les dépendances entre fichiers **explicites**.
 
-## Tentatives
-
-
-
-### CommonJS (Node.js)
+## Origines: CommonJS (Node.js)
 
 ````js
 "use strict";
@@ -78,26 +74,6 @@ module.exports = function (a){
 ````
 
 Problème: `require` synchrone
-
-
-### AMD (Asynchronous Module Definition)
-
-````js
-define(
-    ["helper/util", "jQuery.js", "http://momentjs.org/moment.js"],
-    function(util, jQuery, moment) {
-
-        // export
-        return function(){
-
-        }
-    }
-);
-````
-
-Problème: nb d'A/R égal à la profondeur de l'arbre.
-
-Solution: [r.js](https://github.com/requirejs/r.js)
 
 
 ## Modules ES6
