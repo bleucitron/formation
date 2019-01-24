@@ -1,0 +1,13 @@
+{
+    "extends": "standard",
+    "env": {
+        "browser": true,
+        "jest": true
+    },
+    "rules": {
+        "semi": [2, "always"],
+        "indent": ["error", 2, { "MemberExpression": 0 }],
+        "comma-dangle": [2, "always-multiline"],
+        "curly": ["error", "multi-or-nest"]
+    }
+}

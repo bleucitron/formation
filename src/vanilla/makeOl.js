@@ -1,9 +1,9 @@
-'use strict';
+import makeLi from './makeLi';
 
-function makeOl(tweets) {
+export default function (tweets) {
   const ol = document.createElement('ol');
 
-  tweets.forEach(function (tweet) {
+  tweets.forEach(tweet => {
     const li = makeLi(tweet);
     ol.append(li);
   });
