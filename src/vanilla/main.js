@@ -1,7 +1,7 @@
-import fetchJson from './fetchJson';
+import fetchJson from '../fetchJson';
 import makeOl from './makeOl';
 import makeTrackingButton from './makeTrackingButton';
-import { isTweetFr } from './utils';
+import { isTweetFr } from '../utils';
 
 document.addEventListener('DOMContentLoaded', () => {
   document.body.append(makeTrackingButton());

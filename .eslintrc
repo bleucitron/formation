@@ -1,13 +1,20 @@
 {
-    "extends": "standard",
+    "extends": ["standard", "plugin:react/recommended"],
     "env": {
         "browser": true,
         "jest": true
+    },
+    "plugins": ["react"],
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
     },
     "rules": {
         "semi": [2, "always"],
         "indent": ["error", 2, { "MemberExpression": 0 }],
         "comma-dangle": [2, "always-multiline"],
-        "curly": ["error", "multi-or-nest"]
+        "curly": ["error", "multi-or-nest"],
+        "react/prop-types": 0
     }
 }
