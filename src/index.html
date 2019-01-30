@@ -6,102 +6,11 @@
     <meta description="">
     <link rel="stylesheet" type="text/css" href="../style.css">
 
-    <script>
-      "use strict";
-
-      document.addEventListener('DOMContentLoaded', function(e){
-        fetch('https://raw.githubusercontent.com/iOiurson/formation/correction/data/tweets.json')
-        .then(function(resp){return resp.json()})
-        .then(function(tweets){
-          console.log('Le tableau de tweet', tweets);
-
-// ### 2/ Twitter ###
-
-          // [1] créer une fonction, qui pour un tweet en entrée, crée et retourne un <li> contenant le texte du tweet
-
-
-          // [2] créer et ajouter un <ol> à la page, puis y ajouter les <li> de tweets en utilisant [1]
-
-
-          // créer et ajouter un <button> qui quand on clique dessus affiche 'click' dans la console.
-
-
-          // [3] modifier le bouton pour que quand on clique dessus, ne garde que les tweets en français
-
-
-          // [4] modifier le bouton de filtre pour pouvoir réafficher tous les tweets quand on reclique dessus
-
-
-          /* créer une fonction, qui pour un tableau tweets en entrée, crée et retourne un <ol> rempli de <li>
-          et l'utiliser à [2], [3], [4] */
-
-
-          // Créer un bouton qui active le tracking de la position de la souris (event.clientX, event.clientY), et le désactive quand on reclique dessus
-
-
-// Présentation Asynchronicité
-
-          // Ecrire une fonction 'fetchJson' qui a comme paramètre une url et qui retourne une promesses pour des tweets en utilisant fetch
-
-
-          /* charger et afficher les tweets de
-          'https://raw.githubusercontent.com/iOiurson/formation/correction/data/tweets2.json'*/
-
-
-
-
-          /* Dans le dossier 'src/vanilla', créer plusieurs fichiers avec du code
-            - createTweetLi.js
-            - createTweetsOl.js
-            - createTrackingButton.js
-            - fetchJson.js
-            - main.js
-          */
-
-
-          // charger tout ça via des <script defer src="..."> dans le <head>
-
-
-// Présentation Modules
-
-          /* utiliser import et export pour mettre les différents fichiers en lien, et créer le bundle.js
-            Utiliser le bundle.js comme <script src=""> dans le html */
-
-
-          // Ajouter les infos de la date à nos <li>
-
-
-          // Ajouter les infos de l'auteur à nos <li>
-
-
-          // Donner des classes à la date ainsi qu'à l'auteur pour les styliser
-
-
-          // Faire un module qui contient une fonction qui crée le bouton de filtre
-
-
-// ### BONUS 1: LOCALSTORAGE ###
-            // 1) Rajouter un bouton "fav" à chaque li
-
-
-            /* 2) quand le bouton est cliqué, changer le style du li (rajouter une classe 'fav')
-            + et stocker l'ensemble des id_str fav dans le localStorage */
-
-
-            // 3) au chargement de la page, lire le localStorage pour favoriser les favoris.
-
-
-// ### BONUS 2: TIMING EVENEMENTS ###
-
-            /* Faites un bouton (un peu gros) qui écoute mousedown/click/dblclick et mesure le temps de click et de doubleclick
-            et affiche tempsClic1, tempsClic2, tempsDoubleClic */
-
-
-        })
-        .catch(function(e){ console.error(e) });
-
-      }, {once: true})
-    </script>
+    <script defer src='vanilla/createLi.js'></script>
+    <script defer src='vanilla/createOl.js'></script>
+    <script defer src='vanilla/createTrackingButton.js'></script>
+    <script defer src='vanilla/fetchJson.js'></script>
+    <script defer src='vanilla/main.js'></script>
 
     <title>Touitter</title>
   </head>
