@@ -1,7 +1,5 @@
-'use strict';
-
-function fetchJson(url) {
+export default function (url) {
   return fetch(url)
-  .then(function (resp) { return resp.json(); })
-  .catch(function (err) { return Promise.reject(err); });
+  .then(resp => resp.json())
+  .catch(err => Promise.reject(err));
 }

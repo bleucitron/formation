@@ -1,13 +1,11 @@
-'use strict';
+import createLi from './createLi';
 
-function createOl(tweets) {
+export default function (tweets) {
   const ol = document.createElement('ol');
 
   tweets
-    .map(createLi)
-    .forEach(function (li) {
-      ol.append(li);
-    });
+  .map(createLi)
+  .forEach(li => ol.append(li));
 
   return ol;
 }
