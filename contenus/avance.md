@@ -1,6 +1,6 @@
 # Formation Javascript Avancé
 
-* ## [Javascript](./chapitres/javascript.md)
+* ## [Javascript](./chapitres/javascript_avance.md)
 * ## [DOM](./chapitres/dom.md)
 * ## [Asynchronicité](./chapitres/asynchrone.md)
 * ## [Modules](./chapitres/modules.md)

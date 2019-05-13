@@ -473,8 +473,42 @@ const found = arr.sort(function(a, b){
 });
 ````
 
+
+### `Set` / `Map` (ES6)
+
+Un `Set` ressemble à une liste, avec des éléments uniques.
+
+````js
+const s = new Set(arr);
+s.add(value);
+s.has(value);
+s.delete(value);
+
+## créer une tableau avec seulement des éléments uniques
+arr = Array.from(new Set(arr)); // ou [...new Set(arr)]
+````
+
+Une `Map` ressemble à un objet, plus facile à manipuler.
+
+````js
+const map = new Map();
+// Map : clé (any) => valeur (any)
+map.set(key, value)
+map.get(key)
+map.has(key)
+map.delete(key)
+map.keys() // iterator
+````
+
+### `WeakSet` / `WeakMap`
+- ont la même API...
+- ... sauf `.keys()` et `.values()`
+- leurs clés **doivent** être des objets
+
+---
+
 # À vos claviers !!!
 
-Ouvrir le fichier `./exercices/début.html`, et suivre les indications.
+Ouvrir le fichier `./exercices/tweets.html`, et suivre les indications.
 
 ## [À suivre] [DOM](./dom.md)
