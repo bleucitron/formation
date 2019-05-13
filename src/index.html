@@ -15,29 +15,86 @@
         .then(function(tweets){
           console.log('Le tableau de tweet', tweets);
 
-// ### 2/ Twitter ###
+          // ### 2/ Twitter ###
 
           // [1] créer une fonction, qui pour un tweet en entrée, crée et retourne un <li> contenant le texte du tweet
+          function createLi(tweet) {
+            const li = document.createElement('li');
+            li.textContent = tweet.text;
+            return li;
+          }
 
+          /* créer une fonction, qui pour un tableau tweets en entrée, crée et retourne un <ol> rempli de <li>
+            et l'utiliser à [2], [3], [4] */
+
+          function createOl(tweets) {
+            const ol = document.createElement('ol');
+
+            tweets.map(createLi)
+            .forEach(function (li) {
+              ol.append(li);
+            });
+
+            return ol;
+          }
+
+          function track(event) {
+            console.log('X:', event.clientX, '| Y:', event.clientY);
+          }
+
+          // Créer un bouton qui active le tracking de la position de la souris (event.clientX, event.clientY), et le désactive quand on reclique dessus
+          const trackingButton = document.createElement('button');
+          document.body.append(trackingButton);
+          trackingButton.textContent = 'Track !';
+
+          let isTracking = false;
+
+          trackingButton.addEventListener('click', function() {
+            if (!isTracking) {
+              console.log('Track !');
+              window.addEventListener('mousemove', track);
+
+              isTracking = !isTracking;
+            }
+            else {
+              console.log('ARRET');
+              window.removeEventListener('mousemove', track);
+
+              isTracking = !isTracking;
+            }
+
+          });
+
+          // créer et ajouter un <button> qui quand on clique dessus affiche 'click' dans la console.
+          // [3] modifier le bouton pour que quand on clique dessus, ne garde que les tweets en français
+          // [4] modifier le bouton de filtre pour pouvoir réafficher tous les tweets quand on reclique dessus
+
+          const filterButton = document.createElement('button');
+          document.body.append(filterButton);
+          filterButton.textContent = 'Filtre';
+
+          let isFr = false;
+
+          filterButton.addEventListener('click', function() {
+            let tweetsToDisplay = tweets;
+
+            if (!isFr) {
+              tweetsToDisplay = tweets.filter(function(tweet) {
+                return tweet.lang === 'fr';
+              });
+            }
+
+            const newOl = createOl(tweetsToDisplay);
+
+            displayedOl.replaceWith(newOl);
+            displayedOl = newOl;
+            isFr = !isFr;
+          });
 
           // [2] créer et ajouter un <ol> à la page, puis y ajouter les <li> de tweets en utilisant [1]
 
-
-          // créer et ajouter un <button> qui quand on clique dessus affiche 'click' dans la console.
-
-
-          // [3] modifier le bouton pour que quand on clique dessus, ne garde que les tweets en français
-
-
-          // [4] modifier le bouton de filtre pour pouvoir réafficher tous les tweets quand on reclique dessus
-
-
-          /* créer une fonction, qui pour un tableau tweets en entrée, crée et retourne un <ol> rempli de <li>
-          et l'utiliser à [2], [3], [4] */
-
-
-          // Créer un bouton qui active le tracking de la position de la souris (event.clientX, event.clientY), et le désactive quand on reclique dessus
-
+          let displayedOl = createOl(tweets);
+          document.body.append(displayedOl);
 
 // Présentation Asynchronicité
 
