@@ -1,6 +1,7 @@
 import fetchJson from './fetchJson';
 import createOl from './createOl';
 import createTrackingButton from './createTrackingButton';
+import isFrenchTweet from './utils';
 
 const url1 = 'https://raw.githubusercontent.com/iOiurson/formation/correction/data/tweets.json';
 const url2 = 'https://raw.githubusercontent.com/iOiurson/formation/correction/data/tweets2.json';
@@ -29,7 +30,7 @@ Promise.all([p1, p2])
     let tweetsToDisplay = tweets;
 
     if (!isFr)
-      tweetsToDisplay = tweets.filter(tweet => tweet.lang === 'fr');
+      tweetsToDisplay = tweets.filter(isFrenchTweet);
 
     const newOl = createOl(tweetsToDisplay);
 

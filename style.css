@@ -63,10 +63,8 @@ fairly classic thing to do
     border-collapse: collapse;
 }
 
-
 li:hover{
     border: 1px grey dashed;
-
 }
 
 li{
@@ -80,4 +78,17 @@ li .extra{
 }
 li.expanded .extra{
     display: block;
+}
+
+.histo {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.histo div {
+    outline: 1px solid black;
+    width: 5rem;
+    height: 200px;
+    transition: height 1s ease-in-out;
 }
