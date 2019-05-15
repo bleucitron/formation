@@ -6,5 +6,3 @@
 * ## [DOM](./chapitres/dom.md)
 * ## [Asynchronicité](./chapitres/asynchrone.md)
 * ## [Modules](./chapitres/modules.md)
-* ## [NPM](./chapitres/npm.md)
-* ## [Qualité](./chapitres/qualité.md)
