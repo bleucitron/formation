@@ -7,4 +7,4 @@
 * ## [Asynchronicité](./chapitres/asynchrone.md)
 * ## [Modules](./chapitres/modules.md)
 * ## [NPM](./chapitres/npm.md)
-* ## [Tests](./chapitres/tests.md)
+* ## [Qualité](./chapitres/qualité.md)

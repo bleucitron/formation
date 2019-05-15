@@ -1,4 +1,4 @@
-# Tests
+# Qualité de code
 
 ## Linting
 
