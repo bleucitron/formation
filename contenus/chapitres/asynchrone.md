@@ -6,31 +6,26 @@ C'est une problématique fortement liée au réseau, et à ses fluctuations.
 
 **Javascript est donc asynchrone.**
 
-
 ## Avant
 
 On utilisait des callbacks.
 
 ```js
-
 function afficheSonProfil() {
-    console.log('Romain est barbu');
+  console.log('Romain est barbu');
 }
 
 vaMeChercherLesDonnéesDe(Romain, afficheSonProfil);
 
 console.log('En cours...');
 
-
 /*
 En cours...
 Romain est barbu
 */
-
 ```
 
 Mais on tombait vite dans l'enfer des callbacks.
-
 
 ## Aujourd'hui
 
@@ -38,19 +33,18 @@ On utilise des [Promesses](https://developer.mozilla.org/fr/docs/Web/JavaScript/
 
 ```js
 const maPromesse = new Promise((resolve, reject) => {
-    console.log('Initial');
-    if (toutVaBien)
-        resolve('OK');
-    else
-        reject('On est dans la mouise');
+  console.log('Initial');
+  if (toutVaBien) resolve('OK');
+  else reject('On est dans la mouise');
 });
 
-maPromesse.then(function(valeurPromise) {
-    console.log("Résultat:", valeurPromise);
-})
-.catch(function(erreur){
-    console.error("Erreur:", erreur);
-});
+maPromesse
+  .then(function(valeurPromise) {
+    console.log('Résultat:', valeurPromise);
+  })
+  .catch(function(erreur) {
+    console.error('Erreur:', erreur);
+  });
 ```
 
 ⚠ Si pas de `.catch()`, on ne sera jamais prévenu en cas de problème.
@@ -66,9 +60,8 @@ myP.then().then().catch().then()...
 Si on veut synchroniser plusieurs promesses, il faut utiliser `Promise.all()`.
 
 ```js
-Promise.all([promesse1, promesse2])
-.then(function(tableauDesResultats) {
-    console.log(tableauDesResultats); // [resultat1, resultat2]
+Promise.all([promesse1, promesse2]).then(function(tableauDesResultats) {
+  console.log(tableauDesResultats); // [resultat1, resultat2]
 });
 ```
 
@@ -92,4 +85,4 @@ https://raw.githubusercontent.com/iOiurson/formation/correction/data/tweets2.jso
 puis combiner les résultats avec `Promise.all()`, et la méthode `.concat()` pour fusionner
 les tableaux.
 
-## [À suivre] [Modules](./modules.md)
+## [À suivre][modules](./modules.md)

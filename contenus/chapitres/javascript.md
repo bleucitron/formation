@@ -21,35 +21,31 @@
 - ECMAScript ...
 
 #### Ce qui nous intéresse: compatibilité des navigateurs
+
 - [Navigateurs](https://kangax.github.io/compat-table/es6/)
 - [Node](http://node.green/)
 
-
-
-*Les versions de JavaScript (1.7, 1.7.5, 1.8, etc.) n'existent pas (ce sont numéros de version du moteur JS de Firefox)*
-
+_Les versions de JavaScript (1.7, 1.7.5, 1.8, etc.) n'existent pas (ce sont numéros de version du moteur JS de Firefox)_
 
 ## Syntaxe
 
-* not : `!x`
-* et : `a && b`
-* ou : `a || b`
+- not : `!x`
+- et : `a && b`
+- ou : `a || b`
 
-* `a = b`
-* `a = a + y`
-    * `a += y`
-* `a = a + 1`
-    * `a++`
+- `a = b`
+- `a = a + y`
+  - `a += y`
+- `a = a + 1`
+  - `a++`
 
-````js
-if(x) {
-    // x === true
+```js
+if (x) {
+  // x === true
+} else {
+  // x === false
 }
-else {
-    // x === false
-}
-````
-
+```
 
 ## Variables
 
@@ -57,16 +53,17 @@ Une variable c'est une **boîte avec une étiquette** qui contient une valeur.
 
 - Toujours déclarer avec `const` ou `let` (IE11+. Anciennement `var`)
 
-````js
+```js
 const a = 1;
 let b = 2;
 
-a = 3 // Error
-b = 4 // Ok
-````
+a = 3; // Error
+b = 4; // Ok
+```
+
 - `const` et `let` sont "block scoped", `var` est "function scoped"
 
-````js
+```js
 ## Function scope
 
 function() {
@@ -82,9 +79,9 @@ function() {
 console.log(a); // undefined
 console.log(b); // undefined
 console.log(c); // undefined
-````
+```
 
-````js
+```js
 ## Block scope
 
 if () {
@@ -100,19 +97,19 @@ if () {
 console.log(a); // undefined
 console.log(b); // undefined
 console.log(c); // 3
-````
+```
 
 ### [Mode strict](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
 
 - Toujours utiliser le mode strict en ajoutant `"use strict";` en haut de TOUS vos fichiers
 
-````js
+```js
 a = 1; // Pas d'prob, mais  ne JAMAIS faire ça
 var undefined = 1; // Pas d'prob, mais  ne JAMAIS faire ça
-var o = { a: 1, a: 2 } // Pas d'prob, mais  ne JAMAIS faire ça
-````
+var o = { a: 1, a: 2 }; // Pas d'prob, mais  ne JAMAIS faire ça
+```
 
-````js
+```js
 "use strict";
 
 a = 1; // ERROR
@@ -120,13 +117,9 @@ var undefined = 1; // ERROR
 var o = { a: 1, a: 2 } // ERROR
 
 ...
-````
+```
 
 - [How One Missing `var` Ruined our Launch](http://www.pixelstech.net/article/1320253282-How-One-Missing-%60var%60-Ruined-our-Launch)
-
-- [Passer d'un code non strict à un code strict](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Functions_and_function_scope/Strict_mode/Transitioning_to_strict_mode)
-
-
 
 ## Fonctions
 
@@ -135,37 +128,37 @@ var o = { a: 1, a: 2 } // ERROR
 - Valeur de retour
 - Appel d'une fonction
 
-````js
+```js
 function chanterLaMacarena(paroles) {
-    console.log(paroles);
-    console.log('HEYYYY MACARENA !');
+  console.log(paroles);
+  console.log('HEYYYY MACARENA !');
 }
 
 function faireUnPainAuChocolat(pain, chocolat) {
-    return pain + chocolat;
+  return pain + chocolat;
 }
 
-chanterLaMacarena('bliblablou macarena') // renvoie undefined
+chanterLaMacarena('bliblablou macarena'); // renvoie undefined
 // bliblablou macarena
 // HEY MACARENA !
 
 const maChocolatine = faireUnPainAuChocolat('pain', 'chocolat');
 
-console.log(maChocolatine) // painchocolat
+console.log(maChocolatine); // painchocolat
 // WhaaaAAaAaaaAAAaaat ?!?
-````
+```
 
 ## Retour vers le futur
 
 Écrire le code du futur dans les navigateurs du présent (ou du passé)
 
-
 ### Syntaxe
+
 C'est la façon d'écrire le code, comprise (ou pas) par les navigateurs.
 
 En gros, ce sont les **règles de grammaire**.
 
- Pour utiliser la syntaxe du futur, utiliser [Babel](https://babeljs.io/).
+Pour utiliser la syntaxe du futur, utiliser [Babel](https://babeljs.io/).
 
 ### Runtime
 
@@ -178,7 +171,8 @@ Le fait qu'une fonction ne soit pas implémentée par un navigateur n'est pas un
 Il faut définir ces fonctions pour pouvoir s'en servir.
 
 - écrire soi-même ses polyfills
-````js
+
+```js
 ## dans le <head>
 <script>
 function maFonctionDuFutur() {}
@@ -186,48 +180,50 @@ function maFonctionDuFutur() {}
 
 ## dans mes scripts métier
 maFonctionDuFuture() // ok
-````
+```
+
 - [polyfill.io](https://cdn.polyfill.io/v2/docs/) fait le travail à notre place [(annonce du service)](http://labs.ft.com/2014/09/polyfills-as-a-service/)
-````js
+
+```js
  ## dans le <head>
-<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,fetch,Promise"></script>
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 
 ## dans mes scripts métier
 maFonctionDuFuture() // ok
-````
-
+```
 
 ## Valeurs
 
 Une valeur est le **résultat d'une opération**.
 
-| type          | Exemples                        |
-|---------------|---------------------------------|
-| boolean       | `true`, `false`                 |
-| string        | `''`, `"yo !"`, `` `whatever` `` |
-| number        | `1`, `-2.3`, `NaN`, `Infinity`  |
-| undefined     |                                 |
-| object | `{}`, `{a:1, b: "2"}` |
-| function      | `function somme(a, b){return a+b;}` | "function" |              |
-| symbol ||
+| type      | Exemples                            |
+| --------- | ----------------------------------- |
+| boolean   | `true`, `false`                     |
+| string    | `''`, `"yo !"`, `` `whatever` ``    |
+| number    | `1`, `-2.3`, `NaN`, `Infinity`      |
+| undefined |                                     |
+| object    | `{}`, `{a:1, b: "2"}`               |
+| function  | `function somme(a, b){return a+b;}` | "function" |  |
+| symbol    |                                     |
 
 Pour tester un type: `typeof x`
 
 ```js
-typeof 1 // 'number'
-typeof 'Romain' // 'string'
-typeof undefined // 'undefined'
+typeof 1; // 'number'
+typeof 'Romain'; // 'string'
+typeof undefined; // 'undefined'
 ```
 
 **⚠ `null` et les arrays ont un type `object` ⚠**
-```js
-typeof null // 'object'
-typeof {} // 'object'
-typeof [] // 'object'
 
-x === null // vrai si x est null
-Object(x) === x // vrai si x est un objet
-Array.isArray(x) // vrai si x est un array
+```js
+typeof null; // 'object'
+typeof {}; // 'object'
+typeof []; // 'object'
+
+x === null; // vrai si x est null
+Object(x) === x; // vrai si x est un objet
+Array.isArray(x); // vrai si x est un array
 ```
 
 ### Comparaison
@@ -245,14 +241,16 @@ Toujours utiliser === et !==
 
 Comparaison par référence pour les objets, les listes et les fonctions, par valeur pour le reste.
 
-````js
+```js
 'use strict';
 
-(1 === 1) // true
-('yo' === 'yo') // true
+(1 === 1)(
+  // true
+  'yo' === 'yo',
+); // true
 
 const o = {
-    a: 1
+  a: 1,
 };
 
 const o2 = o;
@@ -260,61 +258,61 @@ const o2 = o;
 console.log(o === o2); // true
 
 const o3 = {
-    a: 1
-}
+  a: 1,
+};
 
-console.log(o === o3) // false
-````
+console.log(o === o3); // false
+```
 
 #### L'exception NaN
 
-````js
+```js
 'use strict';
 
-(NaN === NaN) // false
-````
+NaN === NaN; // false
+```
 
 Pour tester la valeur `NaN`, **utiliser `Number.isNaN()`**.
 
-
 ### Strings
 
-* `'Yo'.slice(start, end)`
-* `'Yo'.substring(start, end)`
-* `'Yo'.substr(start, length)`
-* `str.trim()`
-* `'yyyyyyy'.replace('y', 'a')`
-    * ⚠ only the first occurence
-    * `'yyyyyyy'.replace(/y/g, 'a')`
-* `str.match(regexp)`
-    * https://regexper.com/
-    * https://regex101.com/
-* `str.length`
+- `'Yo'.slice(start, end)`
+- `'Yo'.substring(start, end)`
+- `'Yo'.substr(start, length)`
+- `str.trim()`
+- `'yyyyyyy'.replace('y', 'a')`
+  - ⚠ only the first occurence
+  - `'yyyyyyy'.replace(/y/g, 'a')`
+- `str.match(regexp)`
+  - https://regexper.com/
+  - https://regex101.com/
+- `str.length`
 
 [Comment enlever les accents ?](https://stackoverflow.com/questions/990904/remove-accents-diacritics-in-a-string-in-javascript/37511463#37511463)
 
 ### Number
 
-* `NaN`, `Infinity`
-    * `NaN !== NaN`
-    * `Number.isNaN(x)` // ES6/2015
-* `0.1 + 0.2`
-    * [Faire des maths précises avec bignumber](https://www.npmjs.com/package/bignumber.js)
+- `NaN`, `Infinity`
+  - `NaN !== NaN`
+  - `Number.isNaN(x)` // ES6/2015
+- `0.1 + 0.2`
+  - [Faire des maths précises avec bignumber](https://www.npmjs.com/package/bignumber.js)
 
 ```js
 const e = 2.71828182846;
 
-console.log( e.toFixed(3) )
-console.log( e.toString(36) )
+console.log(e.toFixed(3));
+console.log(e.toString(36));
 ```
 
 #### La librairie standard Math
+
 Une collection de fonctions pour faire des maths.
+
 - `Math.random()`
 - `Math.round/floor/ceil`
 - `Math.sin()`
 - ...
-
 
 ### Booleans
 
@@ -335,19 +333,18 @@ undefined
 
 Un objet c'est une **armoire avec des tiroirs**.
 
-* clé (string) -> valeur (any)
+- clé (string) -> valeur (any)
 
 (formation pas-avancée : montrer [objets.js](./objets.js))
 
 - Lire une propriété `o.a`
-    - `o["a"]` équivalent à `o.a`
-    - `o[maString]`
+  - `o["a"]` équivalent à `o.a`
+  - `o[maString]`
 - Assigner une valeur à une propriété `o.a = 12`
 - Supprimer une propriété `delete o.a;`
 - Lister les propriétés de l'objet `Object.keys(o)`
 - Lister les valeurs de l'objet `Object.values(o)`
 - Tester si une propriété est dans un objet `'yo' in obj`
-
 
 #### JSON
 
@@ -360,37 +357,35 @@ C'est un format d'échange (manière de sérialiser des données structurées)
 - `JSON.stringify(obj) => string`
 - `JSON.parse(string) => obj`
 
-````js
-"use strict";
+```js
+'use strict';
 
 const o = {
   a: 1,
   bloublou: 9,
-  chapito: "yo",
+  chapito: 'yo',
   brave: {
-    autre: "object"
-  }
+    autre: 'object',
+  },
 };
 
 console.log(JSON.stringify(o));
-````
+```
 
 ⚠ C'est un format fragile ⚠, vérifier avec [JSON Lint](https://jsonlint.com/)
-
 
 ### Array
 
 ```js
-"use strict";
+'use strict';
 
 const arr = [12, 65, 546];
 
-arr[0] // 12
-arr.length // 3
-````
+arr[0]; // 12
+arr.length; // 3
+```
 
-
-````js
+```js
 ## Itérer sur un tableau
 
 const arr = [1, 2, 3];
@@ -407,74 +402,73 @@ arr.forEach(function(element) { // beaucoup mieux !
     console.log(element);
 });
 
-````
-
+```
 
 ### Utilisation des tableaux
 
 [De manière illustrée](https://twitter.com/steveluscher/status/741089564329054208)
 
-* `a.forEach(f)`
+- `a.forEach(f)`
 
-````js
+```js
 const arr = [1, 2, 3, 4];
 
 arr.forEach(function(e, i, a) {
-    console.log(e * i);
+  console.log(e * i);
 });
 
 // 0
 // 2
 // 6
 // 12
-````
+```
 
-* `a.map(f)`
+- `a.map(f)`
 
-````js
+```js
 const arr = [1, 2, 3];
 
 const arr2 = arr.map(function(e) {
-    return e * 10;
+  return e * 10;
 }); // [10, 20, 30]
-````
+```
 
-* `a.filter(f)`
+- `a.filter(f)`
 
-````js
+```js
 const arr = [1, 2, 3, 4, 5, 6, 7, 8];
 
 const arr2 = arr.filter(function(e) {
-    return e % 2 === 0;
+  return e % 2 === 0;
 }); // [2, 4, 6, 8]
-````
+```
 
-* `a.slice(debut, fin)`
+- `a.slice(debut, fin)`
 
-````js
+```js
 arr.slice(0, 5); // [1, 2, 3, 4, 5]
-````
+```
 
-* `a.find(pred)`
+- `a.find(pred)`
 
-````js
+```js
 const arr = [1, 2, 3, 4, 5, 6, 7, 8];
 
-const found = arr.find(function(e){
-    return e >= 4 && e % 4 === 2; // 6
+const found = arr.find(function(e) {
+  return e >= 4 && e % 4 === 2; // 6
 });
-````
+```
 
-* `a.sort(fun)`
+- `a.sort(fun)`
 
-````js
-const found = arr.sort(function(a, b){
-    return b - a; // doit retourner un nombre positif ou négatif
+```js
+const found = arr.sort(function(a, b) {
+  return b - a; // doit retourner un nombre positif ou négatif
 });
-````
+```
 
 # À vos claviers !!!
 
 Ouvrir le fichier `./exercices/début.html`, et suivre les indications.
 
-## [À suivre] [DOM](./dom.md)
+## [À suivre][dom](./dom.md)

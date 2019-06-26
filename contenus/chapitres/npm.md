@@ -2,7 +2,6 @@
 
 Gestionnaire de paquets pour NodeJS.
 
-
 ```bash
 npm init // initialise un projet NPM
 
@@ -27,7 +26,7 @@ C'est le fichier de configuration du projet NPM. Il est créé par `npm init`.
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
@@ -45,13 +44,11 @@ Les versions des dépendances sont gérés par la [syntaxe semver](https://docs.
 
 Le fichier `package-lock.json` permet de s'assurer que le même `node_modules` est produit à chaque `npm install`, quelque soit la situation.
 
-
-
 ## Scripts NPM
 
 Les scripts NPM permettent d'automatiser certaines tâches. Ils remplacent les outils Grunt et Gulp la plupart du temps
 
-* http://naholyr.fr/2015/11/ecrire-des-scripts-npm-multi-plateforme/
+- http://naholyr.fr/2015/11/ecrire-des-scripts-npm-multi-plateforme/
 
 ```json
 {
@@ -72,10 +69,11 @@ npm run build
 On va à partir de maintenant utiliser Babel globalement dans le projet.
 
 Enlever les `presets` des scripts
+
 ```json
 {
   "scripts": {
-    "build": "browserify src/vanilla/main.js -o bundle.js -t [ babelify ] -d",
+    "build": "browserify src/vanilla/main.js -o bundle.js -t [ babelify ] -d"
   }
 }
 ```
@@ -89,12 +87,13 @@ et rajouter un `.babelrc` à la racine du projet
 ```
 
 ### Quelques outils
-* [`npm-run-all`](https://www.npmjs.com/package/npm-run-all)
-* [`watch-exec`](https://www.npmjs.com/package/watch-exec)
-* [`npx`](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b)
+
+- [`npm-run-all`](https://www.npmjs.com/package/npm-run-all)
+- [`watch-exec`](https://www.npmjs.com/package/watch-exec)
+- [`npx`](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b)
 
 ## [Bundlephobia](https://bundlephobia.com/)
 
 Pour gérer la taille de ses paquets.
 
-## [À suivre] [Tests](./tests.md)
+## [À suivre][tests](./tests.md)

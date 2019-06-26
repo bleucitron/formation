@@ -2,7 +2,7 @@
 
 1. Pas de `<table>` (`display: table/table-row/table-cell` autorisé)
 1. Pas d'attributs de style (`align`, `font`, etc...). Pas de `<center>`. Utiliser du CSS
-    1. sauf `width` et `height` pour les images
+   1. sauf `width` et `height` pour les images
 1. Unités : pas de tailles en `px` ou `pt`. Utiliser des `%` (contenants) ou `rem` (textes)
 1. Pas de `float` (sauf pour les cas avec `::first-letter`)
 1. Pas de `<br>`

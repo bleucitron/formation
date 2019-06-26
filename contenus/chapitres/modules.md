@@ -2,52 +2,51 @@
 
 ## À l'ancienne
 
-````html
-<!doctype html>
+```html
+<!DOCTYPE html>
 <html>
-    <head>
-        <script src="code1.js"></script>
-        <script src="code2.js"></script>
-        <script src="code3.js"></script>
-        <script src="code4.js"></script>
-        <script src="code5.js"></script>
-        <script src="code6.js"></script>
-    </head>
-    <body></body>
+  <head>
+    <script src="code1.js"></script>
+    <script src="code2.js"></script>
+    <script src="code3.js"></script>
+    <script src="code4.js"></script>
+    <script src="code5.js"></script>
+    <script src="code6.js"></script>
+  </head>
+  <body></body>
 </html>
-````
+```
 
 ### Defer
 
-````html
-<!doctype html>
+```html
+<!DOCTYPE html>
 <html>
-    <head>
-        <script src="code1.js" defer></script>
-        <script src="code2.js" defer></script>
-    </head>
-    <body></body>
+  <head>
+    <script src="code1.js" defer></script>
+    <script src="code2.js" defer></script>
+  </head>
+  <body></body>
 </html>
-````
+```
 
 ### Async
 
-````html
-<!doctype html>
+```html
+<!DOCTYPE html>
 <html>
-    <head>
-        <script src="code1.js" async></script>
-        <script src="code2.js" async></script>
-    </head>
-    <body></body>
+  <head>
+    <script src="code1.js" async></script>
+    <script src="code2.js" async></script>
+  </head>
+  <body></body>
 </html>
-````
-
+```
 
 Problèmes :
 
-* Performance (6 requêtes HTTP max en parallèle)
-* Dépendances entre scripts implicites
+- Performance (6 requêtes HTTP max en parallèle)
+- Dépendances entre scripts implicites
 
 ## Dépendances explicites
 
@@ -59,22 +58,21 @@ On veut donc rendre les dépendances entre fichiers **explicites**.
 
 ## Origines: CommonJS (Node.js)
 
-````js
-"use strict";
+```js
+'use strict';
 
-var dep1 = require('module') // module natif Node ou installé
-var dep2 = require('./fichier.js') // fichier local au projet
+var dep1 = require('module'); // module natif Node ou installé
+var dep2 = require('./fichier.js'); // fichier local au projet
 
 // code
 
-module.exports = function (a){
-    var h = dep1(48);
-    return h + dep2(a);
+module.exports = function(a) {
+  var h = dep1(48);
+  return h + dep2(a);
 };
-````
+```
 
 Problème: `require` synchrone
-
 
 ## Modules ES6
 
@@ -85,9 +83,8 @@ Le module "point d'entrée" n'exporte rien. Les modules "feuilles" n'importe rie
 
 On peut importer depuis un module natif ou installé, ou depuis les fichiers locaux du projet.
 
-````js
+```js
 // un module importe d'autres modules
-
 
 import monModule from 'monModule'; // import externe
 import maFonction from './monFichierLocal'; // import local
@@ -98,27 +95,25 @@ console.log(pikachu);
 
 import * as pokemons from 'pokemons'; // on importe tous les exports
 
-console.log(pokemons.pikachu)
+console.log(pokemons.pikachu);
 
 // ...
-````
+```
 
 ### [`export`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Instructions/export)
 
 On peut exporter des valeurs, des objets, des fonctions...
 
-````js
+```js
 // export par défaut, n'a pas besoin de nom
-export default function(){
-    // ....
+export default function() {
+  // ....
 }
 
 export const maConst = 5; // export
-
-````
+```
 
 **Les modules sont par défaut en mode strict !**
-
 
 ## Bundling
 
@@ -133,7 +128,6 @@ Il y a plusieurs alternatives disponibles.
 
 Ces outils nécessitent de travailler dans un environnement Node, puis de transformer le code Node en un code compatible navigateur.
 
-
 Pour utiliser ces outils, il faut donc [installer Node](https://nodejs.org/en/) et un gestionnaire de paquets, [NPM](https://www.npmjs.com/) ou [Yarn](https://yarnpkg.com/en/).
 
 ---
@@ -141,7 +135,6 @@ Pour utiliser ces outils, il faut donc [installer Node](https://nodejs.org/en/) 
 # À vos claviers !!!
 
 On va utiliser [`browserify`](http://browserify.org/).
-
 
 ### Étape 1: [installer NodeJS](https://nodejs.org/en/)
 
@@ -171,26 +164,25 @@ Enlever tous les `<script>` et les remplacer par `<script defer src="bundle.js">
 
 `main.js`
 
-````js
+```js
 import createTweetsOl from './createTweetsOl.js';
 import createTimeButton from './createTimeButton.js';
 
-document.addEventListener('DOMContentLoaded', function(){
-    // ... createTweetsOl() ...
-    // ... createTimeButton() ...
+document.addEventListener('DOMContentLoaded', function() {
+  // ... createTweetsOl() ...
+  // ... createTimeButton() ...
 });
-````
+```
 
 `createTweetsOl.js`
 
-````js
-export default function(tweets){
-    // ...
+```js
+export default function(tweets) {
+  // ...
 }
-````
+```
 
 ### Étape 5: en profiter pour écrire avec la syntaxe ES6 partout
-
 
 ### Étape 6: ajouter les infos de la date avec [MomentJS](https://momentjs.com/)
 
@@ -205,5 +197,4 @@ import moment from 'moment';
 // ...
 ```
 
-## [À suivre] [NPM](./npm.md)
-
+## [À suivre][npm](./npm.md)

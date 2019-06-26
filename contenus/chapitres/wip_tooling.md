@@ -1,6 +1,5 @@
 # TODO
 
-
 # Minifier
 
 ```bash
@@ -12,10 +11,10 @@ export NODE_ENV="production"
 
 ```json
 {
-    "scripts": {
-        "build:dev": "browserify main.js > bundle.js",
-        "build:prod": "browserify -p [minifyify --no-map] main.js > bundle.js"
-    }
+  "scripts": {
+    "build:dev": "browserify main.js > bundle.js",
+    "build:prod": "browserify -p [minifyify --no-map] main.js > bundle.js"
+  }
 }
 ```
 
