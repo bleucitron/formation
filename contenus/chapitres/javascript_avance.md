@@ -507,4 +507,4 @@ maFonctionDuFuture() // ok
 
 Ouvrir le fichier `./exercices/tweets.html`, et suivre les indications.
 
-## [À suivre][dom](./dom.md)
+## À suivre: [DOM](./dom.md)

@@ -166,4 +166,4 @@ Font d'icônes
 
 # [À vos claviers !!!](./presse.md)
 
-## [À suivre][javascript](./javascript.md)
+## À suivre: [Javascript](./javascript.md)

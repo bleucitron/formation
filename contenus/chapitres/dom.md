@@ -113,4 +113,4 @@ element.addEventListener('click', function(e) {
 
 Ouvrir le fichier `./src/index.html`, et suivre les indications.
 
-## [À suivre][asynchrone](./asynchrone.md)
+## À suivre: [Asynchrone](./asynchrone.md)

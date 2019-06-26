@@ -197,4 +197,4 @@ import moment from 'moment';
 // ...
 ```
 
-## [À suivre][npm](./npm.md)
+## À suivre: [NPM](./npm.md)

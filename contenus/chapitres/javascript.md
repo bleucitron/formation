@@ -427,4 +427,4 @@ const found = arr.sort(function(a, b) {
 
 Ouvrir le fichier `./exercices/début.html`, et suivre les indications.
 
-## [À suivre][dom](./dom.md)
+## À suivre: [DOM](./dom.md)

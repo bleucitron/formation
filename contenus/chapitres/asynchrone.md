@@ -85,4 +85,4 @@ https://raw.githubusercontent.com/iOiurson/formation/correction/data/tweets2.jso
 puis combiner les résultats avec `Promise.all()`, et la méthode `.concat()` pour fusionner
 les tableaux.
 
-## [À suivre][modules](./modules.md)
+## À suivre: [Modules](./modules.md)
