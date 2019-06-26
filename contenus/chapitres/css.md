@@ -43,10 +43,10 @@ Les éléments avec un certain attribut
   - `x:first-child`, `x:last-child`
 
 ```css
-tr td {
+ul li {
   background-color: white;
 }
-tr:nth-child(odd) td {
+li:nth-child(odd) div {
   background-color: grey;
 }
 
@@ -85,10 +85,7 @@ div {
 - `block`
 - `inline`
 - `inline-block`
-- `table`
-  - `table`
-  - `table-row`
-  - `table-cell`
+- `table` (utiliser plutôt `flex` ou `grid`)
 - [`flex`](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
   - `flex-direction`
   - `justify-content`

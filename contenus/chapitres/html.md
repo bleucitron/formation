@@ -96,17 +96,12 @@ HTML est un langage de [balises](https://developer.mozilla.org/fr/docs/Web/Guide
 - [`<iframe src="http://....">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe)
   - sandbox
 
-### Attributs communs
+### Principaux attributs communs
 
 - `hidden`
 - `lang` (surtout pour &lt;html>)
 - `class`
 - `id`
-- data attributes
-
-  - attributs libres qui commencent par `data-`
-
-- `autocomplete` pour les `<input>`
 
 ### Styles
 
@@ -117,9 +112,7 @@ HTML est un langage de [balises](https://developer.mozilla.org/fr/docs/Web/Guide
 ### Scripts
 
 - Dans le `<head>`
-- inline : `<script>`
-  - Bloque le parser HTML à cause d'appels potentiels à `document.write`. **NE PAS UTILISER !**
-- `<script src=""></script>`
+- inline `<script></script>` ou `<script src=""></script>`
   - toujours fermer la balise!
   - bloque le parser HTML
   - attribut `defer`
