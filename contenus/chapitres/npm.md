@@ -96,4 +96,4 @@ et rajouter un `.babelrc` à la racine du projet
 
 Pour gérer la taille de ses paquets.
 
-## À suivre: [Tests](./tests.md)
+## À suivre: [Qualité](./qualite.md)
