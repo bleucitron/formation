@@ -88,13 +88,11 @@ Jest va chercher tous les fichiers en `*.test.js`, et les exécuter.
 ```js
 import maFonction from './maFonction';
 
-describe('la fonction que l\'on veut tester', () => {
-
+describe("la fonction que l'on veut tester", () => {
   it('ce que cette fonction doit faire dans un cas précis', () => {
     var maValeur = maFonction();
 
-    expect(maFonction()).toBe... // chercher dans la doc de Jest
-
+    expect(maValeur).toBe(ceQuiEstAttendu); // chercher dans la doc de Jest
   });
 });
 ```
