@@ -6,6 +6,7 @@
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
     "babel-core": "^7.0.0-bridge.0",
     "babelify": "^10.0.0",
     "browserify": "^16.2.3",
@@ -24,6 +25,8 @@
   "scripts": {
     "build": "browserify src/vanilla/main.js -o bundle.js -t [ babelify ] -d",
     "watch": "watchify src/vanilla/main.js -o bundle.js -t [ babelify ] -d -v",
+    "build:jsx": "browserify src/react/index.jsx -o bundle.js -t [ babelify ] -d",
+    "watch:jsx": "watchify src/react/index.jsx -o bundle.js -t [ babelify ] -d -v",
     "lint": "eslint .",
     "test": "jest ."
   },
@@ -42,6 +45,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "moment": "^2.24.0"
+    "moment": "^2.24.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   }
 }
