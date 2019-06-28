@@ -6,6 +6,8 @@
 
 ## Principe
 
+### Composants
+
 On construit un arbre de composants, avec des parents et des enfants.
 
 Les principes de fonctionnement qui suivent sont les mêmes pour [Vue](https://vuejs.org/), qui s'est inspiré de React.
@@ -131,14 +133,19 @@ Tous les composants standards implémentent les `onEvent` prévus en HTML.
 
 On peut alors ajuster le `state` en fonction des évènements remontés.
 
-### Cycle de vie
+## [Cycle de vie](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
 
-`constructor`
-`componentDidMount`
-`shouldComponentUpdate`
-`render`
-`componentDidUpdate`
-`componentWillUnmount`
+`constructor`: pour initialiser le composant
+
+`componentDidMount`: juste après le premier rendu
+
+`shouldComponentUpdate`: quand les props/state change, dois-je appeler `render` ?
+
+`render`: quand les props/state changent
+
+`componentDidUpdate`: après chaque `render`
+
+`componentWillUnmount`: avant le décrochage du composant
 
 ## Tests de composants
 
@@ -186,7 +193,11 @@ Ajouter la configuration suivante au `package.json`, afin que Jest comprenne qu'
 ## Aller plus loin
 
 Commencer vite et bien un projet React: [Create React App](https://github.com/facebook/create-react-app).
+
 Construire une librairie de composants React (ou autre): [Storybook](https://storybook.js.org/).
+
 Utiliser le [Context](https://fr.reactjs.org/docs/context.html#___gatsby).
+
 Manipuler directement le DOM avec les [Refs](https://fr.reactjs.org/docs/refs-and-the-dom.html#___gatsby).
+
 Utiliser la nouvelle API React, les [Hooks](https://fr.reactjs.org/docs/hooks-intro.html#___gatsby).
