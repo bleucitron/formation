@@ -93,6 +93,8 @@ class MonComposant extends React.Component {
 
   render() {
     // ...
+    this.props;
+    this.state;
   }
 }
 ```
@@ -185,4 +187,6 @@ Ajouter la configuration suivante au `package.json`, afin que Jest comprenne qu'
 
 Commencer vite et bien un projet React: [Create React App](https://github.com/facebook/create-react-app).
 Construire une librairie de composants React (ou autre): [Storybook](https://storybook.js.org/).
+Utiliser le [Context](https://fr.reactjs.org/docs/context.html#___gatsby).
+Manipuler directement le DOM avec les [Refs](https://fr.reactjs.org/docs/refs-and-the-dom.html#___gatsby).
 Utiliser la nouvelle API React, les [Hooks](https://fr.reactjs.org/docs/hooks-intro.html#___gatsby).
