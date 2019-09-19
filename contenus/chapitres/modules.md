@@ -1,5 +1,15 @@
 # Modules
 
+Dans le dossier `src/vanilla`, créer plusieurs fichiers avec du code
+
+- `createTweetLi.js`
+- `createTweetsOl.js`
+- `createTrackingButton.js`
+- `fetchJson.js`
+- `main.js`
+
+et les charger avec `<script src="...">` dans le `<head>`.
+
 ## À l'ancienne
 
 ```html
@@ -196,5 +206,13 @@ import moment from 'moment';
 // chercher dans la doc pour afficher depuis quand le tweet a été envoyé
 // ...
 ```
+
+### Étape 7: ajouter les infos d'auteur
+
+et styliser le tout avec des classes
+
+### Étape 8: faire un module qui crée le bouton de filtre
+
+et l'utiliser dans le `main.js`.
 
 ## À suivre: [NPM](./npm.md)
