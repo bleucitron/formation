@@ -9,38 +9,91 @@
     <script>
       'use strict';
 
+      function fetchJson(url) {
+        return fetch(url).then(function(resp) {
+          return resp.json();
+        });
+      }
+
+      const url1 =
+        'https://raw.githubusercontent.com/iOiurson/formation/correction/data/tweets.json';
+      const url2 =
+        'https://raw.githubusercontent.com/iOiurson/formation/correction/data/tweets2.json';
+
       document.addEventListener(
         'DOMContentLoaded',
         function(e) {
-          fetch(
-            'https://raw.githubusercontent.com/iOiurson/formation/correction/data/tweets.json',
-          )
-            .then(function(resp) {
-              return resp.json();
-            })
+          Promise.all([fetchJson(url1), fetchJson(url2)]) // ou Promise.all([url1, url2].map(fetchJson))
             .then(function(tweets) {
+              tweets = tweets[0].concat(tweets[1]);
               console.log('Le tableau de tweet', tweets);
 
-              // ### 2/ Twitter ###
+              function createLi(t) {
+                const li = document.createElement('li');
+                li.textContent = t.text;
+                return li;
+              }
 
-              // [1] créer une fonction, qui pour un tweet en entrée, crée et retourne un <li> contenant le texte du tweet
+              function createOl(listeDeTweets) {
+                const ol = document.createElement('ol');
 
-              // [2] créer et ajouter un <ol> à la page, puis y ajouter les <li> de tweets en utilisant [1]
+                listeDeTweets.forEach(function(tweet) {
+                  ol.append(createLi(tweet));
+                });
 
-              // créer et ajouter un <button> qui quand on clique dessus affiche 'click' dans la console.
+                return ol;
+              }
 
-              // [3] modifier le bouton pour que quand on clique dessus, ne garde que les tweets en français
+              const button = document.createElement('button');
+              button.textContent = 'Click';
 
-              // [4] modifier le bouton de filtre pour pouvoir réafficher tous les tweets quand on reclique dessus
+              document.body.append(button);
 
-              /* [5] créer une fonction, qui pour un tableau tweets en entrée, crée et retourne un <ol> rempli de <li>
-          et l'utiliser à [2], [3], [4] */
+              // Créer un bouton qui active le tracking de la position de la souris (event.clientX, event.clientY), et le désactive quand on reclique dessus
+              const buttonTracking = document.createElement('button');
+              buttonTracking.textContent = 'Track';
 
-              // [6] Créer un bouton qui active le tracking de la position de la souris (event.clientX, event.clientY), et le désactive quand on reclique dessus
+              document.body.append(buttonTracking);
 
-              // PRÉSENTATION Asynchronicité
+              let isTracking = false;
 
-              // PRÉSENTATION Modules
+              function track(event) {
+                console.log('X', event.clientX, 'Y', event.clientY);
+              }
+              buttonTracking.addEventListener('click', function(e) {
+                if (!isTracking) {
+                  console.log('Track');
+                  window.addEventListener('mousemove', track);
+                } else {
+                  console.log('Untrack');
+                  window.removeEventListener('mousemove', track);
+                }
+
+                isTracking = !isTracking;
+              });
+
+              let olInitial = createOl(tweets);
+
+              document.body.append(olInitial);
+
+              let isFr = false;
+
+              button.addEventListener('click', function() {
+                console.log('Click');
+
+                const tweetsToDisplay = isFr
+                  ? tweets
+                  : tweets.filter(function(tweet) {
+                      return tweet.lang === 'fr';
+                    });
+
+                const olNew = createOl(tweetsToDisplay);
+
+                olInitial.replaceWith(olNew);
+                olInitial = olNew;
+
+                isFr = !isFr;
+              });
 
               // ### BONUS 1: LOCALSTORAGE ###
               // [1] Rajouter un bouton "fav" à chaque li
