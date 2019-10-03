@@ -160,7 +160,7 @@ npm -v
 # dans le dossier projet :
 npm init -y
 npm install browserify watchify --save-dev
-npm i babelify @babel/core babel-core@7.0.0-bridge.0 @babel/preset-env --save-dev
+npm i babelify @babel/core @babel/preset-env --save-dev
 
 npx browserify src/vanilla/main.js -o bundle.js -t [ babelify --presets [ @babel/env ] ] -d
 # npx watchify src/vanilla/main.js -o bundle.js -t [ babelify --presets [ @babel/env ] ] -d -v
