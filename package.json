@@ -1,0 +1,32 @@
+{
+  "name": "js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bundle.js",
+  "scripts": {
+    "lint": "eslint .",
+    "build": "browserify src/vanilla/main.js -o bundle.js -t [ babelify ] -d",
+    "watch": "watchify src/vanilla/main.js -o bundle.js -t [ babelify ] -d -v",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "moment": "^2.24.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "babelify": "^10.0.0",
+    "browserify": "^16.5.0",
+    "eslint": "^6.5.1",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.15.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "watchify": "^3.11.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
