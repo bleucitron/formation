@@ -81,19 +81,18 @@ Ils sont uniques par élément.
 
 ## [Evènements](https://developer.mozilla.org/en-US/docs/Web/Events)
 
-- DOMContentLoaded
+- `DOMContentLoaded`
   - Quand le HTML est chargée et que l'arbre DOM est construit
-- load
+- `load`
   - Quand la page entière est chargée (CSS, fonts, images, etc.)
-- click (mousedown/mouseup/dblclick)
-- mouseenter/mouseleave
-- submit (&lt;form>)
-- keypress (keyup/keydown)
-- input
-- change
-- scroll (listener après le scroll)
-- touchstart
-  - le listener bloque touchstart
+- `click`, `mousedown`, `mouseup`, `dblclick`
+- `mouseenter`, `mouseleave`
+- `submit` (&lt;form>)
+- `keypress`, `keyup`, `keydown`
+- `input`
+- `change`
+- `scroll` (listener après le scroll)
+- `touchstart`
 
 ### Event properties
 
@@ -102,6 +101,8 @@ element.addEventListener('click', function(e) {
   e.target; // renvoie l'élément qui a généré l'évènement
   e.timestamp; // renvoie la date de l'évènement en ms depuis le chargement de la page
   e.preventDefault(); // empêche les comportements par défaut
+  e.clientX; // renvoie la position X de la souris
+  e.clientY; // renvoie la position Y de la souris
   e.bubbles; // renvoie true si l'évènement remonte l'arbre, false s'il descend
   e.stopPropagation(); // arrête la propagation de l'évènement
 });

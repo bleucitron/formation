@@ -57,10 +57,17 @@ myP.then().then().catch().then()...
 
 ### Synchroniser
 
-Si on veut synchroniser plusieurs promesses, il faut utiliser `Promise.all()`.
+Si on veut synchroniser plusieurs promesses, on peut utiliser
+
+- `Promise.all()`, renvoie la promesse d'avoir **TOUTES** les promesses **résolues**
+- `Promise.allSettled()`, renvoie la promesse d'avoir toutes les promesses **terminées**
 
 ```js
 Promise.all([promesse1, promesse2]).then(function(tableauDesResultats) {
+  console.log(tableauDesResultats); // [resultat1, resultat2]
+});
+
+Promise.allSettled([promesse1, promesse2]).then(function(tableauDesResultats) {
   console.log(tableauDesResultats); // [resultat1, resultat2]
 });
 ```

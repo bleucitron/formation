@@ -469,9 +469,13 @@ En gros, ce sont les **règles de grammaire**.
 
 Pour utiliser la syntaxe du futur, utiliser [Babel](https://babeljs.io/).
 
-### Runtime
+### Sémantique
 
-On parle ici de **sémantique**, des mots standards du langage fournis par le navigateur (ou Node).
+Les mots nouveaux d'un standard récent ne sont pas compris par des navigateurs anciens.
+
+Pour pouvoir utiliser les nouveaux mots, il faut les définir s'ils ne sont pas reconnus par le navigateur.
+
+On parle alors de **polyfills**.
 
 Si vous utilisez des fonctions du futur sans polyfills, ces fonctions ne seront pas définies sur les vieux navigateurs.
 

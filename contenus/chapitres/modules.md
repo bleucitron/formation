@@ -87,7 +87,23 @@ Problème: `require` synchrone
 ## Modules ES6
 
 Quand on importe un module, on "récupère" ce que ce module exporte.
-Le module "point d'entrée" n'exporte rien. Les modules "feuilles" n'importe rien.
+
+Le module "point d'entrée" n'exporte rien.
+
+Les modules "feuilles" n'importent rien.
+
+### [`export`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Instructions/export)
+
+On peut exporter des valeurs, des objets, des fonctions...
+
+```js
+// export par défaut, n'a pas besoin de nom
+export default function() {
+  // ....
+}
+
+export const maConst = 5; // export
+```
 
 ### [`import`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Instructions/import)
 
@@ -108,19 +124,6 @@ import * as pokemons from 'pokemons'; // on importe tous les exports
 console.log(pokemons.pikachu);
 
 // ...
-```
-
-### [`export`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Instructions/export)
-
-On peut exporter des valeurs, des objets, des fonctions...
-
-```js
-// export par défaut, n'a pas besoin de nom
-export default function() {
-  // ....
-}
-
-export const maConst = 5; // export
 ```
 
 **Les modules sont par défaut en mode strict !**
