@@ -370,6 +370,7 @@ arr.forEach(function(element) { // beaucoup mieux !
 const arr = [1, 2, 3, 4];
 
 arr.forEach(function(e, i, a) {
+  // les arguments i et a sont optionnels
   console.log(e * i);
 });
 
@@ -384,7 +385,8 @@ arr.forEach(function(e, i, a) {
 ```js
 const arr = [1, 2, 3];
 
-const arr2 = arr.map(function(e) {
+const arr2 = arr.map(function(e, i, a) {
+  // les arguments i et a sont optionnels
   return e * 10;
 }); // [10, 20, 30]
 ```
@@ -394,15 +396,10 @@ const arr2 = arr.map(function(e) {
 ```js
 const arr = [1, 2, 3, 4, 5, 6, 7, 8];
 
-const arr2 = arr.filter(function(e) {
+const arr2 = arr.filter(function(e, i, a) {
+  // les arguments i et a sont optionnels
   return e % 2 === 0;
 }); // [2, 4, 6, 8]
-```
-
-- `a.slice(debut, fin)`
-
-```js
-arr.slice(0, 5); // [1, 2, 3, 4, 5]
 ```
 
 - `a.find(pred)`
@@ -410,7 +407,8 @@ arr.slice(0, 5); // [1, 2, 3, 4, 5]
 ```js
 const arr = [1, 2, 3, 4, 5, 6, 7, 8];
 
-const found = arr.find(function(e) {
+const found = arr.find(function(e, i, a) {
+  // les arguments i et a sont optionnels
   return e >= 4 && e % 4 === 2; // 6
 });
 ```
@@ -421,6 +419,26 @@ const found = arr.find(function(e) {
 const found = arr.sort(function(a, b) {
   return b - a; // doit retourner un nombre positif ou négatif
 });
+```
+
+- `a.includes(element)`
+
+```js
+arr.includes(2); // true
+arr.includes(10); // false
+```
+
+- `a.slice(debut, fin)`
+
+```js
+arr.slice(0, 5); // [1, 2, 3, 4, 5]
+```
+
+- `a.flat()`
+
+```js
+var arr = [1, 2, [3, 4]];
+arr.flat(); // [1, 2, 3, 4]
 ```
 
 # À vos claviers !!!
