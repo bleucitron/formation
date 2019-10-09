@@ -1,14 +1,14 @@
 function track(e) {
-  console.log('X', e.clientX, 'Y', e.clientY);
+  console.log(`X ${e.clientX} Y ${e.clientY}`);
 }
 
 let isTracking = false;
 
-export default function() {
+export default () => {
   const trackingButton = document.createElement('button');
   trackingButton.textContent = 'Track';
 
-  trackingButton.addEventListener('click', function() {
+  trackingButton.addEventListener('click', () => {
     if (!isTracking) {
       window.addEventListener('mousemove', track);
     } else {
@@ -19,4 +19,4 @@ export default function() {
   });
 
   return trackingButton;
-}
+};

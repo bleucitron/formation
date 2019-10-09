@@ -1,9 +1,6 @@
-export default function(url) {
-  return fetch(url)
-    .then(function(resp) {
-      return resp.json();
-    })
-    .catch(function(err) {
+export default url =>
+  fetch(url)
+    .then(resp => resp.json())
+    .catch(err => {
       throw err;
     });
-}
