@@ -195,9 +195,7 @@ export default function(tweets) {
 }
 ```
 
-### Étape 5: en profiter pour écrire avec la syntaxe ES6 partout
-
-### Étape 6: ajouter les infos de la date avec [MomentJS](https://momentjs.com/)
+### Étape 5: ajouter les infos de la date avec [MomentJS](https://momentjs.com/)
 
 ```bash
 npm install moment
@@ -210,11 +208,11 @@ import moment from 'moment';
 // ...
 ```
 
-### Étape 7: ajouter les infos d'auteur
+### Étape 6: ajouter les infos d'auteur
 
 et styliser le tout avec des classes
 
-### Étape 8: faire un module qui crée le bouton de filtre
+### Étape 7: faire un module qui crée le bouton de filtre
 
 et l'utiliser dans le `main.js`.
 
