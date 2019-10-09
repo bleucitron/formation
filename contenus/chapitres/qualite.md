@@ -90,7 +90,7 @@ import maFonction from './maFonction';
 
 describe("la fonction que l'on veut tester", () => {
   it('ce que cette fonction doit faire dans un cas précis', () => {
-    var maValeur = maFonction();
+    const maValeur = maFonction();
 
     expect(maValeur).toBe(ceQuiEstAttendu); // chercher dans la doc de Jest
   });
