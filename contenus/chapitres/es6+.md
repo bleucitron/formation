@@ -1,8 +1,9 @@
-# [ES6+](https://node.green)
+# [ES6+](https://kangax.github.io/compat-table/es2016plus/)
 
-## [ES6 (2015)](https://node.green/)
+## ES6 (2015)
 
 - ### `const`, `let`
+  `const` et `let` sont **block-scoped**.
 
 ```js
 const a = 1;
@@ -12,8 +13,6 @@ let b = 1;
 b = 2; // ok
 ```
 
-`const` et `let` sont **block-scoped**.
-
 - ### Function default parameters
 
 ```js
@@ -22,13 +21,58 @@ function (a, b = 0){}
 
 - ### arrow functions
 
+```js
+() => 1; // les parenthèses sont nécessaires quand il n'y a pas d'argument
+
+a => a + 1; // les parenthèses sont optionnelles quand il y a 1 seul argument
+
+(a, b) => a + b; // les parenthèses sont nécessaires quand il y a plusieurs arguments
+
+a => {
+  // avec un corps de fonction
+  console.log('Coucou');
+  return a + 1;
+};
+
+a => ({
+  // retourne un objet
+  a: a + 1,
+});
+```
+
 - ### Destructuring
 
+```js
+const o = { a: 1, b: 2 };
+
+const { a, b } = o; // a <= 1, b <= 2
+const { a, b: c } = o; // a <= 1, c <= 2
+
+const l = [1, 2];
+
+const [a, b] = l; // a <= 1, b <= 2
+```
+
 - ### Rest, spread syntax for iterables
+
+```js
+const l = [1, 2, 3];
+
+const [a, ...leReste] = l; // a <= 1, leReste <= [2, 3]
+
+const l2 = [...l]; // crée une copie de l
+const l3 = [...l, ...l2]; // fusionne 2 listes
+```
 
 - ### `for...of` loops
 
 - ### Template literals
+
+```js
+const s = 1;
+
+console.log(`Ceci est une string avec une variable: ${s + 2}`);
+```
 
 - ### `Map`, `Set`, `WeakMap`, `WeakSet`
 
@@ -36,7 +80,17 @@ function (a, b = 0){}
 
 - ### Classes
 
-- ### Strings
+Les `class` sont des fonctions en toile de fond, qui cherchent à mimer les classes de la Programmation Orientée Objet.
+
+```js
+class MyClass() {
+  constructor() {}
+
+  mymethod() {}
+}
+```
+
+- ### String methods
 
 ```js
 const str = 'La la la lalalala lalalala Hey Jude !';
@@ -46,7 +100,7 @@ str.startsWith('La'); // true
 str.endsWith('!'); // true
 ```
 
-- ### Arrays
+- ### Array methods
 
 ```js
 const arr = [1, 2, 3, 4];
@@ -58,14 +112,14 @@ arr.findIndex(e => e === 2); // 1
 arr.fill(0, 2, 4); // [1, 2, 0, 0]
 ```
 
-- ### Numbers
+- ### Number methods
 
 ```js
 Number.isNaN(NaN); // true
 Number.isNaN(undefined); // false
 ```
 
-## [ES2016](https://node.green/#ES2016)
+## ES2016
 
 - ### Exponentiation operator
 
@@ -73,15 +127,15 @@ Number.isNaN(undefined); // false
 2 ** 4; // 16
 ```
 
-- ### `Array.prototype.includes()`
+- ### `arr.includes()`
 
 ```js
 [1, 2, 3, 4].includes(3); // true
 ```
 
-## [ES2017](https://node.green/#ES2017)
+## ES2017
 
-- ### Objects static methods
+- ### Object static methods
 
 ```js
 const o = { a: 1, b: 2 };
@@ -124,7 +178,7 @@ async function() {
 }
 ```
 
-## [ES2018](https://node.green/#ES2018)
+## ES2018
 
 - ### Object rest, spread operators
 
@@ -145,7 +199,7 @@ const o3 = { ...o, e: 5 }; // {a:1, b:2, c:3, d:4, e:5}
 
 Passe dans le `finally()` quelque soit le devenir de la promesse.
 
-## [ES2019](https://node.green/#ES2019)
+## ES2019
 
 - ### Strings
 
@@ -168,7 +222,7 @@ const l = [[1, 2], [3]];
 l.flat(); // [1, 2, 3]
 ```
 
-## [ES2020](https://node.green/#ES2020)
+## ES2020
 
 - ### `Promise.allSettled()`
 
