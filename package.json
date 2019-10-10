@@ -8,8 +8,10 @@
     "lint": "eslint .",
     "build": "browserify src/vanilla/main.js -o bundle.js -t [ babelify ] -d",
     "watch": "watchify src/vanilla/main.js -o bundle.js -t [ babelify ] -d -v",
-    "build:jsx": "browserify src/react/main.jsx -o bundle.js -t [ babelify ] -d",
-    "watch:jsx": "watchify src/react/main.jsx -o bundle.js -t [ babelify ] -d -v"
+    "build:jsx": "browserify src/react/main.jsx -o bundle.js -t [ babelify ] -d --extension=jsx",
+    "watch:jsx": "watchify src/react/main.jsx -o bundle.js -t [ babelify ] -d -v --extension=jsx",
+    "build:hooks": "browserify src/hooks/main.jsx -o bundle.js -t [ babelify ] -d --extension=jsx",
+    "watch:hooks": "watchify src/hooks/main.jsx -o bundle.js -t [ babelify ] -d -v --extension=jsx"
   },
   "keywords": [],
   "author": "",
@@ -45,6 +47,7 @@
   },
   "dependencies": {
     "moment": "^2.24.0",
+    "prop-types": "^15.7.2",
     "react": "^16.10.2",
     "react-dom": "^16.10.2"
   }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 import TweetList from './TweetList';
@@ -14,41 +14,12 @@ function Filter(props) {
   return <button onClick={props.handleClick}>Filter</button>;
 }
 
-function Root({ data, name, age }) {
-  const [isFr, setIsFr] = useState(false);
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    Promise.all(
-      [URL1, URL2].map(fetchJson).then(([tweets1, tweets2]) => {
-        setData(tweets1.concat(tweets2));
-      }),
-    );
-  }, []);
-
-  function handleClick() {
-    setIsFr(prevIsFr => !prevIsFr);
-  }
-
-  const tweets = isFr ? data.filter(isFrenchTweet) : data;
-
-  const content = data ? (
-    <div>
-      <Filter handleClick={handleClick} />
-      <TweetList tweets={tweets} />
-    </div>
-  ) : (
-    'Loading'
-  );
-
-  return content;
-}
-
 class Root extends Component {
   constructor() {
     super();
     this.state = {
       isFr: false,
+      data: null,
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -57,6 +28,16 @@ class Root extends Component {
     this.setState(state => ({
       isFr: !state.isFr,
     }));
+  }
+
+  componentDidMount() {
+    Promise.all([URL1, URL2].map(fetchJson)).then(([tweets1, tweets2]) => {
+      const data = tweets1.concat(tweets2);
+
+      this.setState({
+        data,
+      });
+    });
   }
 
   render() {
@@ -76,4 +57,4 @@ class Root extends Component {
   }
 }
 
-ReactDOM.render(<Root data={data} />, document.getElementById('root'));
+ReactDOM.render(<Root />, document.getElementById('root'));
