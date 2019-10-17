@@ -1,6 +1,7 @@
 import fetchJson from './fetchJson';
 import createTrackingButton from './createTrackingButton';
 import createOl from './createOl';
+import { isTweetFr } from '../utils';
 
 const url1 =
   'https://raw.githubusercontent.com/iOiurson/formation/correction/data/tweets.json';
@@ -16,7 +17,7 @@ document.addEventListener(
         console.log('Le tableau de tweet', tweets);
 
         const button = document.createElement('button');
-        button.textContent = 'Click';
+        button.textContent = 'Filtrer';
 
         document.body.append(button);
 
@@ -31,9 +32,7 @@ document.addEventListener(
         button.addEventListener('click', () => {
           console.log('Click');
 
-          const tweetsToDisplay = isFr
-            ? tweets
-            : tweets.filter(({ lang }) => lang === 'fr');
+          const tweetsToDisplay = isFr ? tweets : tweets.filter(isTweetFr);
 
           const olNew = createOl(tweetsToDisplay);
 

@@ -1,5 +1,5 @@
 {
-  "env": { "browser": true, "es6": true },
+  "env": { "browser": true, "es6": true, "jest": true },
   "extends": ["standard"],
   "globals": { "Atomics": "readonly", "SharedArrayBuffer": "readonly" },
   "parserOptions":

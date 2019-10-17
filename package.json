@@ -7,14 +7,19 @@
     "lint": "eslint .",
     "build": "browserify src/vanilla/main.js -o bundle.js -t [ babelify ] -d",
     "watch": "watchify src/vanilla/main.js -o bundle.js -t [ babelify ] -d -v",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:jsx": "browserify src/react/main.jsx -o bundle.js -t [ babelify ] -d --extension=jsx",
+    "watch:jsx": "watchify src/react/main.jsx -o bundle.js -t [ babelify ] -d -v --extension=jsx",
+    "test": "jest ."
   },
   "dependencies": {
-    "moment": "^2.24.0"
+    "moment": "^2.24.0",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
     "@babel/preset-env": "^7.6.2",
+    "@babel/preset-react": "^7.6.3",
     "babelify": "^10.0.0",
     "browserify": "^16.5.0",
     "eslint": "^6.5.1",
@@ -24,9 +29,23 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.15.1",
     "eslint-plugin-standard": "^4.0.1",
+    "husky": "^3.0.9",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.4.2",
     "watchify": "^3.11.1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "lint-staged": {
+    "*.js": [
+      "eslint",
+      "jest --findRelatedTests"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
 }
