@@ -78,9 +78,9 @@ Permet d'écrire du code asynchrone comme s'il était synchrone.
 
 ---
 
-# À vos claviers !!!
+# _**À vos claviers !!!**_
 
-### 1) Ecrire une fonction `fetchJson` qui a comme paramètre une url et qui retourne une promesses pour des tweets en utilisant `fetch`
+### 1) Ecrire une fonction `fetchJson` qui a comme paramètre une url et qui retourne une promesse pour des tweets en utilisant `fetch`
 
 ### 2) Utiliser cette fonction pour charger les tweets
 

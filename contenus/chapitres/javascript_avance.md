@@ -507,7 +507,7 @@ maFonctionDuFuture() // ok
 
 ---
 
-# À vos claviers !!!
+# _**À vos claviers !!!**_
 
 Ouvrir le fichier `./exercices/tweets.html`, et suivre les indications.
 

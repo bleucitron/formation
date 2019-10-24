@@ -40,13 +40,13 @@ C'est le fichier de configuration du projet NPM. Il est créé par `npm init`.
 }
 ```
 
-Les versions des dépendances sont gérés par la [syntaxe semver](https://docs.npmjs.com/files/package.json#dependencies).
+Les versions des dépendances sont gérées par la [syntaxe semver](https://docs.npmjs.com/files/package.json#dependencies).
 
 Le fichier `package-lock.json` permet de s'assurer que le même `node_modules` est produit à chaque `npm install`, quelque soit la situation.
 
 ## Scripts NPM
 
-Les scripts NPM permettent d'automatiser certaines tâches. Ils remplacent les outils Grunt et Gulp la plupart du temps
+Les scripts NPM permettent d'automatiser certaines tâches. Ils remplacent les outils Grunt et Gulp la plupart du temps.
 
 - http://naholyr.fr/2015/11/ecrire-des-scripts-npm-multi-plateforme/
 
@@ -66,7 +66,7 @@ npm run build
 
 ### Aparté Babel
 
-On va à partir de maintenant utiliser Babel globalement dans le projet.
+On va à partir de maintenant utiliser Babel **globalement** dans le projet.
 
 Enlever les `presets` des scripts
 

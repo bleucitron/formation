@@ -145,7 +145,7 @@ Pour utiliser ces outils, il faut donc [installer Node](https://nodejs.org/en/) 
 
 ---
 
-# À vos claviers !!!
+# **_À vos claviers !!!_**
 
 On va utiliser [`browserify`](http://browserify.org/).
 

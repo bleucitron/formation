@@ -110,7 +110,7 @@ element.addEventListener('click', function(e) {
 
 ---
 
-# À vos claviers !!!
+# _**À vos claviers !!!**_
 
 Ouvrir le fichier `./src/index.html`, et suivre les indications.
 

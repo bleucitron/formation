@@ -441,7 +441,7 @@ var arr = [1, 2, [3, 4]];
 arr.flat(); // [1, 2, 3, 4]
 ```
 
-# À vos claviers !!!
+# **_À vos claviers !!!_**
 
 Ouvrir le fichier `./exercices/début.html`, et suivre les indications.
 

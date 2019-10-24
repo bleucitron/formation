@@ -97,6 +97,16 @@ describe("la fonction que l'on veut tester", () => {
 });
 ```
 
+### **_À vos claviers !!!_**
+
+Isoler la fonction qui teste la langue d'un tweet (`isFrenchTweet`) dans un module, et la tester:
+
+- (1) tester que `isFrenchTweet` renvoie `true` pour un tweet en francais
+- (2) tester que `isFrenchTweet` renvoie `false` pour un tweet en anglais
+- (2bis) tester que `isFrenchTweet` renvoie `false` pour un tweet sans langue
+- (3) tester que `isFrenchTweet` renvoie `true` pour un tweet en francais canadien (`fr-ca`)
+- (4) tester que `isFrenchTweet` jette une exception pour un tweet undefined
+
 ## Automatisation
 
 On veut s'assurer que les tests sont lancés systématiquement.
@@ -134,15 +144,5 @@ Attention ! Métrique dangereuse !
 ## Tests automatisés sur vrais navigateurs: [Karma](https://developers.google.com/web/updates/2017/06/headless-karma-mocha-chai)
 
 ---
-
-# À vos claviers !!!
-
-Isoler la fonction `isFrenchTweet` dans un module, et la tester:
-
-- (1) tester que isTweetFr renvoie vrai pour un tweet en francais
-- (2) tester que isTweetFr renvoie false pour un tweet en anglais
-- (2bis) tester que isTweetFr renvoie faux pour un tweet sans langue
-- (3) tester que isTweetFr renvoie vrai pour un tweet en francais canadien (fr-ca)
-- (4) tester que isTweetFr jette une exception pour un tweet undefined
 
 ## À suivre: [React](./react.md)
