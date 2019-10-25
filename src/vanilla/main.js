@@ -1,7 +1,7 @@
 import fetchJSON from './fetchJSON';
 import createOl from './createOl';
 import createTracking from './createTracking';
-import { isTweetFr } from './utils';
+import createFilter from './createFilter';
 
 const url1 =
   'https://raw.githubusercontent.com/iOiurson/formation/correction/data/tweets.json';
@@ -20,25 +20,11 @@ document.addEventListener(
 
         console.log('Le tableau de tweet', tweets);
 
+        const monOl = createOl(tweets);
         const trackingButton = createTracking();
+        const filterButton = createFilter(tweets, monOl);
 
-        let monOl = createOl(tweets);
-
-        const monFiltre = document.createElement('button');
-        monFiltre.textContent = 'Filtre';
-
-        let isFr = false;
-
-        monFiltre.addEventListener('click', () => {
-          const tweetsToDisplay = !isFr ? tweets.filter(isTweetFr) : tweets;
-
-          const newOl = createOl(tweetsToDisplay);
-          monOl.replaceWith(newOl);
-          isFr = !isFr;
-          monOl = newOl;
-        });
-
-        document.body.append(monFiltre);
+        document.body.append(filterButton);
         document.body.append(trackingButton);
         document.body.append(monOl);
       })

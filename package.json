@@ -4,7 +4,10 @@
   "description": "",
   "main": "bundle.js",
   "dependencies": {
-    "moment": "^2.24.0"
+    "moment": "^2.24.0",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-spinners": "^0.6.1"
   },
   "lint-staged": {
     "*.js": [
@@ -20,6 +23,7 @@
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
     "babelify": "^10.0.0",
     "browserify": "^16.5.0",
     "eslint": "^6.5.1",
@@ -38,7 +42,9 @@
     "test": "jest .",
     "lint": "eslint .",
     "build": "browserify src/vanilla/main.js -o bundle.js -t [ babelify ] -d",
-    "watch": "watchify src/vanilla/main.js -o bundle.js -t [ babelify ] -d -v"
+    "watch": "watchify src/vanilla/main.js -o bundle.js -t [ babelify ] -d -v",
+    "build:jsx": "browserify src/react/main.jsx -o bundle.js -t [ babelify ] -d --extension=jsx",
+    "watch:jsx": "watchify src/react/main.jsx -o bundle.js -t [ babelify ] -d -v --extension=jsx"
   },
   "keywords": [],
   "author": "",
