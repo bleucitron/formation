@@ -3,12 +3,10 @@ import ReactDOM from 'react-dom';
 import { HashLoader } from 'react-spinners';
 
 import fetchJson from '../vanilla/fetchJson';
-import { isTweetFr } from '../utils';
+import { isTweetFr, isSelectedAuthor } from '../utils';
+import AuthorList from './AuthorList';
 import TweetList from './TweetList';
-
-function Filter(props) {
-  return <button onClick={props.filter}>Filtrer</button>;
-}
+import Filter from './Filter';
 
 const url1 =
   'https://raw.githubusercontent.com/iOiurson/formation/correction/data/tweets.json';
@@ -23,14 +21,22 @@ class Main extends React.Component {
       isFr: false,
       data: [],
       authors: [],
+      selectedAuthor: '',
     };
 
     this.filter = this.filter.bind(this);
+    this.selectAuthor = this.selectAuthor.bind(this);
     this.renderContent = this.renderContent.bind(this);
   }
 
   filter() {
     this.setState(state => ({ isFr: !state.isFr }));
+  }
+
+  selectAuthor(name) {
+    const isAlreadySelected = this.state.selectedAuthor === name;
+
+    this.setState({ selectedAuthor: isAlreadySelected ? '' : name });
   }
 
   componentDidMount() {
@@ -53,15 +59,24 @@ class Main extends React.Component {
   }
 
   renderContent() {
-    const tweetsToDisplay = this.state.isFr
-      ? this.state.data.filter(isTweetFr)
-      : this.state.data;
+    const { data, isFr, selectedAuthor } = this.state;
+    let tweetsToDisplay = data;
 
-    console.log('Authors', this.state.authors);
+    if (isFr) tweetsToDisplay = tweetsToDisplay.filter(isTweetFr);
+
+    if (selectedAuthor)
+      tweetsToDisplay = tweetsToDisplay.filter(tweet =>
+        isSelectedAuthor(tweet, selectedAuthor),
+      );
 
     return (
       <>
         <Filter filter={this.filter} />
+        <AuthorList
+          authors={this.state.authors}
+          selected={selectedAuthor}
+          selectAuthor={this.selectAuthor}
+        />
         <TweetList tweets={tweetsToDisplay} />
       </>
     );
