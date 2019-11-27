@@ -37,18 +37,25 @@ document.addEventListener(
           - afficher son texte dans la console
           - créer une div qui contient le texte du tweet et ajouter la div au <body>
         */
+        console.log('--- Question 1 ---');
 
         // afficher dans la console les textes de tous les tweets du tableau en utilisant .forEach()
+        console.log('--- Question 2 ---');
 
         // créer un tableau avec seulement tous les textes des tweets en utilisant .map()
+        console.log('--- Question 3 ---');
 
         // créer un tableau avec seulement les dates de publication
+        console.log('--- Question 4 ---');
 
         // créer un tableau avec seulement les tweets en français en utilisant .filter()
+        console.log('--- Question 5 ---');
 
         // créer un <ol> et l'ajouter au <body>
+        console.log('--- Question 6 ---');
 
         // pour chaque tweet, créer un <li>, mettre le texte dedans, mettre le <li> dans le <ol>
+        console.log('--- Question 7 ---');
       })
       .catch(function(e) {
         console.error(e);
