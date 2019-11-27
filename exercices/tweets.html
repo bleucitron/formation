@@ -4,22 +4,22 @@
     <meta charset="utf-8" />
 
     <meta description="" />
-    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <link rel="stylesheet" type="text/css" href="../reset.css" />
 
     <script>
-      'use strict';
+      "use strict";
 
       document.addEventListener(
-        'DOMContentLoaded',
+        "DOMContentLoaded",
         function(e) {
           fetch(
-            'https://raw.githubusercontent.com/iOiurson/formation/correction/data/tweets.json',
+            "https://raw.githubusercontent.com/iOiurson/formation/correction/data/tweets.json"
           )
             .then(function(resp) {
               return resp.json();
             })
             .then(function(tweets) {
-              console.log('Le tableau de tweet', tweets);
+              console.log("Le tableau de tweet", tweets);
               /*
 
 Pense-bête DOM
@@ -63,7 +63,7 @@ Pense-bête DOM
               console.error(e);
             });
         },
-        { once: true },
+        { once: true }
       );
     </script>
 
