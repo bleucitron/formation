@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 // ### 0/ Pour se chauffer ###
 
@@ -28,7 +28,7 @@ const nombres = [23, 12, 57, 178, 139, 434, 222, 1000, 59, 887];
   en utilisant .map() et la function x10
 */
 
-const couleurs = ["bleu", "rouge", "vert", "jaune", "orange", "marron", "noir"];
+const couleurs = ['bleu', 'rouge', 'vert', 'jaune', 'orange', 'marron', 'noir'];
 
 /* [8] logguer chacune des valeurs de "couleurs" et leur longueur dans la console
   en utilisant .forEach()
@@ -42,7 +42,7 @@ const couleurs = ["bleu", "rouge", "vert", "jaune", "orange", "marron", "noir"];
 
 // [11] utiliser "longueur" à l'étape [9]
 
-const personnes = [{ nom: "Romain", date: "1985-12-31" }];
+const personnes = [{ nom: 'Romain', date: '1985-12-31' }];
 
 // [12] ajouter 2 ou 3 nouvelles personnes au tableau "personnes", en utilisant .push()
 

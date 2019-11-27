@@ -1,16 +1,16 @@
-"use strict";
+'use strict';
 
 document.addEventListener(
-  "DOMContentLoaded",
+  'DOMContentLoaded',
   function(e) {
     fetch(
-      "https://raw.githubusercontent.com/iOiurson/formation/correction/data/tweets.json"
+      'https://raw.githubusercontent.com/iOiurson/formation/correction/data/tweets.json',
     )
       .then(function(resp) {
         return resp.json();
       })
       .then(function(tweets) {
-        console.log("Le tableau de tweet", tweets);
+        console.log('Le tableau de tweet', tweets);
 
         // ### 2/ Twitter ###
 
@@ -50,5 +50,5 @@ document.addEventListener(
         console.error(e);
       });
   },
-  { once: true }
+  { once: true },
 );
