@@ -133,18 +133,18 @@ var o = { a: 1, a: 2 } // ERROR
 ```js
 function chanterLaMacarena(paroles) {
   console.log(paroles);
-  console.log("HEYYYY MACARENA !");
+  console.log('HEYYYY MACARENA !');
 }
 
 function faireUnPainAuChocolat(pain, chocolat) {
   return pain + chocolat;
 }
 
-chanterLaMacarena("bliblablou macarena"); // renvoie undefined
+chanterLaMacarena('bliblablou macarena'); // renvoie undefined
 // bliblablou macarena
 // HEY MACARENA !
 
-const maChocolatine = faireUnPainAuChocolat("pain", "chocolat");
+const maChocolatine = faireUnPainAuChocolat('pain', 'chocolat');
 
 console.log(maChocolatine); // painchocolat
 // WhaaaAAaAaaaAAAaaat ?!?
@@ -168,7 +168,7 @@ Pour tester un type: `typeof x`, mais il y a des [pièges](https://developer.moz
 
 ```js
 typeof 1; // 'number'
-typeof "Romain"; // 'string'
+typeof 'Romain'; // 'string'
 typeof undefined; // 'undefined'
 ```
 
@@ -200,10 +200,10 @@ Toujours utiliser === et !==
 Comparaison par référence pour les objets, les listes et les fonctions, par valeur pour le reste.
 
 ```js
-"use strict";
+'use strict';
 
 const o = {
-  a: 1
+  a: 1,
 };
 
 const o2 = o;
@@ -211,7 +211,7 @@ const o2 = o;
 console.log(o === o2); // true
 
 const o3 = {
-  a: 1
+  a: 1,
 };
 
 console.log(o === o3); // false
@@ -220,7 +220,7 @@ console.log(o === o3); // false
 #### L'exception NaN
 
 ```js
-"use strict";
+'use strict';
 
 NaN === NaN; // false
 ```
@@ -311,15 +311,15 @@ C'est un format d'échange (manière de sérialiser des données structurées)
 - `JSON.parse(string) => obj`
 
 ```js
-"use strict";
+'use strict';
 
 const o = {
   a: 1,
   bloublou: 9,
-  chapito: "yo",
+  chapito: 'yo',
   brave: {
-    autre: "object"
-  }
+    autre: 'object',
+  },
 };
 
 console.log(JSON.stringify(o));
@@ -330,7 +330,7 @@ console.log(JSON.stringify(o));
 ### [Dates](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 
 ```js
-const uneDate = new Date("2009-10-12"); // renvoie la durée en MILLISECONDES depuis le 1 janvier 1970
+const uneDate = new Date('2009-10-12'); // renvoie la durée en MILLISECONDES depuis le 1 janvier 1970
 const aujourdHui = new Date(); // renvoie la durée en MILLISECONDES depuis le 1 janvier 1970
 
 uneDate.getDay();
@@ -345,7 +345,7 @@ aujourdHui - uneDate; // soustrait les dates
 ### [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 
 ```js
-"use strict";
+'use strict';
 
 const arr = [12, 65, 546];
 
@@ -524,8 +524,8 @@ maFonctionDuFuture() // ok
 
 # _**À vos claviers !!!**_
 
-Ouvrir le fichier `/js/dom.js`, et suivre les indications.
+Ouvrir le fichier `/exos/dom.js`, et suivre les indications.
 
-_(Le fichier HTML correspondant est `/js/dom.html`)_
+_(Le fichier HTML correspondant est `/html/dom.html`)_
 
 ## À suivre: [DOM](./dom.md)
