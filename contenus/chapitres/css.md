@@ -6,7 +6,7 @@ C'est le **maquillage** d'une page web.
 
 ```css
 mon-selecteur-css {
-  ma-regle: 'ma-valeur';
+  ma-regle: "ma-valeur";
 }
 ```
 
@@ -74,7 +74,12 @@ a:visited {
 
 Le style d'un document HTML est appliqué selon la logique d'une cascade.
 
+Les éléments se positionnent les uns par rapport aux autres en fonction du `box-model` de chacun.
+
 ### [`display`](https://developer.mozilla.org/fr/docs/Web/CSS/display)
+
+Le `display` permet de controller comment l'élément est influencé par la cascade.
+Les éléments HTML sont en général soit `block`, soit `inline` par défaut.
 
 ```css
 div {
@@ -82,18 +87,20 @@ div {
 }
 ```
 
-- `block`
-- `inline`
-- `inline-block`
-- `table` (utiliser plutôt `flex` ou `grid`)
-- [`flex`](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- `block`: prend toute la largeur du parent
+- `inline`: se comporte comme un mot dans un texte
+- `inline-block`: un `block` qui ne prend pas toute la place
+- [`flex`](https://css-tricks.com/snippets/css/a-guide-to-flexbox/): permet de facilement gérer les éléments de manière verticale ou horizontale
   - `flex-direction`
   - `justify-content`
   - `align-items`
-- [`grid`](https://css-tricks.com/snippets/css/complete-guide-grid/)
-- `none`
+- [`grid`](https://css-tricks.com/snippets/css/complete-guide-grid/): permet de facilement gérer les éléments sur une grille
+- `table` (utiliser plutôt `flex` ou `grid`)
+- `none`: l'élément n'est plus affiché
 
 ### [`position`](https://developer.mozilla.org/fr/docs/Web/CSS/position)
+
+En modifiant la `position` d'un élément, on le "sort" de la cascade.
 
 ```css
 div {
@@ -105,9 +112,10 @@ div {
 }
 ```
 
-- `relative` : se positionne relativement à sa position initiale
+- `relative` : se positionne relativement à sa position initiale dans la cascade
 - `absolute`: se positionne relativement à son plus proche parent **positionné**
 - `fixed`: se positionne relativement au `body`
+- `sticky`: se positionne en `relative` jusqu'à un certain seuil, puis en `absolute`
 
 ## [Unités](https://developer.mozilla.org/en-US/docs/Web/CSS/length#rem)
 
@@ -121,8 +129,8 @@ S'ajoutent via [`@font-face`](https://www.paulirish.com/2009/bulletproof-font-fa
 
 ```css
 @font-face {
-  font-family: 'Graublau Web';
-  src: url('GraublauWeb.eot?');
+  font-family: "Graublau Web";
+  src: url("GraublauWeb.eot?");
 }
 ```
 
