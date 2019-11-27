@@ -1,3 +1,52 @@
-* {
-  color: blue;
+body {
+  display: flex;
+  font-family: system-ui;
+  background: rgb(21, 32, 43);
+  color: white;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+body > * {
+  flex: 1 0;
+}
+
+main {
+  flex: 2 0;
+}
+
+menu {
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 2rem;
+  flex-basis: 15rem;
+}
+
+nav ul {
+  margin: 1rem 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+nav li {
+  margin: 1.5rem 0;
+}
+
+nav button {
+  width: 100%;
+  padding: 1rem;
+  color: white;
+  background: #1b95e0;
+  border-radius: 2rem;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: bold;
 }

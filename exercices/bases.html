@@ -7,69 +7,130 @@
     <link rel="stylesheet" type="text/css" href="../reset.css" />
 
     <script>
-      "use strict";
+      'use strict';
 
       // ### 0/ Pour se chauffer ###
 
       // [1] créer une variable x, et lui assigner un nombre
+      const x = 10;
 
       // [2] logguer cette variable dans la console avec console.log()
+      console.log('X', x);
 
       /* [3] créer une fonction x10 qui en entrée prend un nombre et renvoie le nombre multiplié par 10
         puis logguez x10(x)
       */
+      function x10(nombre) {
+        return nombre * 10;
+      }
+
+      console.log('x10', x10(x));
 
       const nombres = [23, 12, 57, 178, 139, 434, 222, 1000, 59, 887];
 
       /* [4] logguer chacune des valeurs de "nombres" dans la console
         en utilisant .forEach()
       */
+      nombres.forEach(function(nombre) {
+        console.log(nombre);
+      });
 
       /* [5] à partir de "nombres", créer un nouveau tableau avec seulement les entiers pairs
         en utilisant .filter()
       */
+      const pairs = nombres.filter(function(nombre) {
+        return nombre % 2 === 0;
+      });
+      console.log('pairs', pairs);
 
-      /* [6] à partir de "nombres", créer un nouveau tableau avec seulement les entiers plus grands que 5
+      /* [6] à partir de "nombres", créer un nouveau tableau avec seulement les entiers plus grands que 100
         en utilisant .filter()
       */
+      const plusQue100 = nombres.filter(function(nombre) {
+        return nombre > 100;
+      });
+      console.log('plusQue5', plusQue100);
 
       /* [7] à partir de "nombres", créer un nouveau tableau contenant les valeurs multipliées par 10
         en utilisant .map() et la function x10
       */
+      const nx10 = nombres.map(function(nombre) {
+        return nombre * 10;
+      });
+      console.log('nx10', nx10);
 
       const couleurs = [
-        "bleu",
-        "rouge",
-        "vert",
-        "jaune",
-        "orange",
-        "marron",
-        "noir"
+        'bleu',
+        'rouge',
+        'vert',
+        'jaune',
+        'orange',
+        'marron',
+        'noir',
       ];
 
       /* [8] logguer chacune des valeurs de "couleurs" et leur longueur dans la console
         en utilisant .forEach()
       */
+      couleurs.forEach(function(couleur) {
+        console.log(couleur, couleur.length);
+      });
 
       /* [9] à partir de "couleurs", créer un nouveau tableau contenant les longueurs
         en utilisant .map()
       */
+      const longueurs = couleurs.map(function(couleur) {
+        return couleur.length;
+      });
+      console.log('longueurs', longueurs);
 
       // [10] créer une fonction "longueur" qui prend en entrée une string et renvoie la longueur de la string
+      function getLength(s) {
+        return s.length;
+      }
 
       // [11] utiliser "longueur" à l'étape [9]
+      const longueurs2 = couleurs.map(getLength);
+      console.log('longueurs2', longueurs2);
 
-      const personnes = [{ nom: "Romain", date: "1985-12-31" }];
+      const personnes = [{ nom: 'Romain', date: '1985-12-31' }];
 
       // [12] ajouter 2 ou 3 nouvelles personnes au tableau "personnes", en utilisant .push()
+      personnes.push({
+        nom: 'Pierre',
+        date: '1959-12-07',
+      });
+      personnes.push({
+        nom: 'Maryline',
+        date: '1961-02-03',
+      });
+      console.log('personnes', personnes);
 
       // [13] à partir de "personnes", créer un nouveau tableau contenant seulement les noms
+      function getName(personne) {
+        return personne.nom;
+      }
+
+      const noms = personnes.map(getName);
+      console.log('noms', noms);
 
       /* [14] créer une fonction "calculerAge" qui en entrée prend un string représentant la date de naissance
        et renvoie l'âge en nombre, en utilisant Date()
       */
+      function computeAge(date) {
+        const diff = new Date() - new Date(date);
+
+        return Math.floor(diff / 1000 / 60 / 60 / 24 / 365);
+      }
+      personnes.forEach(function(personne) {
+        console.log(personne.nom, computeAge(personne.date));
+      });
 
       // [15] à partir de "personnes" et "calculerAge", créer un nouveau tableau contenant seulement les âges
+      const ages = personnes.map(function(personne) {
+        return computeAge(personne.date);
+      });
+      console.log('ages', ages);
     </script>
 
     <title>yo</title>
