@@ -433,6 +433,8 @@ arr.flat(); // [1, 2, 3, 4]
 
 # **_À vos claviers !!!_**
 
-Ouvrir le fichier `./exercices/bases.html`, et suivre les indications.
+Ouvrir le fichier `/js/bases.js`, et suivre les indications.
+
+_(Le fichier HTML correspondant est `/html/bases.html`)_
 
 ## À suivre: [DOM](./dom.md)

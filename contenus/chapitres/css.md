@@ -172,6 +172,8 @@ Font d'icônes
 
 ---
 
-# [À vos claviers !!!](./presse.md)
+# [À vos claviers !!!](./twitter.md)
+
+Reproduire la page d'accueil de [Twitter](https://twitter.com/home) dans les fichiers `html/twitter.html` et `css/twitter.css`;
 
 ## À suivre: [Javascript](./javascript.md)

@@ -522,10 +522,10 @@ maFonctionDuFuture() // ok
 maFonctionDuFuture() // ok
 ```
 
----
-
 # _**À vos claviers !!!**_
 
-Ouvrir le fichier `./exercices/tweets.html`, et suivre les indications.
+Ouvrir le fichier `/js/dom.js`, et suivre les indications.
+
+_(Le fichier HTML correspondant est `/js/dom.html`)_
 
 ## À suivre: [DOM](./dom.md)

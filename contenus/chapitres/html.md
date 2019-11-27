@@ -128,7 +128,7 @@ Pour creuser plus profond
 - http://www.html5rocks.com/en/tutorials/speed/script-loading/
 - https://www.igvita.com/2014/05/20/script-injected-async-scripts-considered-harmful/
 
-## Bonus
+### Bonus
 
 - favicon : `<link rel="icon" href="favicon.ico">`
 
