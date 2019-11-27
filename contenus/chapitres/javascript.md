@@ -131,18 +131,18 @@ var o = { a: 1, a: 2 } // ERROR
 ```js
 function chanterLaMacarena(paroles) {
   console.log(paroles);
-  console.log('HEYYYY MACARENA !');
+  console.log("HEYYYY MACARENA !");
 }
 
 function faireUnPainAuChocolat(pain, chocolat) {
   return pain + chocolat;
 }
 
-chanterLaMacarena('bliblablou macarena'); // renvoie undefined
+chanterLaMacarena("bliblablou macarena"); // renvoie undefined
 // bliblablou macarena
 // HEY MACARENA !
 
-const maChocolatine = faireUnPainAuChocolat('pain', 'chocolat');
+const maChocolatine = faireUnPainAuChocolat("pain", "chocolat");
 
 console.log(maChocolatine); // painchocolat
 // WhaaaAAaAaaaAAAaaat ?!?
@@ -159,28 +159,10 @@ Une valeur est le **résultat d'une opération**.
 | number    | `1`, `-2.3`, `NaN`, `Infinity`      |
 | undefined |                                     |
 | object    | `{}`, `{a:1, b: "2"}`               |
-| function  | `function somme(a, b){return a+b;}` | "function" |  |
+| function  | `function somme(a, b){return a+b;}` |
 | symbol    |                                     |
 
-Pour tester un type: `typeof x`
-
-```js
-typeof 1; // 'number'
-typeof 'Romain'; // 'string'
-typeof undefined; // 'undefined'
-```
-
-**⚠ `null` et les arrays ont un type `object` ⚠**
-
-```js
-typeof null; // 'object'
-typeof {}; // 'object'
-typeof []; // 'object'
-
-x === null; // vrai si x est null
-Object(x) === x; // vrai si x est un objet
-Array.isArray(x); // vrai si x est un array
-```
+Pour tester un type: `typeof x`, mais il y a des [pièges](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/L_op%C3%A9rateur_typeof).
 
 ### Comparaison
 
@@ -198,15 +180,10 @@ Toujours utiliser === et !==
 Comparaison par référence pour les objets, les listes et les fonctions, par valeur pour le reste.
 
 ```js
-'use strict';
-
-(1 === 1)(
-  // true
-  'yo' === 'yo',
-); // true
+"use strict";
 
 const o = {
-  a: 1,
+  a: 1
 };
 
 const o2 = o;
@@ -214,7 +191,7 @@ const o2 = o;
 console.log(o === o2); // true
 
 const o3 = {
-  a: 1,
+  a: 1
 };
 
 console.log(o === o3); // false
@@ -223,7 +200,7 @@ console.log(o === o3); // false
 #### L'exception NaN
 
 ```js
-'use strict';
+"use strict";
 
 NaN === NaN; // false
 ```
@@ -291,8 +268,6 @@ Un objet c'est une **armoire avec des tiroirs**.
 
 - clé (string) -> valeur (any)
 
-(formation pas-avancée : montrer [objets.js](./objets.js))
-
 - Lire une propriété `o.a`
   - `o["a"]` équivalent à `o.a`
   - `o[maString]`
@@ -314,15 +289,15 @@ C'est un format d'échange (manière de sérialiser des données structurées)
 - `JSON.parse(string) => obj`
 
 ```js
-'use strict';
+"use strict";
 
 const o = {
   a: 1,
   bloublou: 9,
-  chapito: 'yo',
+  chapito: "yo",
   brave: {
-    autre: 'object',
-  },
+    autre: "object"
+  }
 };
 
 console.log(JSON.stringify(o));
@@ -330,10 +305,25 @@ console.log(JSON.stringify(o));
 
 ⚠ C'est un format fragile ⚠, vérifier avec [JSON Lint](https://jsonlint.com/)
 
-### Array
+### [Dates](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 
 ```js
-'use strict';
+const uneDate = new Date("2009-10-12"); // renvoie la durée en MILLISECONDES depuis le 1 janvier 1970
+const aujourdHui = new Date(); // renvoie la durée en MILLISECONDES depuis le 1 janvier 1970
+
+uneDate.getDay();
+uneDate.getDate();
+uneDate.getMonth();
+uneDate.getYear();
+// etc ...
+
+aujourdHui - uneDate; // soustrait les dates
+```
+
+### [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+
+```js
+"use strict";
 
 const arr = [12, 65, 546];
 
@@ -360,7 +350,7 @@ arr.forEach(function(element) { // beaucoup mieux !
 
 ```
 
-### Utilisation des tableaux
+#### Utilisation des tableaux
 
 [De manière illustrée](https://twitter.com/steveluscher/status/741089564329054208)
 
@@ -443,6 +433,6 @@ arr.flat(); // [1, 2, 3, 4]
 
 # **_À vos claviers !!!_**
 
-Ouvrir le fichier `./exercices/début.html`, et suivre les indications.
+Ouvrir le fichier `./exercices/bases.html`, et suivre les indications.
 
 ## À suivre: [DOM](./dom.md)

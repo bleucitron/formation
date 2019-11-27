@@ -6,14 +6,18 @@
   - => 'kjhg' (dernière valeur "truthy")
 - `0 || 37 || null`
   - => 37 (première valeur "truthy")
-  - `Number.isNaN = Number.isNaN || function(x){return x!==x};`
+- `Number.isNaN = Number.isNaN || function(x){return x!==x};`
 
 Valeur par défaut pour les arguments :
 
 ```js
-function(b){
-    b = b || 45
-    return b * 7;
+function(b) {
+  b = b || 45
+  return b * 7;
+}
+
+function(b = 45) { // es6
+  return b * 7;
 }
 ```
 
