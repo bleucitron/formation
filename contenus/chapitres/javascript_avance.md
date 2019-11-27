@@ -330,16 +330,17 @@ console.log(JSON.stringify(o));
 ### [Dates](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 
 ```js
-const uneDate = new Date('2009-10-12'); // renvoie la durée en MILLISECONDES depuis le 1 janvier 1970
-const aujourdHui = new Date(); // renvoie la durée en MILLISECONDES depuis le 1 janvier 1970
+const uneDate = new Date('2009-10-12'); // renvoie une objet Date
+const aujourdHui = new Date();
 
+uneDate.getTime(); // nombre de millisecondes depuis le 1er janvier 1970
 uneDate.getDay();
 uneDate.getDate();
 uneDate.getMonth();
 uneDate.getYear();
 // etc ...
 
-aujourdHui - uneDate; // soustrait les dates
+aujourdHui - uneDate; // soustrait les dates, renvoie un entier en millisecondes
 ```
 
 ### [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
@@ -414,7 +415,7 @@ const arr2 = arr.filter(function(e) {
 - `a.slice(debut, fin)`
 
 ```js
-arr.slice(0, 5); // [1, 2, 3, 4, 5]
+arr.slice(2, 5); // [3, 4, 5]
 ```
 
 - `a.find(pred)`
