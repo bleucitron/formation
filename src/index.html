@@ -4,37 +4,88 @@
     <meta charset="utf-8" />
 
     <meta description="" />
-    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <link rel="stylesheet" type="text/css" href="../reset.css" />
 
     <script>
       'use strict';
+      function createLi(tweet) {
+        const li = document.createElement('li');
+        li.textContent = tweet.text;
+        return li;
+      }
+
+      function createOl(tweets) {
+        const ol = document.createElement('ol');
+
+        tweets.map(createLi).forEach(function(li) {
+          ol.append(li);
+        });
+
+        return ol;
+      }
+
+      function track(event) {
+        console.log(event.clientX, event.clientY);
+      }
+
+      function fetchJson(url) {
+        return fetch(url).then(function(resp) {
+          return resp.json();
+        });
+      }
+
+      const url =
+        'https://raw.githubusercontent.com/iOiurson/formation/correction/data/tweets.json';
 
       document.addEventListener(
         'DOMContentLoaded',
         function(e) {
-          fetch(
-            'https://raw.githubusercontent.com/iOiurson/formation/correction/data/tweets.json',
-          )
-            .then(function(resp) {
-              return resp.json();
-            })
+          fetchJson(url)
             .then(function(tweets) {
               console.log('Le tableau de tweet', tweets);
 
-              // ### 2/ Twitter ###
+              let displayedOl = createOl(tweets);
 
-              // [1] créer une fonction, qui pour un tweet en entrée, crée et retourne un <li> contenant le texte du tweet
+              document.body.append(displayedOl);
 
-              // [2] créer et ajouter un <ol> à la page, puis y ajouter les <li> de tweets en utilisant [1]
+              const filter = document.createElement('button');
+              filter.textContent = 'To Fr';
+              document.body.prepend(filter);
 
-              // créer et ajouter un <button> qui quand on clique dessus affiche 'click' dans la console.
+              const tracker = document.createElement('button');
+              tracker.textContent = 'Track';
+              document.body.prepend(tracker);
 
-              // [3] modifier le bouton pour que quand on clique dessus, ne garde que les tweets en français
+              let isTracking = false;
 
-              // [4] modifier le bouton de filtre pour pouvoir réafficher tous les tweets quand on reclique dessus
+              tracker.addEventListener('click', function() {
+                if (!isTracking) {
+                  console.log('Track !');
+                  window.addEventListener('mousemove', track);
+                } else {
+                  console.log('Untrack !');
+                  window.removeEventListener('mousemove', track);
+                }
+                isTracking = !isTracking;
+              });
 
-              /* [5] créer une fonction, qui pour un tableau tweets en entrée, crée et retourne un <ol> rempli de <li>
-          et l'utiliser à [2], [3], [4] */
+              let isFr = false;
+
+              filter.addEventListener('click', function() {
+                const tweetsToDisplay = !isFr
+                  ? tweets.filter(function(tweet) {
+                      return tweet.lang === 'fr';
+                    })
+                  : tweets;
+
+                filter.textContent = !isFr ? 'To Int' : 'To Fr';
+
+                const newOl = createOl(tweetsToDisplay);
+
+                displayedOl.replaceWith(newOl);
+                displayedOl = newOl;
+                isFr = !isFr;
+              });
 
               // [6] Créer un bouton qui active le tracking de la position de la souris (event.clientX, event.clientY), et le désactive quand on reclique dessus
 

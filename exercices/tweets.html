@@ -6,20 +6,27 @@
     <meta description="" />
     <link rel="stylesheet" type="text/css" href="../reset.css" />
 
+    <style>
+      .coucou {
+        font-size: 2rem;
+        color: blue;
+      }
+    </style>
+
     <script>
-      "use strict";
+      'use strict';
 
       document.addEventListener(
-        "DOMContentLoaded",
+        'DOMContentLoaded',
         function(e) {
           fetch(
-            "https://raw.githubusercontent.com/iOiurson/formation/correction/data/tweets.json"
+            'https://raw.githubusercontent.com/iOiurson/formation/correction/data/tweets.json',
           )
             .then(function(resp) {
               return resp.json();
             })
             .then(function(tweets) {
-              console.log("Le tableau de tweet", tweets);
+              console.log('Le tableau de tweet', tweets);
               /*
 
 Pense-bête DOM
@@ -46,24 +53,56 @@ Pense-bête DOM
             - afficher son texte dans la console
             - créer une div qui contient le texte du tweet et ajouter la div au <body>
           */
+              console.log('Premier', tweets[0]);
+              console.log('Premier texte', tweets[0].text);
+
+              const div = document.createElement('div');
+              document.body.append(div);
+              div.textContent = tweets[0].text;
+              div.classList.add('coucou');
+
+              div.style.color = 'red';
+              console.log(div.getBoundingClientRect());
 
               // afficher dans la console les textes de tous les tweets du tableau en utilisant .forEach()
+              tweets.forEach(function(tweet) {
+                console.log(tweet.text);
+              });
 
               // créer un tableau avec seulement tous les textes des tweets en utilisant .map()
+              const texts = tweets.map(function(tweet) {
+                return tweet.text;
+              });
+              console.log('Textes', texts);
 
               // créer un tableau avec seulement les dates de publication
+              const dates = tweets.map(function(tweet) {
+                return tweet.created_at;
+              });
+              console.log('Dates', dates);
 
               // créer un tableau avec seulement les tweets en français en utilisant .filter()
+              const frs = tweets.filter(function(tweet) {
+                return tweet.lang === 'fr';
+              });
+              console.log('Frs', frs);
 
               // créer un <ol> et l'ajouter au <body>
+              const ol = document.createElement('ol');
+              document.body.append(ol);
 
               // pour chaque tweet, créer un <li>, mettre le texte dedans, mettre le <li> dans le <ol>
+              tweets.forEach(function(tweet) {
+                const li = document.createElement('li');
+                ol.append(li);
+                li.textContent = tweet.text;
+              });
             })
             .catch(function(e) {
               console.error(e);
             });
         },
-        { once: true }
+        { once: true },
       );
     </script>
 

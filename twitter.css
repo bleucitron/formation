@@ -1,7 +1,8 @@
 body {
   display: flex;
+  height: 100vh;
   font-family: system-ui;
-  background: rgb(21, 32, 43);
+  background: #15202b;
   color: white;
 }
 
@@ -14,8 +15,19 @@ body > * {
   flex: 1 0;
 }
 
+main,
+aside,
+menu {
+  height: 100%;
+}
+
 main {
   flex: 2 0;
+  overflow-y: scroll;
+}
+
+main::-webkit-scrollbar {
+  display: none;
 }
 
 menu {
@@ -30,6 +42,22 @@ nav {
   flex-basis: 15rem;
 }
 
+nav > a div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  padding: 0 0.7rem;
+  font-size: 1.7rem;
+  cursor: pointer;
+  width: 2.7rem;
+  height: 2.7rem;
+}
+
+nav > a div:hover {
+  background: #273440;
+}
+
 nav ul {
   margin: 1rem 0;
   font-size: 1.1rem;
@@ -37,7 +65,21 @@ nav ul {
 }
 
 nav li {
-  margin: 1.5rem 0;
+  padding: 0.7rem 1rem;
+  margin: 0.5rem 0;
+  border-radius: 2rem;
+  width: fit-content;
+}
+
+nav li i {
+  font-size: 1.4rem;
+  margin-right: 1rem;
+}
+
+nav li:hover {
+  color: #1b95e0;
+  background: #273440;
+  cursor: pointer;
 }
 
 nav button {
@@ -49,4 +91,163 @@ nav button {
   border: none;
   font-size: 0.9rem;
   font-weight: bold;
+  cursor: pointer;
+}
+
+main {
+  border: 1px solid #38444d;
+  border-top: none;
+  border-bottom: none;
+}
+
+aside {
+  display: flex;
+  justify-content: flex-start;
+}
+
+aside .container {
+  margin-left: 2rem;
+  flex-basis: 15rem;
+}
+
+aside .container header {
+  padding: 0.8rem 1.2rem;
+}
+
+aside .container footer {
+  padding: 0.8rem 1.2rem;
+  font-size: 0.9rem;
+  color: #1b95e0;
+}
+
+aside .container header h1 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+aside .container li {
+  padding: 0.9rem 1.2rem;
+  border-top: 1px solid #38444d;
+}
+
+aside .container li:last-child {
+  border-bottom: 1px solid #38444d;
+}
+
+aside .container li h3 {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+aside .container li div {
+  padding-top: 5px;
+  font-size: 0.9rem;
+  color: #8899a6;
+}
+
+aside .search {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 0.5rem;
+  color: #8899a6;
+  background-color: #253341;
+  border-radius: 1rem;
+}
+
+aside .search > div {
+  width: 2.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  border: 1px solid #253341;
+  border-right: none;
+}
+
+aside .search input {
+  flex: 1 0;
+  padding: 0.5rem;
+  color: white;
+  background-color: #253341;
+  border: 1px solid #253341;
+  border-left: none;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+}
+
+aside .search input::placeholder {
+  background-color: #253341;
+  color: #8899a6;
+}
+
+aside .search input:focus {
+  background: #15202b;
+  border: 1px solid #1b95e0;
+  border-left: none;
+  outline: none;
+}
+
+aside .search input:focus::placeholder {
+  background: #15202b;
+}
+
+aside .search input:focus + div {
+  border: 1px solid #1b95e0;
+  border-right: none;
+  background: #15202b;
+}
+
+aside .trending {
+  margin-top: 1rem;
+  border-radius: 1rem;
+  background: #192734;
+}
+
+.tweet {
+  display: flex;
+  padding: 0.5rem;
+  padding-bottom: 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-bottom: 1px solid #253341;
+}
+
+.tweet .picture {
+  display: flex;
+  justify-content: flex-end;
+  flex-basis: 5rem;
+  padding: 0 0.5rem;
+}
+
+.tweet .picture img {
+  width: 3rem;
+  height: 3rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.tweet .wrapper {
+  flex: 1 0;
+}
+
+.tweet .wrapper header {
+  display: flex;
+  margin-bottom: 0.2rem;
+}
+
+.tweet .wrapper .name {
+  font-weight: bold;
+}
+
+.tweet .wrapper .name,
+.tweet .wrapper .tag,
+.tweet .wrapper .date {
+  margin-right: 0.5rem;
+}
+
+.tweet .wrapper .tag,
+.tweet .wrapper .date {
+  color: #8899a6;
 }
