@@ -525,8 +525,8 @@ maFonctionDuFuture() // ok
 
 # _**À vos claviers !!!**_
 
-Ouvrir le fichier `/exos/dom.js`, et suivre les indications.
-
-_(Le fichier HTML correspondant est `/html/dom.html`)_
+- Ouvrir le dossier `/exos/2 - dom`
+- Ouvrir le fichier `dom.html` dans votre navigateur
+- Suivre les indications du fichier `dom.js`, et vérifier les résultats dans votre navigateur
 
 ## À suivre: [DOM](./dom.md)

@@ -6,7 +6,7 @@ C'est le **maquillage** d'une page web.
 
 ```css
 mon-selecteur-css {
-  ma-regle: "ma-valeur";
+  ma-regle: 'ma-valeur';
 }
 ```
 
@@ -129,8 +129,8 @@ S'ajoutent via [`@font-face`](https://www.paulirish.com/2009/bulletproof-font-fa
 
 ```css
 @font-face {
-  font-family: "Graublau Web";
-  src: url("GraublauWeb.eot?");
+  font-family: 'Graublau Web';
+  src: url('GraublauWeb.eot?');
 }
 ```
 
@@ -174,6 +174,6 @@ Font d'icônes
 
 # [À vos claviers !!!](./twitter.md)
 
-Reproduire la page d'accueil de [Twitter](https://twitter.com/home) dans les fichiers `html/twitter.html` et `css/twitter.css`;
+Reproduire la page d'accueil de [Twitter](https://twitter.com/home) dans le dossier `exos/0 - html/`;
 
 ## À suivre: [Javascript](./javascript.md)

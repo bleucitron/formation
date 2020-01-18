@@ -435,8 +435,8 @@ arr.flat(); // [1, 2, 3, 4]
 
 # **_À vos claviers !!!_**
 
-Ouvrir le fichier `/exos/bases.js`, et suivre les indications.
-
-_(Le fichier HTML correspondant est `/html/bases.html`)_
+- Ouvrir le dossier `/exos/1 - js`
+- Ouvrir le fichier `bases.html` dans votre navigateur
+- Suivre les indications du fichier `bases.js`, et vérifier les résultats dans votre navigateur
 
 ## À suivre: [DOM](./dom.md)
