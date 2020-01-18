@@ -1,5 +1,7 @@
 # Qualité de code
 
+## [Typescript](./typescript.md)
+
 ## Linting
 
 Sert à écrire du code propre, selon les conventions que l'on choisit.
