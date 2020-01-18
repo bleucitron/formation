@@ -106,9 +106,9 @@ Compiler l'exercice:
 npx tsc -w --noImplicitAny exos/typescript.ts
 ```
 
-Ouvrir le fichier `/exos/typescript.ts`, et suivre les indications.
-
-_(Le fichier HTML correspondant est `/html/typescript.html`)_
+- Ouvrir le dossier `/exos/2 - typescript`
+- Ouvrir le fichier `typescript.html` dans votre navigateur
+- Suivre les indications du fichier `typescript.ts`, et vérifier les résultats dans votre navigateur
 
 ### Projet
 
