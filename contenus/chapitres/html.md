@@ -31,9 +31,9 @@ HTML est un langage de [balises](https://developer.mozilla.org/fr/docs/Web/Guide
 - [`<a>`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/a) : Liens
 
 ```html
-<a href="https://www.youtube.com/watch?v=2zNSgSzhBfM "
-  >cette vidéo est géniale !</a
->
+<a href="https://www.youtube.com/watch?v=2zNSgSzhBfM">
+  cette vidéo est géniale !
+</a>
 ```
 
 - [`<ul>`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/ul) [`<ol>`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/ol) [`<li>`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/li) : lister des éléments
