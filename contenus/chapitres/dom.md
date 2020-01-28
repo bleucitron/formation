@@ -112,6 +112,8 @@ element.addEventListener('click', function(e) {
 
 # _**À vos claviers !!!**_
 
-Ouvrir le fichier `./src/index.html`, et suivre les indications.
+- Ouvrir le dossier `/exos/2 - dom`
+- Ouvrir le fichier `dom.html` dans votre navigateur
+- Suivre les indications du fichier `dom.js`, et vérifier les résultats dans votre navigateur
 
 ## À suivre: [Asynchrone](./asynchrone.md)
