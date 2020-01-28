@@ -39,6 +39,13 @@ document.addEventListener(
           - créer une div qui contient le texte du tweet et ajouter la div au <body>
         */
 
+        console.log('Premier tweet', tweets[0]);
+        console.log('Texte du premier tweet', tweets[0].text);
+
+        const maDiv = document.createElement('div');
+        maDiv.textContent = tweets[0].text;
+        document.body.append(maDiv);
+
         console.log('--- Question 2 ---');
         // afficher dans la console les textes de tous les tweets du tableau en utilisant .forEach()
 

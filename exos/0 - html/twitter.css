@@ -1,0 +1,28 @@
+body {
+  font-family: Helvetica;
+  display: flex;
+  justify-content: space-evenly;
+  background: blue;
+  height: 100vh;
+  margin: 0;
+}
+
+header,
+main,
+aside {
+  flex: 1 0;
+}
+
+main {
+  flex: 2 0;
+  border: 1px solid white;
+}
+
+ul {
+  list-style: none;
+}
+
+nav ul li {
+  margin: 1rem 0.5rem;
+  font-size: 1.5rem;
+}
