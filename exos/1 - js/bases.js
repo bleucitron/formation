@@ -8,7 +8,7 @@ console.log('--- Question 1 ---');
 console.log('--- Question 2 ---');
 // [2] logguer cette variable dans la console avec console.log()
 
-console.log('--- Question 3---');
+console.log('--- Question 3 ---');
 /* [3] créer une fonction x10 qui en entrée prend un nombre et renvoie le nombre multiplié par 10
   puis logguez x10(x)
 */
