@@ -1,33 +1,98 @@
 'use strict';
 
+function fetchJson(url) {
+  return fetch(url).then(function(response) {
+    return response.json();
+  });
+}
+
+const tweetsUrl =
+  'https://raw.githubusercontent.com/iOiurson/formation/correction/data/tweets.json';
+
 document.addEventListener(
   'DOMContentLoaded',
   function(e) {
-    fetch(
-      'https://raw.githubusercontent.com/iOiurson/formation/correction/data/tweets.json',
-    )
-      .then(function(resp) {
-        return resp.json();
-      })
+    fetchJson(tweetsUrl)
       .then(function(tweets) {
         console.log('Le tableau de tweet', tweets);
 
         // ### 2/ Twitter ###
 
-        // [1] créer une fonction, qui pour un tweet en entrée, crée et retourne un <li> contenant le texte du tweet
+        function createLi(tweet) {
+          const monLi = document.createElement('li');
+          monLi.textContent = tweet.text;
+          return monLi;
+        }
 
-        // [2] créer et ajouter un <ol> à la page, puis y ajouter les <li> de tweets en utilisant [1]
+        function createOl(tweets) {
+          const newOl = document.createElement('ol');
 
-        // créer et ajouter un <button> qui quand on clique dessus affiche 'click' dans la console.
+          tweets.forEach(function(tweet) {
+            const monLi = createLi(tweet);
+            newOl.append(monLi);
+          });
 
-        // [3] modifier le bouton pour que quand on clique dessus, ne garde que les tweets en français
+          // tweets.map(createLi).forEach(function(li) {
+          //   newOl.append(li);
+          // });
 
-        // [4] modifier le bouton de filtre pour pouvoir réafficher tous les tweets quand on reclique dessus
+          return newOl;
+        }
 
-        /* [5] créer une fonction, qui pour un tableau tweets en entrée, crée et retourne un <ol> rempli de <li>
-    et l'utiliser à [2], [3], [4] */
+        let monOl = createOl(tweets);
+        document.body.append(monOl);
+
+        const button = document.createElement('button');
+        button.textContent = 'Filtrer';
+        document.body.prepend(button);
+
+        let isFr = false;
+
+        button.addEventListener('click', function() {
+          let tweetsToDisplay = tweets;
+
+          if (!isFr) {
+            tweetsToDisplay = tweets.filter(function(tweet) {
+              return tweet.lang === 'fr';
+            });
+          }
+
+          // const tweetsToDisplay = !isFr
+          //   ? (tweetsToDisplay = tweets.filter(function(tweet) {
+          //       return tweet.lang === 'fr';
+          //     }))
+          //   : tweets;
+
+          const newOl = createOl(tweetsToDisplay);
+          monOl.replaceWith(newOl);
+          monOl = newOl;
+          isFr = !isFr;
+        });
 
         // [6] Créer un bouton qui active le tracking de la position de la souris (event.clientX, event.clientY), et le désactive quand on reclique dessus
+        const trackingButton = document.createElement('button');
+
+        function track(e) {
+          console.log(e.clientX, e.clientY);
+        }
+
+        trackingButton.textContent = 'Track';
+        document.body.prepend(trackingButton);
+
+        let isTracking = false;
+
+        trackingButton.addEventListener('click', function() {
+          if (!isTracking) {
+            console.log('Tracking');
+
+            window.addEventListener('mousemove', track);
+          } else {
+            console.log('Stop Tracking');
+
+            window.removeEventListener('mousemove', track);
+          }
+          isTracking = !isTracking;
+        });
 
         // PRÉSENTATION Asynchronicité
 
