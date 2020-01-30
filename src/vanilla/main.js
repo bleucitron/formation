@@ -1,43 +1,25 @@
 'use strict';
 
-function fetchJson(url) {
-  return fetch(url).then(function(response) {
-    return response.json();
-  });
-}
+import fetchJson from './fetchJson.js';
+import createOl from './createOl.js';
+import { checkTweetLang } from './checkTweetLang.js';
 
-const tweetsUrl =
+const url1 =
   'https://raw.githubusercontent.com/iOiurson/formation/correction/data/tweets.json';
+const url2 =
+  'https://raw.githubusercontent.com/iOiurson/formation/correction/data/tweets2.json';
 
 document.addEventListener(
   'DOMContentLoaded',
-  function(e) {
-    fetchJson(tweetsUrl)
-      .then(function(tweets) {
+  e => {
+    const myPs = [url1, url2].map(fetchJson);
+
+    Promise.all(myPs)
+      .then(resultat => {
+        const tweets = resultat.flat();
         console.log('Le tableau de tweet', tweets);
 
         // ### 2/ Twitter ###
-
-        function createLi(tweet) {
-          const monLi = document.createElement('li');
-          monLi.textContent = tweet.text;
-          return monLi;
-        }
-
-        function createOl(tweets) {
-          const newOl = document.createElement('ol');
-
-          tweets.forEach(function(tweet) {
-            const monLi = createLi(tweet);
-            newOl.append(monLi);
-          });
-
-          // tweets.map(createLi).forEach(function(li) {
-          //   newOl.append(li);
-          // });
-
-          return newOl;
-        }
 
         let monOl = createOl(tweets);
         document.body.append(monOl);
@@ -48,19 +30,16 @@ document.addEventListener(
 
         let isFr = false;
 
-        button.addEventListener('click', function() {
+        button.addEventListener('click', () => {
           let tweetsToDisplay = tweets;
 
           if (!isFr) {
-            tweetsToDisplay = tweets.filter(function(tweet) {
-              return tweet.lang === 'fr';
-            });
+            // tweetsToDisplay = tweets.filter(tweet => tweet.lang === 'fr');
+            tweetsToDisplay = tweets.filter(checkTweetLang);
           }
 
           // const tweetsToDisplay = !isFr
-          //   ? (tweetsToDisplay = tweets.filter(function(tweet) {
-          //       return tweet.lang === 'fr';
-          //     }))
+          //   ? (tweetsToDisplay = tweets.filter(tweet => tweet.lang === 'fr'))
           //   : tweets;
 
           const newOl = createOl(tweetsToDisplay);
@@ -81,7 +60,7 @@ document.addEventListener(
 
         let isTracking = false;
 
-        trackingButton.addEventListener('click', function() {
+        trackingButton.addEventListener('click', () => {
           if (!isTracking) {
             console.log('Tracking');
 
@@ -93,8 +72,6 @@ document.addEventListener(
           }
           isTracking = !isTracking;
         });
-
-        // PRÉSENTATION Asynchronicité
 
         // PRÉSENTATION Modules
 
@@ -111,9 +88,7 @@ document.addEventListener(
         /* Faites un bouton (un peu gros) qui écoute mousedown/click/dblclick et mesure le temps de click et de doubleclick
       et affiche tempsClic1, tempsClic2, tempsDoubleClic */
       })
-      .catch(function(e) {
-        console.error(e);
-      });
+      .catch(e => console.error(e));
   },
   { once: true },
 );

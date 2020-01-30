@@ -3,3 +3,18 @@ h1 {
   font-weight: bold;
   text-align: center;
 }
+
+body {
+  background: #f1f1f1;
+  margin: 2rem;
+}
+
+li {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: white;
+}
+
+#root {
+  margin: 1rem 0;
+}
