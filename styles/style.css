@@ -5,7 +5,21 @@ h1 {
 }
 
 li {
-  display: flex;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  background: #ddd;
+}
+
+.text {
+  padding: 0.5rem;
+}
+
+.author {
+  font-weight: bold;
+}
+
+.date {
+  font-style: italic;
 }
 
 .fav {

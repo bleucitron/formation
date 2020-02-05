@@ -1,6 +1,6 @@
 let isTracking = false;
 
-function track(e) {
+function track(e: MouseEvent) {
   console.log('X', e.clientX, 'Y', e.clientY);
 }
 

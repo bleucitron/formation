@@ -1,6 +1,6 @@
-import createLi from './createLi';
+import createLi, { Tweet } from './createLi';
 
-export default function(tweets) {
+export default function(tweets: Tweet[]) {
   const ol = document.createElement('ol');
 
   tweets.forEach(function(tweet) {

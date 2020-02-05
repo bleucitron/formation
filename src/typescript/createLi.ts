@@ -1,13 +1,25 @@
 import moment from 'moment';
 import 'moment/locale/es';
 
+interface User {
+  name: string;
+}
+
+export interface Tweet {
+  id: string;
+  text: string;
+  lang: string;
+  created_at: string;
+  user: User;
+}
+
 const favsFromLocalStorage = localStorage.getItem('favs');
 
 const favs = favsFromLocalStorage
   ? new Set(JSON.parse(favsFromLocalStorage))
   : new Set();
 
-export default function(tweet) {
+export default function(tweet: Tweet) {
   const li = document.createElement('li');
 
   const textDiv = document.createElement('div');

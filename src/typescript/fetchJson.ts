@@ -1,4 +1,4 @@
-export default function(url) {
+export default function(url: string): Promise<any> {
   return fetch(url)
     .then(function(resp) {
       return resp.json();

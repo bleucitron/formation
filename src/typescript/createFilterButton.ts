@@ -1,14 +1,18 @@
+import { Tweet } from './createLi';
 import createOl from './createOl';
-import { isTweetFr } from '../typescript/utils';
 
 let isFr = false;
 
-export default function(tweets, ol) {
+export default function(tweets: Tweet[], ol: HTMLOListElement) {
   const filterButton = document.createElement('button');
   filterButton.textContent = 'Filtre';
 
   filterButton.addEventListener('click', function() {
-    const tweetsToDisplay = isFr ? tweets : tweets.filter(isTweetFr);
+    const tweetsToDisplay = isFr
+      ? tweets
+      : tweets.filter(function(tweet: Tweet) {
+          return tweet.lang === 'fr';
+        });
 
     const newOl = createOl(tweetsToDisplay);
 
