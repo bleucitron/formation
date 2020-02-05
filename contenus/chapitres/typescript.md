@@ -44,6 +44,13 @@ Pour les Arrays: `string[]`.
 
 Pour les Promesses: `Promise<string>`
 
+## Déclarer un type
+
+```ts
+type RougeOuBleu = 'rouge' | 'bleu';
+type RougeEtGros = 'rouge' & 'gros';
+```
+
 ## Déclarer une Interface
 
 Les Interfaces permettent de définir des types d'objets.
@@ -128,7 +135,11 @@ Ajouter `tsconfig.json` à la racine du projet.
 {
   "compilerOptions": {
     "esModuleInterop": true,
-    "noImplicitAny": true
+    "target": "esnext",
+    "strict": true,
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "lib": ["esnext", "dom"]
   }
 }
 ```
