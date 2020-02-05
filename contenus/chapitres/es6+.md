@@ -211,7 +211,10 @@ Passe dans le `finally()` quelque soit le devenir de la promesse.
 - ### `Object.fromEntries()`
 
 ```js
-Object.fromEntries([['a', 1], ['b', 2]]); // {a:1, b:2}
+Object.fromEntries([
+  ['a', 1],
+  ['b', 2],
+]); // {a:1, b:2}
 ```
 
 - ### `Array.prototype.flat()`
@@ -223,6 +226,34 @@ l.flat(); // [1, 2, 3]
 ```
 
 ## ES2020
+
+- ### Optional chaining
+
+Permet de récupérer un champ d'un objet potentiellement non défini ou null.
+Permet d'éxecuter une fonction potentiellement non définie ou nulle.
+
+```js
+a == null ? undefined : a.b;
+a?.b; // undefined si `a` est null/undefined, `a.b` sinon.
+
+a == null ? undefined : a[x];
+a?.[x]; // undefined si `a` est null/undefined, `a[x]` sinon.
+
+a == null ? undefined : a.b(); // jette une erreur si `a.b` n'est pas une fonction
+a?.b(); // undefined si `a` est null/undefined, sinon exécute `a.b()`
+
+a == null ? undefined : a(); // jette une erreur si `a.b` n'est pas une fonction ni null/undefined
+a?.(); // undefined si `a` est null/undefined, sinon exécute a
+```
+
+- ### Nullish coalescing
+
+Ternaire simplifié dans le cas d'un `null`/`undefined` potentiel.
+
+```js
+const a = b || 1; // avant on faisait ça
+const a = b ?? 1; // renvoie 1 si b est null ou undefined, b sinon
+```
 
 - ### `Promise.allSettled()`
 
