@@ -14,20 +14,63 @@ document.addEventListener(
 
         // ### TOUITTER ###
 
-        // [1] créer une fonction, qui pour un tweet en entrée, crée et retourne un <li> contenant le texte du tweet
+        function createLi(tweet) {
+          const li = document.createElement('li');
 
-        // [2] créer et ajouter un <ol> à la page, puis y ajouter les <li> de tweets en utilisant [1]
+          if (tweet.lang === 'fr') {
+            li.classList.add('fr');
+          } else {
+            li.classList.add('other');
+          }
 
-        // [3] modifier la fonction [1] pour ajouter une classe 'fr' ou 'other' au <li> en fonction de la langue
+          li.textContent = tweet.text;
+          return li;
+        }
 
-        // [4] créer et ajouter un <button> qui quand on clique dessus affiche 'click' dans la console.
+        function createOl(tweets) {
+          const newOl = document.createElement('ol');
 
-        // [5] modifier le listener du bouton pour que quand on clique dessus, ne garde que les tweets en français
+          tweets.map(createLi).forEach(function(li) {
+            newOl.append(li);
+          });
 
-        // [6] modifier le bouton de filtre pour pouvoir réafficher tous les tweets quand on reclique dessus
+          return newOl;
+        }
 
-        /* [7] créer une fonction, qui pour un tableau tweets en entrée, crée et retourne un <ol> rempli de <li>
-    et l'utiliser à [2], [5], [6] */
+        let currentOl = createOl(tweets);
+        document.body.append(currentOl);
+
+        // tweets.map(createLi).forEach(function(li) {
+        //   currentOl.append(li);
+        // });
+
+        const filterButton = document.createElement('button');
+        filterButton.textContent = 'Filtre';
+        document.body.prepend(filterButton);
+
+        let isFr = false;
+
+        filterButton.addEventListener('click', function() {
+          let tweetsToDisplay = tweets;
+
+          if (!isFr) {
+            tweetsToDisplay = tweets.filter(function(tweet) {
+              return tweet.lang === 'fr';
+            });
+          }
+
+          // const tweetsToDisplay = !isFr
+          //   ? tweets.filter(function(tweet) {
+          //       return tweet.lang === 'fr';
+          //     })
+          //   : tweets;
+
+          const newOl = createOl(tweetsToDisplay);
+
+          currentOl.replaceWith(newOl);
+          currentOl = newOl;
+          isFr = !isFr;
+        });
 
         // ### BONUS: LOCALSTORAGE ###
         // [1] Rajouter un bouton "fav" à chaque li
