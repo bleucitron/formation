@@ -135,7 +135,7 @@ document.addEventListener(
         let isTracking = false;
 
         function track(event) {
-          console.log('X', event.clientX, 'Y', event.clientY);
+          console.log(`X ${event.clientX} | Y  ${event.clientY}`);
         }
 
         trackingButton.addEventListener('click', function() {

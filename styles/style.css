@@ -11,3 +11,14 @@ h1 {
 .other {
   color: darkgreen;
 }
+
+li {
+  display: flex;
+  justify-content: space-between;
+
+  margin: 1rem;
+}
+
+li.fav {
+  font-weight: bold;
+}
