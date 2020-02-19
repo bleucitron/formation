@@ -110,10 +110,10 @@ npm i typescript -D
 Compiler l'exercice:
 
 ```bash
-npx tsc -w --noImplicitAny --lib esnext,dom 'exos/3 - typescript/typescript.ts'
+npx tsc -w --noImplicitAny --lib esnext,dom 'exos/3_typescript/typescript.ts'
 ```
 
-- Ouvrir le dossier `/exos/3 - typescript`
+- Ouvrir le dossier `/exos/3_typescript`
 - Ouvrir le fichier `typescript.html` dans votre navigateur
 - Suivre les indications du fichier `typescript.ts`, et vérifier les résultats dans votre navigateur
 

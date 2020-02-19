@@ -112,7 +112,7 @@ element.addEventListener('click', function(e) {
 
 # _**À vos claviers !!!**_
 
-- Ouvrir le dossier `/exos/2 - dom`
+- Ouvrir le dossier `/exos/2_dom`
 - Ouvrir le fichier `dom.html` dans votre navigateur
 - Suivre les indications du fichier `dom.js`, et vérifier les résultats dans votre navigateur
 

@@ -174,6 +174,6 @@ Font d'icônes
 
 # [À vos claviers !!!](./twitter.md)
 
-Reproduire la page d'accueil de [Twitter](https://twitter.com/home) dans le dossier `exos/0 - html/`;
+Reproduire la page d'accueil de [Twitter](https://twitter.com/home) dans le dossier `exos/0_html/`;
 
 ## À suivre: [Javascript](./javascript.md)
