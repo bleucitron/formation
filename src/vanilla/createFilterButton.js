@@ -1,4 +1,5 @@
 import createOl from './createOl';
+import { isTweetFr } from './utils';
 
 let isFr = false;
 
@@ -10,7 +11,7 @@ export default function(tweets, ol) {
     let tweetsToDisplay = tweets;
 
     if (!isFr) {
-      tweetsToDisplay = tweets.filter(({ lang }) => lang === 'fr');
+      tweetsToDisplay = tweets.filter(isTweetFr);
     }
 
     const newOl = createOl(tweetsToDisplay);

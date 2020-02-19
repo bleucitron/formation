@@ -1,22 +1,27 @@
 console.log('--- Question 1 ---');
 // Résoudre les erreurs Typescript pour calculer 3 au lieu de '12'
 
-function somme(a, b) {
+function somme(a: number, b: number): number {
   return a + b;
 }
 
-console.log('Somme', somme(1, '2'));
+console.log('Somme', somme(1, 2));
 
 console.log('--- Question 2 ---');
 // Écrire l'interface Person
 
-const romain = {
+interface Person {
+  name: string;
+  age: number;
+}
+
+const romain: Person = {
   name: 'Romain',
-  age: '3 4',
+  age: 34,
 };
 
-function logPerson(person) {
-  console.log('Name:', person.nom);
+function logPerson(person: Person): void {
+  console.log('Name:', person.name);
   console.log('Is adult:', person.age > 18);
 }
 
@@ -28,10 +33,10 @@ console.log('--- Question 3 ---');
 const persons = [
   romain,
   { name: 'Michel', age: 65 },
-  { nome: 'Jean-Claude', age: '65' },
+  { name: 'Jean-Claude', age: 65 },
 ];
 
-function getAllAges(persons: Person[]) {
+function getAllAges(persons: Person[]): number[] {
   const ages: number[] = persons.map(function(p) {
     return p.age;
   });

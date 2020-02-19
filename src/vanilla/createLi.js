@@ -3,7 +3,7 @@ import 'moment/locale/fr';
 
 const favs = new Set(JSON.parse(localStorage.getItem('favs')));
 
-export default function({ lang, id_str, created_at, text }) {
+export default function({ lang, id_str: id, created_at: date, text }) {
   const li = document.createElement('li');
 
   if (lang === 'fr') {
@@ -12,12 +12,12 @@ export default function({ lang, id_str, created_at, text }) {
     li.classList.add('other');
   }
 
-  if (favs.has(id_str)) li.classList.add('fav');
+  if (favs.has(id)) li.classList.add('fav');
 
   const textDiv = document.createElement('div');
   textDiv.textContent = text;
   const dateDiv = document.createElement('div');
-  dateDiv.textContent = moment(new Date(created_at)).fromNow();
+  dateDiv.textContent = moment(new Date(date)).fromNow();
   // dateDiv.textContent = moment(
   //   tweet.created_at,
   //   'ddd MMM DD HH:mm:ss Z YYYY',
@@ -28,12 +28,12 @@ export default function({ lang, id_str, created_at, text }) {
   const contentDiv = document.createElement('div');
 
   bouton.addEventListener('click', () => {
-    if (favs.has(id_str)) {
+    if (favs.has(id)) {
       li.classList.remove('fav');
-      favs.delete(id_str);
+      favs.delete(id);
     } else {
       li.classList.add('fav');
-      favs.add(id_str);
+      favs.add(id);
     }
 
     localStorage.setItem('favs', JSON.stringify(Array.from(favs)));
