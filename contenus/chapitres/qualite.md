@@ -99,7 +99,11 @@ describe("la fonction que l'on veut tester", () => {
 });
 ```
 
+**À noter:** Dans Jest, on a accès à toute l'API du DOM, grâce à `jsdom`.
+
 ### **_À vos claviers !!!_**
+
+**isFrenchTweet**
 
 Isoler la fonction qui teste la langue d'un tweet (`isFrenchTweet`) dans un module, et la tester:
 
@@ -108,6 +112,17 @@ Isoler la fonction qui teste la langue d'un tweet (`isFrenchTweet`) dans un modu
 - (2bis) tester que `isFrenchTweet` renvoie `false` pour un tweet sans langue
 - (3) tester que `isFrenchTweet` renvoie `true` pour un tweet en francais canadien (`fr-ca`)
 - (4) tester que `isFrenchTweet` jette une exception pour un tweet undefined
+
+**createOl**
+
+Créer des tests pour la fonction `createOl`:
+
+- (1) tester que `createOl` renvoie une instance de `HTMLOListElement`
+- (2) tester que `createOl` renvoie un élément qui a le bon nombre d'enfants
+
+**createLi**
+
+Créer des tests pour la fonction `createLi`.
 
 ## Automatisation
 
