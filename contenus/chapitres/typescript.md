@@ -110,7 +110,7 @@ npm i typescript -D
 Compiler l'exercice:
 
 ```bash
-npx tsc -w --noImplicitAny 'exos/3 - typescript/typescript.ts'
+npx tsc -w --noImplicitAny --lib esnext,dom 'exos/3 - typescript/typescript.ts'
 ```
 
 - Ouvrir le dossier `/exos/3 - typescript`
