@@ -1,5 +1,26 @@
 'use strict';
 
+function createOl(tweets) {
+  const ol = document.createElement('ol');
+  tweets.forEach(function(tweet) {
+    const monLi = createLi(tweet);
+    ol.append(monLi);
+  });
+
+  return ol;
+}
+
+function createLi(tweet) {
+  const monLi = document.createElement('li');
+  monLi.textContent = tweet.text;
+
+  return monLi;
+}
+
+function track(e) {
+  console.log('X', e.clientX, 'Y', e.clientY);
+}
+
 document.addEventListener(
   'DOMContentLoaded',
   function(e) {
@@ -7,44 +28,73 @@ document.addEventListener(
       'https://raw.githubusercontent.com/iOiurson/formation/correction/data/tweets.json',
     )
       .then(function(resp) {
+        console.log('REsP', resp);
+
         return resp.json();
       })
       .then(function(tweets) {
         console.log('Le tableau de tweet', tweets);
 
-        // ### 2/ Twitter ###
+        let monOl = createOl(tweets);
+        document.body.append(monOl);
 
-        // [1] créer une fonction, qui pour un tweet en entrée, crée et retourne un <li> contenant le texte du tweet
+        // tweets
+        //   .map(createLi)
+        //   .forEach(function(li) {
+        //     monOl.append(li);
+        //   });
 
-        // [2] créer et ajouter un <ol> à la page, puis y ajouter les <li> de tweets en utilisant [1]
+        const filterButton = document.createElement('button');
+        filterButton.textContent = 'Filter';
+        document.body.prepend(filterButton);
 
-        // créer et ajouter un <button> qui quand on clique dessus affiche 'click' dans la console.
+        let isFr = false;
 
-        // [3] modifier le bouton pour que quand on clique dessus, ne garde que les tweets en français
+        filterButton.addEventListener('click', function() {
+          const tweetsToDisplay = !isFr
+            ? tweets.filter(function(tweet) {
+                return tweet.lang === 'fr';
+              })
+            : tweets;
 
-        // [4] modifier le bouton de filtre pour pouvoir réafficher tous les tweets quand on reclique dessus
+          const newOl = createOl(tweetsToDisplay);
 
-        /* [5] créer une fonction, qui pour un tableau tweets en entrée, crée et retourne un <ol> rempli de <li>
-    et l'utiliser à [2], [3], [4] */
+          monOl.replaceWith(newOl);
+          monOl = newOl;
+          isFr = !isFr;
+        });
 
         // [6] Créer un bouton qui active le tracking de la position de la souris (event.clientX, event.clientY), et le désactive quand on reclique dessus
+
+        const trackingButton = document.createElement('button');
+        trackingButton.textContent = 'Track';
+        document.body.prepend(trackingButton);
+
+        let isTracking = false;
+
+        trackingButton.addEventListener('click', function() {
+          console.log('Track !', isTracking);
+
+          if (!isTracking) {
+            window.addEventListener('mousemove', track);
+          } else {
+            window.removeEventListener('mousemove', track);
+          }
+
+          isTracking = !isTracking;
+        });
 
         // PRÉSENTATION Asynchronicité
 
         // PRÉSENTATION Modules
 
-        // ### BONUS 1: LOCALSTORAGE ###
+        // ### BONUS: LOCALSTORAGE ###
         // [1] Rajouter un bouton "fav" à chaque li
 
         /* [2] quand le bouton est cliqué, changer le style du li (rajouter une classe 'fav')
       + et stocker l'ensemble des id_str fav dans le localStorage */
 
         // [3] au chargement de la page, lire le localStorage pour favoriser les favoris.
-
-        // ### BONUS 2: TIMING EVENEMENTS ###
-
-        /* Faites un bouton (un peu gros) qui écoute mousedown/click/dblclick et mesure le temps de click et de doubleclick
-      et affiche tempsClic1, tempsClic2, tempsDoubleClic */
       })
       .catch(function(e) {
         console.error(e);

@@ -11,6 +11,9 @@ document.addEventListener(
       })
       .then(function(tweets) {
         console.log('Le tableau de tweet', tweets);
+
+        n.onclick = function() {};
+
         /*
 
   Pense-bête DOM
@@ -39,27 +42,62 @@ document.addEventListener(
           - créer une div qui contient le texte du tweet et ajouter la div au <body>
         */
 
+        console.log('Premier tweet', tweets[0]);
+        console.log('Premier texte', tweets[0].text);
+
+        const maDiv = document.createElement('div');
+        document.body.append(maDiv);
+        maDiv.textContent = tweets[0].text;
+
         console.log('--- Question 2 ---');
         // afficher dans la console les textes de tous les tweets du tableau en utilisant .forEach()
+        tweets.forEach(function(tweet) {
+          console.log(tweet.text);
+        });
 
         console.log('--- Question 3 ---');
         // créer un tableau avec seulement tous les textes des tweets en utilisant .map()
+        const texts = tweets.map(function(tweet) {
+          return tweet.text;
+        });
+
+        console.log('Texts', texts);
 
         console.log('--- Question 4 ---');
         // créer un tableau avec seulement les dates de publication
 
+        const dates = tweets.map(function(tweet) {
+          return tweet.created_at;
+        });
+
+        console.log('Dates', dates);
+
         console.log('--- Question 5 ---');
         // créer un tableau avec seulement les tweets en français en utilisant .filter()
 
+        const tweetsFr = tweets.filter(function(tweet) {
+          return tweet.lang === 'fr';
+        });
+
+        console.log('frs', tweetsFr);
+
         console.log('--- Question 6 ---');
         // créer un <ol> et l'ajouter au <body>
+        const ol = document.createElement('ol');
 
         console.log('--- Question 7 ---');
         // pour chaque tweet, créer un <li>, mettre le texte dedans, mettre le <li> dans le <ol>
+
+        tweets.forEach(function(tweet) {
+          const li = document.createElement('li');
+          li.textContent = tweet.text;
+          ol.append(li);
+        });
+        document.body.append(ol);
       })
       .catch(function(e) {
         console.error(e);
       });
   },
-  { once: true },
+  { once: true, useCapture: true },
 );
