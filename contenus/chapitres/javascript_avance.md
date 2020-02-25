@@ -412,12 +412,6 @@ const arr2 = arr.filter(function(e) {
 }); // [2, 4, 6, 8]
 ```
 
-- `a.slice(debut, fin)`
-
-```js
-arr.slice(2, 5); // [3, 4, 5]
-```
-
 - `a.find(pred)`
 
 ```js
@@ -426,6 +420,13 @@ const arr = [1, 2, 3, 4, 5, 6, 7, 8];
 const found = arr.find(function(e) {
   return e >= 4 && e % 4 === 2; // 6
 });
+```
+
+- `a.includes(element)`
+
+```js
+arr.includes(2); // true
+arr.includes(10); // false
 ```
 
 - `a.sort(fun)`
@@ -441,6 +442,12 @@ const found = arr.sort(function(a, b) {
 ```js
 var arr = [1, 2, [3, 4]];
 arr.flat(); // [1, 2, 3, 4]
+```
+
+- `a.slice(debut, fin)`
+
+```js
+arr.slice(2, 5); // [3, 4, 5]
 ```
 
 ### `Set` / `Map` (ES6)

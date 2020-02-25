@@ -420,17 +420,17 @@ arr.includes(2); // true
 arr.includes(10); // false
 ```
 
-- `a.slice(debut, fin)`
-
-```js
-arr.slice(2, 5); // [3, 4, 5]
-```
-
 - `a.flat()`
 
 ```js
 var arr = [1, 2, [3, 4]];
 arr.flat(); // [1, 2, 3, 4]
+```
+
+- `a.slice(debut, fin)`
+
+```js
+arr.slice(2, 5); // [3, 4, 5]
 ```
 
 # **_À vos claviers !!!_**

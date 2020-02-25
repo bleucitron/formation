@@ -86,7 +86,7 @@ Ils sont uniques par élément.
 - `load`
   - Quand la page entière est chargée (CSS, fonts, images, etc.)
 - `click`, `mousedown`, `mouseup`, `dblclick`
-- `mouseenter`, `mouseleave`
+- `mousemove`, `mouseover`, `mouseenter`, `mouseleave`
 - `submit` (&lt;form>)
 - `keypress`, `keyup`, `keydown`
 - `input`
@@ -99,6 +99,7 @@ Ils sont uniques par élément.
 ```js
 element.addEventListener('click', function(e) {
   e.target; // renvoie l'élément qui a généré l'évènement
+  e.currentTarget; // renvoie l'élément courant lors de la traversée du DOM
   e.timestamp; // renvoie la date de l'évènement en ms depuis le chargement de la page
   e.preventDefault(); // empêche les comportements par défaut
   e.clientX; // renvoie la position X de la souris
