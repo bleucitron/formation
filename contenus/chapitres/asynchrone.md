@@ -32,7 +32,7 @@ Mais on tombait vite dans l'enfer des callbacks.
 On utilise des [Promesses](https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Utiliser_les_promesses) !
 
 ```js
-const maPromesse = new Promise((resolve, reject) => {
+const maPromesse = new Promise(function(resolve, reject) {
   console.log('Initial');
   if (toutVaBien) resolve('OK');
   else reject('On est dans la mouise');
