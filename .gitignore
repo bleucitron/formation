@@ -1,4 +1,5 @@
 node_modules
 bundle.js
+**/typescript.js
 
 secret.json
