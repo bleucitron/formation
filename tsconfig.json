@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "target": "esnext",
+    "strict": true,
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "lib": ["esnext", "dom"]
+  },
+  "include": ["src/typescript"]
+}

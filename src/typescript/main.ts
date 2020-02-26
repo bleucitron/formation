@@ -17,7 +17,7 @@ document.addEventListener(
 
         console.log('Le tableau de tweets', tweets);
 
-        const monOl = createOl(tweets);
+        let monOl = createOl(tweets);
         const trackingButton = createTrackingButton();
         const filterButton = createFilterButton(monOl, tweets);
 
