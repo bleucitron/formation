@@ -92,4 +92,4 @@ Et c'est tout.
 - Objets (`{}`, ...): pour regrouper des données
 - Functions (`() => 1`, ...): pour faire référence à du code
 
-## _La suite: [Valeurs et variables](./variables.md)_
+#### _La suite: [Valeurs et variables](./variables.md)_
