@@ -72,7 +72,7 @@ On peut voir `undefined` comme la conséquence d'une erreur de code, et `null` c
 
 Il s'agit toutefois d'une convention.
 
-## Booléens
+## Booléen
 
 `true` / `false`
 
@@ -94,7 +94,7 @@ let isWeather = isRainy || isSunny;
 let isRainbow = isRainy && isSunny;
 ```
 
-## Numbers
+## Nombre
 
 `1`, `2`, `2.5`, `2.75`, ... `3`
 
@@ -183,7 +183,7 @@ let hey = 'Salut';
 console.log(hey[0]); // 'S'
 ```
 
-## Symbol
+## Symbole
 
 `Symbol(1)`
 
@@ -193,7 +193,7 @@ console.log(typeof Symbol()); // 'symbol'
 
 Trop abstrait, sort du cadre de ce cours.
 
-## Objects
+## Objet
 
 `{}`
 
@@ -251,7 +251,7 @@ for (let i = 0; i < 7; i++) {
 }
 ```
 
-## Fonctions
+## Fonction
 
 `function () {}`
 
@@ -289,4 +289,4 @@ console.log(pie);
 
 **Le nombre de valeurs objets ou fonctions varie** au cours du temps, selon que votre code en crée, ou que le ramasse-miette en détruit.
 
-#### _La suite: [Égalité(s) des valeurs](egalite.md)_
+#### _La suite: [Égalité(s) des valeurs](./05_equality.md)_

@@ -45,6 +45,8 @@ let pikachu = {
 
 Un objet sert à grouper des données qui ont du sens ensemble. Mais **les données ne sont pas dans l'objet**.
 
+Deux propriétés d'un même objet ne peuvent pas avoir le même nom.
+
 Il y a donc 2 types de câbles:
 
 - les variables, qui partent du code
@@ -92,11 +94,11 @@ console.log(pikachu.color); // ?
 
 **Règles pour les expressions de propriété:**
 
-1. Vérifier la value à gauche du `.`
-2. Si cette valeur est `null` ou `undefined`, lever une exception
-3. Vérifier si la propriété à droite du `.` existe sur l'objet
-4. si oui, répondre la valeur pointée
-5. si non, répondre `undefined`
+- Vérifier la value à gauche du `.`
+- Si cette valeur est `null` ou `undefined`, lever une exception
+- Vérifier si la propriété à droite du `.` existe sur l'objet
+  - si oui, répondre la valeur pointée
+  - si non, répondre `undefined`
 
 ```js
 console.log(pikachu.color); // undefined
@@ -174,4 +176,4 @@ salameche = {
 
 Au final, tout n'est qu'une histoire de câbles.
 
-#### _La suite: [Propriétés](proprietes.md)_
+#### _La suite: [Un peu plus de syntaxe](./07_syntax.md)_
