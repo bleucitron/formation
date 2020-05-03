@@ -127,4 +127,4 @@ x = 0;
 - Les valeurs de type primitif sont immutables
 - Les variables sont des câbles qui partent d'un nom et pointent vers une valeur
 
-#### _La suite: [Combien de valeurs ?](./04_count.md)_
+#### _La suite: [Combien de valeurs ?](./1-4_count.md)_

@@ -27,4 +27,4 @@
 
 _Les versions de JavaScript (1.7, 1.7.5, 1.8, etc.) n'existent pas (ce sont numéros de version du moteur JS de Firefox)_
 
-#### _La suite: [Le modèle mental](./01_mental_models.md)_
+#### _La suite: [Le modèle mental](./1-1_mental_models.md)_

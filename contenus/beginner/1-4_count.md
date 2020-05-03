@@ -85,13 +85,11 @@ Blanc / Noir.
 
 Les booléens servent à faire des opérations logiques.
 
-### _<span style="color:royalblue">Dessiner les opérations suivantes sur une feuille:</span>_
+On peut écrire l'inverse d'un booléen avec `!a`.
 
 ```js
-let isRainy = true;
-let isSunny = !isRainy; // l'inverse
-let isWeather = isRainy || isSunny;
-let isRainbow = isRainy && isSunny;
+let happy = true;
+let sad = !happy;
 ```
 
 ## Nombre
@@ -243,14 +241,6 @@ let evier = {};
 evier = null;
 ```
 
-### _<span style="color:royalblue">Combien d'objets différents sont créés ?</span>_
-
-```js
-for (let i = 0; i < 7; i++) {
-  console.log({});
-}
-```
-
 ## Fonction
 
 `function () {}`
@@ -289,4 +279,4 @@ console.log(pie);
 
 **Le nombre de valeurs objets ou fonctions varie** au cours du temps, selon que votre code en crée, ou que le ramasse-miette en détruit.
 
-#### _La suite: [Égalité(s) des valeurs](./05_equality.md)_
+#### _La suite: [Égalité(s) des valeurs](./1-5_equality.md)_

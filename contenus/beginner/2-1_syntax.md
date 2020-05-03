@@ -290,7 +290,7 @@ arr.slice(2, 5); // [3, 4, 5]
 
 # **_À vos claviers !!!_**
 
-- Ouvrir le dossier `/exos/1_js`
+- Ouvrir le dossier `/exos/beginner/1_js`
 - Ouvrir le fichier `bases.html` dans votre navigateur
 - Suivre les indications du fichier `bases.js`, et vérifier les résultats dans votre navigateur
 

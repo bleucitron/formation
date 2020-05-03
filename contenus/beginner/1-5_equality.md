@@ -105,4 +105,4 @@ console.log(false == [0]); // true
 
 > ## Always use `===` unless you have a good reason to use `==`.
 
-#### _La suite: [Propriétés](./06_properties.md)_
+#### _La suite: [Propriétés](./1-6_properties.md)_

@@ -42,4 +42,4 @@ a = 0;
 
 Quel est votre monologue, votre façon de décrire le code ?
 
-#### _La suite: [L'univers Javascript](./02_universe.md)_
+#### _La suite: [L'univers Javascript](./1-2_universe.md)_
