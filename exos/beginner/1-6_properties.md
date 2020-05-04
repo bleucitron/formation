@@ -1,4 +1,4 @@
-# Variables
+# Properties
 
 ## Exercices
 
@@ -7,41 +7,6 @@ Pour les snippets suivant, dessiner le diagramme représentant la situation **ap
 Vous pouvez utiliser des outils comme [AWW](https://awwapp.com/#) ou [Miro](https://miro.com/).
 
 ### 1)
-
-```js
-let x = 10;
-let y = x;
-x = 0;
-```
-
-### 2)
-
-```js
-let a = 2;
-let b = 3;
-let c = a + b;
-a = c - a;
-```
-
-### 3)
-
-```js
-let a = 'hello';
-let b = typeof a;
-let c = typeof typeof 1;
-let d = a === c;
-```
-
-### 4)
-
-```js
-let isRainy = true;
-let isSunny = !isRainy;
-let isWeather = isRainy || isSunny;
-let isRainbow = isRainy && isSunny;
-```
-
-### 5)
 
 ```js
 let color = 'blue';
@@ -58,7 +23,7 @@ for (let i = 0; i < 3; i++) {
 }
 ```
 
-### 6)
+### 2)
 
 ```js
 let john = {
@@ -76,7 +41,7 @@ let paul = {
 paul.address.city = 'london';
 ```
 
-### 7)
+### 3)
 
 ```js
 let griffindor = {
@@ -107,7 +72,7 @@ harry.house = {
 hermione.house.name = 'hufflepuff';
 ```
 
-### 8)
+### 4)
 
 ```js
 let knight = {

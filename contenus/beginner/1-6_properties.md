@@ -176,6 +176,6 @@ salameche = {
 
 Au final, tout n'est qu'une histoire de câbles.
 
-## [Exercice](../../exos/beginner/mental_model.md)
+## [Exercices](../../exos/beginner/1-6_properties.md)
 
 #### _La suite: [Un peu plus de syntaxe](./2-1_syntax.md)_
