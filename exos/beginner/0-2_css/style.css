@@ -1,3 +1,68 @@
 body {
   padding: 2rem;
 }
+
+.tweet {
+  position: relative;
+  height: 8rem;
+  background: #15202b;
+  color: white;
+  display: flex;
+  font-family: 'Roboto';
+}
+
+.id {
+  display: flex;
+  align-items: baseline;
+}
+
+.id > * {
+  margin-right: 0.5rem;
+}
+
+.name {
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.content {
+  padding: 1rem;
+  flex: 1 0;
+}
+
+.img-container {
+  height: 100%;
+  width: 4rem;
+  padding-left: 2rem;
+  padding-top: 1rem;
+}
+
+img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+.tag {
+  color: #8596a2;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-around;
+  color: #8596a2;
+  padding: 0;
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.fas.fa-chevron-down {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 1rem;
+  color: #8596a2;
+}
