@@ -4,25 +4,25 @@ _Basé sur [Just Javascript](https://justjavascript.com/), de [Dan Abramov](http
 
 ## Votre planète
 
-Dans du code, il y a des valeurs, des expressions, des mots-clés, des instructions...
-
-Les valeurs sont fondamentales, et méritent une attention particulière.
-
-Dan Abramov parle du Petit Prince, de St Éxupéry.
-
 ![Le petit Prince](../images/little_prince.jpg)
 
 Vous êtes sur une petite planète: votre code.
 
-Il y a des déclarations de variables, des boucles, des conditions, des appels à des fonctions...
+Dans votre code, il y a des variables, des expressions, des mots-clés, des instructions...
 
-Mais les valeurs, elles, sont plus haut, dans le ciel.
+Il y a aussi des réassignations de variables, des boucles, des conditions, des appels à des fonctions...
+
+Mais les valeurs, elles, sont plus haut, dans le ciel. **Les valeurs sont fondamentales**, et méritent une attention particulière.
 
 **Les valeurs n'existent pas dans le code**.
 
 [![L'univers Javascript](../images/universe.png)](https://illustrated.dev/)
 
 ## Les étoiles
+
+Les valeurs sont un peu comme des étoiles, que l'on peut regarder depuis sa planète.
+
+Ces étoiles sont plus ou moins lointaines, mais sont toujours disponibles, on peut toujours les regarder.
 
 ### Valeurs primitives
 
