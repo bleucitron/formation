@@ -18,7 +18,7 @@ n.remove();
 n.replaceWith(n2);
 ```
 
-### Document + HTMLDocument
+### Document
 
 Le document est un noeud spécial.
 
@@ -69,7 +69,7 @@ n.dispatchEvent(e); // génére un évènement custom
 // Exemple
 monElement.addEventListener(
   'click',
-  function() {
+  function () {
     console.log('yo');
   },
   { once: true },
@@ -97,7 +97,7 @@ Ils sont uniques par élément.
 ### Event properties
 
 ```js
-element.addEventListener('click', function(e) {
+element.addEventListener('click', function (e) {
   e.target; // renvoie l'élément qui a généré l'évènement
   e.currentTarget; // renvoie l'élément courant lors de la traversée du DOM
   e.timestamp; // renvoie la date de l'évènement en ms depuis le chargement de la page

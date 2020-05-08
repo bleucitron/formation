@@ -10,7 +10,7 @@ console.log('--- Question 2 ---');
 
 console.log('--- Question 3 ---');
 /* [3] créer une fonction x10 qui en entrée prend un nombre et renvoie le nombre multiplié par 10
-  puis logguez x10(x)
+  puis logguez le résultat de la fonction x10 appliquée sur x
 */
 
 console.log('--- Question 4 ---');
