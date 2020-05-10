@@ -290,8 +290,8 @@ arr.slice(2, 5); // [3, 4, 5]
 
 # **_À vos claviers !!!_**
 
-- Ouvrir le dossier `/exos/beginner/2-1_js`
+- Ouvrir le dossier `/exos/beginner/2-1_syntax`
 - Ouvrir le fichier `index.html` dans votre navigateur
 - Suivre les indications du fichier `index.js`, et vérifier les résultats dans votre navigateur
 
-## À suivre: [DOM](../old/dom.md)
+## À suivre: [DOM](./2-2_xxx_dom.md)
