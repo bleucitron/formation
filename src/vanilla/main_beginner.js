@@ -41,8 +41,6 @@ document.addEventListener(
         /* [11] créer une fonction, qui pour un tableau tweets en entrée, crée et retourne un <ol> rempli de <li>
     et l'utiliser à [3], [6], [9] */
 
-        // [12] Créer un bouton qui active le tracking de la position de la souris (event.clientX, event.clientY), et le désactive quand on reclique dessus
-
         // PRÉSENTATION Asynchronicité
 
         // PRÉSENTATION Modules
