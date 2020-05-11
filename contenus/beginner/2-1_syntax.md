@@ -178,28 +178,28 @@ aujourdHui - uneDate; // soustrait les dates, renvoie un entier en millisecondes
 ## [Tableaux](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 
 ```js
-const arr = [12, 65, 546];
+const array = [12, 65, 546];
 
-arr[0]; // 12
-arr.length; // 3
+array[0]; // 12
+array.length; // 3
 ```
 
 ### Itérer sur un tableau
 
 ```js
-const arr = [1, 2, 3];
+const array = [1, 2, 3];
 
 for (let i = 0; i < arr.length; i++) {
   // à l'ancienne
-  console.log(arr[i]);
+  console.log(array[i]);
 }
 
-for (let element of arr) {
+for (let element of array) {
   // à un poil plus moderne
   console.log(element);
 }
 
-arr.forEach(function (element) {
+array.forEach(function (element) {
   // beaucoup mieux !
   console.log(element);
 });
@@ -214,11 +214,11 @@ De manière illustrée, ça donne [ça](https://twitter.com/steveluscher/status/
 - `a.forEach(f)`
 
 ```js
-const arr = [1, 2, 3, 4];
+const array = [1, 2, 3, 4];
 
-arr.forEach(function (e, i, a) {
+array.forEach(function (element, index, arr) {
   // les arguments i et a sont optionnels
-  console.log(e * i);
+  console.log(element * index);
 });
 
 // 0
@@ -230,9 +230,9 @@ arr.forEach(function (e, i, a) {
 - `a.map(f)`
 
 ```js
-const arr = [1, 2, 3];
+const array = [1, 2, 3];
 
-const arr2 = arr.map(function (e, i, a) {
+const array10 = array.map(function (e, i, a) {
   // les arguments i et a sont optionnels
   return e * 10;
 }); // [10, 20, 30]
@@ -241,9 +241,9 @@ const arr2 = arr.map(function (e, i, a) {
 - `a.filter(f)`
 
 ```js
-const arr = [1, 2, 3, 4, 5, 6, 7, 8];
+const array = [1, 2, 3, 4, 5, 6, 7, 8];
 
-const arr2 = arr.filter(function (e, i, a) {
+const pairs = array.filter(function (e, i, a) {
   // les arguments i et a sont optionnels
   return e % 2 === 0;
 }); // [2, 4, 6, 8]
@@ -252,9 +252,9 @@ const arr2 = arr.filter(function (e, i, a) {
 - `a.find(pred)`
 
 ```js
-const arr = [1, 2, 3, 4, 5, 6, 7, 8];
+const array = [1, 2, 3, 4, 5, 6, 7, 8];
 
-const found = arr.find(function (e, i, a) {
+const found = array.find(function (e, i, a) {
   // les arguments i et a sont optionnels
   return e >= 4 && e % 4 === 2; // 6
 });
@@ -263,7 +263,7 @@ const found = arr.find(function (e, i, a) {
 - `a.sort(fun)`
 
 ```js
-const found = arr.sort(function (a, b) {
+const found = array.sort(function (a, b) {
   return b - a; // doit retourner un nombre positif ou négatif
 });
 ```
@@ -271,21 +271,21 @@ const found = arr.sort(function (a, b) {
 - `a.includes(element)`
 
 ```js
-arr.includes(2); // true
-arr.includes(10); // false
+array.includes(2); // true
+array.includes(10); // false
 ```
 
 - `a.flat()`
 
 ```js
-var arr = [1, 2, [3, 4]];
-arr.flat(); // [1, 2, 3, 4]
+const array = [1, 2, [3, [4]]];
+const applati = array.flat(); // [1, 2, 3, 4]
 ```
 
 - `a.slice(debut, fin)`
 
 ```js
-arr.slice(2, 5); // [3, 4, 5]
+const extrait = array.slice(2, 5); // [3, 4, 5]
 ```
 
 # **_À vos claviers !!!_**
