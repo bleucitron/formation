@@ -3,3 +3,20 @@ h1 {
   font-weight: bold;
   text-align: center;
 }
+
+.text {
+  font-size: 1.5rem;
+}
+
+.date {
+  font-style: italic;
+  color: grey;
+}
+
+.user {
+  font-weight: bold;
+}
+
+.tweet {
+  margin: 2rem;
+}

@@ -55,6 +55,8 @@ console.log('--- Question 12 ---');
 // [12] ajouter 2 ou 3 nouvelles personnes au tableau "personnes", en utilisant .push()
 const personnes = [{ nom: 'Romain', date: '1985-12-31' }];
 
+personnes.push({ nom: 'David', date: '1987-03-08' });
+
 console.log('--- Question 13 ---');
 // [13] à partir de "personnes", créer un nouveau tableau contenant seulement les noms en utilisant .map()
 
@@ -63,5 +65,31 @@ console.log('--- Question 14 ---');
  et renvoie l'âge en nombre, en utilisant Date()
 */
 
+function calculerAge(dateEnString) {
+  const auj = new Date();
+  const date = new Date(dateEnString);
+
+  return Math.floor((auj - date) / 1000 / 3600 / 24 / 365.25);
+}
+
+console.log(calculerAge('1985-12-31'));
+
 console.log('--- Question 15 ---');
 // [15] à partir de "personnes" et "calculerAge", créer un nouveau tableau contenant seulement les âges
+
+// const ages = personnes.map(function (p) {
+//   return calculerAge(p.date);
+// });
+
+// const dates = personnes.map(function (p) {
+//   return p.date;
+// });
+// const ages = dates.map(calculerAge);
+
+const ages = personnes
+  .map(function (p) {
+    return p.date;
+  })
+  .map(calculerAge);
+
+console.log('Ages', ages);
