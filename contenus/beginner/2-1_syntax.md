@@ -169,7 +169,7 @@ uneDate.getTime(); // nombre de millisecondes depuis le 1er janvier 1970
 uneDate.getDay();
 uneDate.getDate();
 uneDate.getMonth();
-uneDate.getYear();
+uneDate.getFullYear();
 // etc ...
 
 aujourdHui - uneDate; // soustrait les dates, renvoie un entier en millisecondes
