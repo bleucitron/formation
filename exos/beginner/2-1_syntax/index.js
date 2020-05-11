@@ -1,6 +1,4 @@
-'use strict';
-
-// ### 0/ Pour se chauffer ###
+// # 2-1_Syntax
 
 console.log('--- Question 1 ---');
 // [1] créer une variable x, et lui assigner un nombre
