@@ -22,11 +22,11 @@ document.addEventListener(
 
         // [4] créer et ajouter un <button> qui quand on clique dessus affiche 'click' dans la console.
 
-        // [5] utiliser checkFr au clic du bouton pour afficher dans la console la liste des tweets français
+        // [5] modifier le bouton, et utiliser checkFr au clic du bouton pour afficher dans la console la liste des tweets français
 
         // [6] modifier le bouton pour que quand on clique dessus,
-        //  - supprime le <ol> existant
-        //  - ajoute un nouvel <ol> avec les tweets en français
+        //  - crée un nouveau <ol> avec seulement les tweets français
+        //  - remplace le <ol> existant avec le nouvel <ol>, en utilisant .replaceWith()
 
         // [7] créer une variable booléenne isFr, et l'initialiser à false
 
