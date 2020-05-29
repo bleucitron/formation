@@ -172,6 +172,6 @@ Font d'icônes
 
 ---
 
-## [Exercice](../../exos/beginner/0-2_css/index.md)
+## [Exercice](../../exos/0-2_css/index.md)
 
 ## À suivre: [Javascript](./1-0_history.md)

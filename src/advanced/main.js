@@ -2,17 +2,17 @@
 
 document.addEventListener(
   'DOMContentLoaded',
-  function(e) {
+  function (e) {
     fetch(
       'https://raw.githubusercontent.com/iOiurson/formation/correction/data/tweets.json',
     )
-      .then(function(resp) {
+      .then(function (resp) {
         return resp.json();
       })
-      .then(function(tweets) {
+      .then(function (tweets) {
         console.log('Le tableau de tweet', tweets);
 
-        // ### 2/ Twitter ###
+        // ### Projet Touitter ###
 
         // [1] créer une fonction, qui pour un tweet en entrée, crée et retourne un <li> contenant le texte du tweet
 
@@ -46,7 +46,7 @@ document.addEventListener(
         /* Faites un bouton (un peu gros) qui écoute mousedown/click/dblclick et mesure le temps de click et de doubleclick
       et affiche tempsClic1, tempsClic2, tempsDoubleClic */
       })
-      .catch(function(e) {
+      .catch(function (e) {
         console.error(e);
       });
   },

@@ -268,4 +268,4 @@ Promise.allSettled([p1, p2]).then(res => {
 });
 ```
 
-## À suivre: [Qualité](./qualite.md)
+## À suivre: [Qualité](./modules.md)

@@ -4,7 +4,7 @@ _Basé sur [Just Javascript](https://justjavascript.com/), de [Dan Abramov](http
 
 ## Votre planète
 
-![Le petit Prince](../images/little_prince.jpg)
+![Le petit Prince](../../images/little_prince.jpg)
 
 Vous êtes sur une petite planète: votre code.
 
@@ -16,7 +16,7 @@ Mais les valeurs, elles, sont plus haut, dans le ciel. **Les valeurs sont fondam
 
 **Les valeurs n'existent pas dans le code**.
 
-[![L'univers Javascript](../images/universe.png)](https://illustrated.dev/)
+[![L'univers Javascript](../../images/universe.png)](https://illustrated.dev/)
 
 ## Les étoiles
 

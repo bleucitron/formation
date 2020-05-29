@@ -16,19 +16,19 @@ On va définir les fondations d'un modèle mental cohérent.
 
 ## La matrice
 
-![La matrice depuis l'extérieur](../images/matrix_outside.jpeg)
+![La matrice depuis l'extérieur](../../images/matrix_outside.jpeg)
 
 L'idée n'est pas de comprendre Javascript d'un point de vue de la mémoire de la machine, mais de se construire un univers, une représentation de Javascript qui s'affranchit de la simulation.
 
 **Nous sommes dans la matrice**, nous l'étudions de l'intérieur.
 
-![La matrice depuis l'intérieur](../images/matrix_inside.jpeg)
+![La matrice depuis l'intérieur](../../images/matrix_inside.jpeg)
 
 Les détails d'implémentation ne sont pas importants pour bâtir les fondations de notre compréhension du langage.
 
 Alors peut-être qu'un jour, nous pourrons voir comme Neo.
 
-![La matrice depuis Neo](../images/matrix_neo.jpeg)
+![La matrice depuis Neo](../../images/matrix_neo.jpeg)
 
 ## Votre monologue
 

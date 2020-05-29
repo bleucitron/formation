@@ -132,6 +132,6 @@ Pour creuser plus profond
 
 - favicon : `<link rel="icon" href="favicon.ico">`
 
-## [Exercice](../../exos/beginner/0-1_html/index.md)
+## [Exercice](../../exos/0-1_html/index.md)
 
 ## À suivre: [CSS](./0-2_css.md)

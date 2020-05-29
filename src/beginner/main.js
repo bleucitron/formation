@@ -12,7 +12,7 @@ document.addEventListener(
       .then(function (tweets) {
         console.log('Le tableau de tweet', tweets);
 
-        // ### 2/ Twitter ###
+        // ### Projet Touitter ###
 
         // [1] créer et ajouter un <button> "bouton" qui quand on clique dessus affiche 'click' dans la console.
         // Ne pas oublier de donner un textContent au bouton

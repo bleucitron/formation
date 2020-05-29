@@ -127,6 +127,6 @@ x = 0;
 - Les valeurs de type primitif sont immutables
 - Les variables sont des câbles qui partent d'un nom et pointent vers une valeur
 
-## [Exercices](../../exos/beginner/1-3_variables.md)
+## [Exercices](../../../exos/1-3_variables.md)
 
 #### _La suite: [Combien de valeurs ?](./1-4_count.md)_

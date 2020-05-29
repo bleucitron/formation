@@ -113,7 +113,7 @@ element.addEventListener('click', function (e) {
 
 # _**À vos claviers !!!**_
 
-- Ouvrir le dossier `/exos/beginner/2-2_dom`
+- Ouvrir le dossier `/src/advanced`
 - Ouvrir le fichier `index.html` dans votre navigateur
 - Suivre les indications du fichier `index.js`, et vérifier les résultats dans votre navigateur
 
