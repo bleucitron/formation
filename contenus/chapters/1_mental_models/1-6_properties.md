@@ -176,4 +176,4 @@ salameche = {
 
 Au final, tout n'est qu'une histoire de câbles.
 
-## [Exercices](../../../exos/1-6_properties.md)
+#### _La suite: [Exercices](./1-6-1_properties_exo.md)_

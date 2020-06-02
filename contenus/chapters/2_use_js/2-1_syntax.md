@@ -290,7 +290,7 @@ const extrait = array.slice(2, 5); // [3, 4, 5]
 
 # **_À vos claviers !!!_**
 
-- Ouvrir le dossier `/exos/2-1_syntax`
+- Ouvrir le dossier `/exos/beginner/3_syntax`
 - Ouvrir le fichier `index.html` dans votre navigateur
 - Suivre les indications du fichier `index.js`, et vérifier les résultats dans votre navigateur
 

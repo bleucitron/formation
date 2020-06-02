@@ -40,3 +40,5 @@ let isSunny = !isRainy;
 let isWeather = isRainy || isSunny;
 let isRainbow = isRainy && isSunny;
 ```
+
+#### _La suite: [Combien de valeurs ?](./1-4_count.md)_
