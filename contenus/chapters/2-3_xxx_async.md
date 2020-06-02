@@ -25,6 +25,81 @@ function récupérerLArgent() {
 }
 ```
 
+Deux possibilités:
+
+- les Promesses
+- `async/await`
+
+## Les Promesses
+
+### Avant
+
+Pour gérer l'asynchrone, avant, on utilisait des callbacks.
+
+```js
+function afficheSonProfil() {
+  console.log('Romain est barbu');
+}
+
+vaMeChercherLesDonnéesDe(Romain, afficheSonProfil);
+
+console.log('En cours...');
+
+/*
+En cours...
+Romain est barbu
+*/
+```
+
+Mais on tombait vite dans l'enfer des callbacks.
+
+### Aujourd'hui
+
+On utilise des [Promesses](https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Utiliser_les_promesses) !
+
+Les Promesses offrent une API simple permettant de gérer les cas **résolus** (promesses tenues), et les cas **rejetés** (promesses non tenues).
+
+```js
+const maPromesse = new Promise(function (resolve, reject) {
+  console.log('Au bout de 2 ans...');
+  if (toutVaBien) resolve('200€');
+  else reject("j'ai tout dépensé");
+});
+
+maPromesse
+  .then(function (valeurPromise) {
+    console.log('Argent:', valeurPromise);
+  })
+  .catch(function (erreur) {
+    console.error('Raison:', erreur);
+  });
+```
+
+⚠ Si pas de `.catch()`, on ne sera jamais prévenu en cas de problème.
+
+### Chaînage
+
+```js
+myP.then().then().catch().then()...
+```
+
+### Synchroniser
+
+Si on veut synchroniser plusieurs promesses, on peut utiliser
+
+- `Promise.all()`, renvoie la promesse d'avoir **TOUTES** les promesses **résolues**
+- `Promise.allSettled()`, renvoie la promesse d'avoir toutes les promesses **terminées**
+
+```js
+Promise.all([promesse1, promesse2]).then(function (tableauDesResultats) {
+  console.log(tableauDesResultats); // [resultat1, resultat2]
+});
+
+Promise.allSettled([promesse1, promesse2]).then(function (tableauDesResultats) {
+  console.log(tableauDesResultats); // [resultat1, resultat2]
+});
+```
+
 ## [`async`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)/[`await`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
 
 `async` permet de déclarer une fonction qui dépend d'opérations asynchrones.
@@ -64,75 +139,9 @@ async function récupérerLArgent() {
 }
 ```
 
-## Les Promesses
+Tout ce qui est possible avec les promesses l'est aussi avec `async/await`.
 
-### Avant
-
-Pour gérer l'asynchrone, avant, on utilisait des callbacks.
-
-```js
-function afficheSonProfil() {
-  console.log('Romain est barbu');
-}
-
-vaMeChercherLesDonnéesDe(Romain, afficheSonProfil);
-
-console.log('En cours...');
-
-/*
-En cours...
-Romain est barbu
-*/
-```
-
-Mais on tombait vite dans l'enfer des callbacks.
-
-### Aujourd'hui
-
-On utilise des [Promesses](https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Utiliser_les_promesses) !
-
-Les Promesses offrent une API simple permettant de gérer les cas **résolus** (promesses tenues), et les cas **rejetés** (promesses non tenues).
-
-```js
-const maPromesse = new Promise(function (resolve, reject) {
-  console.log('Initial');
-  if (toutVaBien) resolve('OK');
-  else reject('On est dans la mouise');
-});
-
-maPromesse
-  .then(function (valeurPromise) {
-    console.log('Résultat:', valeurPromise);
-  })
-  .catch(function (erreur) {
-    console.error('Erreur:', erreur);
-  });
-```
-
-⚠ Si pas de `.catch()`, on ne sera jamais prévenu en cas de problème.
-
-### Chaînage
-
-```js
-myP.then().then().catch().then()...
-```
-
-### Synchroniser
-
-Si on veut synchroniser plusieurs promesses, on peut utiliser
-
-- `Promise.all()`, renvoie la promesse d'avoir **TOUTES** les promesses **résolues**
-- `Promise.allSettled()`, renvoie la promesse d'avoir toutes les promesses **terminées**
-
-```js
-Promise.all([promesse1, promesse2]).then(function (tableauDesResultats) {
-  console.log(tableauDesResultats); // [resultat1, resultat2]
-});
-
-Promise.allSettled([promesse1, promesse2]).then(function (tableauDesResultats) {
-  console.log(tableauDesResultats); // [resultat1, resultat2]
-});
-```
+... sauf qu'il est actuellement impossible d'utiliser `await` si on est pas dans une fonction.
 
 ---
 

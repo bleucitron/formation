@@ -117,4 +117,4 @@ element.addEventListener('click', function (e) {
 - Ouvrir le fichier `index.html` dans votre navigateur
 - Suivre les indications du fichier `index.js`, et vérifier les résultats dans votre navigateur
 
-## À suivre: [Asynchrone](./2-3_xxx_async.md)
+## À suivre: [Asynchrone](../2-3_xxx_async.md)
