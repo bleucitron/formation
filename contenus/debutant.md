@@ -17,7 +17,7 @@
 
 ## 2. Utiliser Javascript
 
-- #### [Un peu plus de syntaxe](./chapters/2_use_js/2-1_syntax.md)
+- #### [Un peu plus de syntaxe](./chapters/2_js/2-1_syntax.md)
 - #### [Le DOM](./old/dom.md)
 - #### [L'asynchrone](./old/asynchrone.md)
 - #### [Les modules](./old/modules.md)

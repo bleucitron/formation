@@ -12,9 +12,9 @@
 
 ## 2. Utiliser Javascript
 
-- #### [Un peu plus de syntaxe](./chapters/2_use_js_advanced/2-1_syntax_advanced.md)
-- #### [Le DOM](./chapters/2_use_js_advanced/2-2_dom_advanced.md)
-- #### [L'asynchrone](./chapters/2_use_js_advanced/2-3_xxx_async.md)
+- #### [Un peu plus de syntaxe](./chapters/2_js_advanced/2-1_syntax_advanced.md)
+- #### [Le DOM](./chapters/2_js_advanced/2-2_dom_advanced.md)
+- #### [L'asynchrone](./chapters/2_js_advanced/2-3_xxx_async.md)
 - #### [ES6+](./old/es6+.md)
 
 ## 3. Outillage
