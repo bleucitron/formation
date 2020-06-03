@@ -1,33 +1,91 @@
 'use strict';
 
+function createLi(tweet) {
+  const monLi = document.createElement('li');
+  monLi.textContent = tweet.text;
+  return monLi;
+}
+
+function createOl(tweets) {
+  const monOl = document.createElement('ol');
+
+  tweets.forEach(function (tweet) {
+    const myLi = createLi(tweet);
+    monOl.append(myLi);
+  });
+
+  return monOl;
+}
+
+function fetchJson(url) {
+  const maPromesse = fetch(url).then(function (resp) {
+    return resp.json();
+  });
+
+  return maPromesse;
+}
+
+const urls = [
+  'https://raw.githubusercontent.com/iOiurson/formation/correction/data/tweets.json',
+  'https://raw.githubusercontent.com/iOiurson/formation/correction/data/tweets2.json',
+];
+
+const mesPromesses = urls.map(fetchJson);
+
 document.addEventListener(
   'DOMContentLoaded',
   function (e) {
-    fetch(
-      'https://raw.githubusercontent.com/iOiurson/formation/correction/data/tweets.json',
-    )
-      .then(function (resp) {
-        return resp.json();
-      })
-      .then(function (tweets) {
+    Promise.all(mesPromesses)
+      .then(function (data) {
+        const tweets = data.flat();
         console.log('Le tableau de tweet', tweets);
 
         // ### Projet Touitter ###
 
-        // [1] créer une fonction, qui pour un tweet en entrée, crée et retourne un <li> contenant le texte du tweet
+        let monOl = createOl(tweets);
+        document.body.append(monOl);
 
-        // [2] créer et ajouter un <ol> à la page, puis y ajouter les <li> de tweets en utilisant [1]
+        const button = document.createElement('button');
+        button.textContent = 'Filtrer';
 
-        // créer et ajouter un <button> qui quand on clique dessus affiche 'click' dans la console.
+        let isFr = false;
 
-        // [3] modifier le bouton pour que quand on clique dessus, ne garde que les tweets en français
+        button.addEventListener('click', () => {
+          isFr = !isFr;
 
-        // [4] modifier le bouton de filtre pour pouvoir réafficher tous les tweets quand on reclique dessus
+          const tweetsToDisplay = isFr
+            ? tweets.filter(tweet => tweet.lang === 'fr')
+            : tweets;
 
-        /* [5] créer une fonction, qui pour un tableau tweets en entrée, crée et retourne un <ol> rempli de <li>
-    et l'utiliser à [2], [3], [4] */
+          const newOl = createOl(tweetsToDisplay);
 
-        // [6] Créer un bouton qui active le tracking de la position de la souris (event.clientX, event.clientY), et le désactive quand on reclique dessus
+          monOl.replaceWith(newOl);
+          monOl = newOl;
+        });
+
+        document.body.prepend(button);
+
+        const trackingButton = document.createElement('button');
+        trackingButton.textContent = 'Track !';
+        document.body.prepend(trackingButton);
+
+        let isTracking = false;
+
+        function track(event) {
+          console.log('X', event.clientX, 'Y', event.clientY);
+        }
+
+        trackingButton.addEventListener('click', function () {
+          isTracking = !isTracking;
+
+          console.log('isTracking', isTracking);
+
+          if (isTracking) {
+            window.addEventListener('mousemove', track);
+          } else {
+            window.removeEventListener('mousemove', track);
+          }
+        });
 
         // PRÉSENTATION Asynchronicité
 
@@ -49,6 +107,8 @@ document.addEventListener(
       .catch(function (e) {
         console.error(e);
       });
+
+    console.log('COUCOU');
   },
   { once: true },
 );
