@@ -41,10 +41,6 @@ document.addEventListener(
         /* [11] créer une fonction, qui pour un tableau tweets en entrée, crée et retourne un <ol> rempli de <li>
     et l'utiliser à [3], [6], [9] */
 
-        // PRÉSENTATION Asynchronicité
-
-        // PRÉSENTATION Modules
-
         // ### BONUS: LOCALSTORAGE ###
         // [1] Rajouter un bouton "fav" à chaque li
 

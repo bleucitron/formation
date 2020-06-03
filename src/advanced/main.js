@@ -29,10 +29,6 @@ document.addEventListener(
 
         // [6] Créer un bouton qui active le tracking de la position de la souris (event.clientX, event.clientY), et le désactive quand on reclique dessus
 
-        // PRÉSENTATION Asynchronicité
-
-        // PRÉSENTATION Modules
-
         // ### BONUS 1: LOCALSTORAGE ###
         // [1] Rajouter un bouton "fav" à chaque li
 
@@ -40,11 +36,6 @@ document.addEventListener(
       + et stocker l'ensemble des id_str fav dans le localStorage */
 
         // [3] au chargement de la page, lire le localStorage pour favoriser les favoris.
-
-        // ### BONUS 2: TIMING EVENEMENTS ###
-
-        /* Faites un bouton (un peu gros) qui écoute mousedown/click/dblclick et mesure le temps de click et de doubleclick
-      et affiche tempsClic1, tempsClic2, tempsDoubleClic */
       })
       .catch(function (e) {
         console.error(e);
