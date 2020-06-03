@@ -13,6 +13,7 @@ document.addEventListener(
         console.log('Le tableau de tweet', tweets);
 
         // ### Projet Touitter ###
+        // Attention: toucher au DOM coûte cher, utiliser le moins possible les APIs du DOM
 
         // [1] créer une fonction, qui pour un tweet en entrée, crée et retourne un <li> contenant le texte du tweet
 

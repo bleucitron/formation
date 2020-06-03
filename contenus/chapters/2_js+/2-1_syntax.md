@@ -89,10 +89,6 @@ romain = { favoriteMovie: 'Les Tuche 3' }; // Error
 Les fonctions contiennent du code. Elles sont comme des petites lunes autour de notre planète.
 
 ```js
-const fredonner = () => {
-  console.log('♪ lalala ♬');
-};
-
 function chanter() {
   console.log('♪ LALALA ♬');
 }
@@ -124,7 +120,26 @@ function cuisiner(lait, chocolat, beurre) {
 console.log(cuisiner);
 ```
 
-Donner un nom à une fonction permet de la réutiliser.
+### Named functions
+
+```js
+rire();
+pleurer();
+
+const rire = function () {
+  // cette fonction n'a pas de nom, pas recommandé
+  console.log('HAHAHA !');
+};
+
+function pleurer() {
+  // recommandé
+  console.log('BOUHOUHOUHOU...');
+}
+```
+
+Les fonctions nommées sont définies au moment de l'interprétation.
+
+De plus, donner un nom à une fonction permet d'avoir des informations plus pertinentes dans les logs d'erreurs.
 
 ## [Math](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math)
 
