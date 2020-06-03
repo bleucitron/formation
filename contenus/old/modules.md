@@ -1,16 +1,8 @@
 # Modules
 
-Dans le dossier `src/vanilla`, créer plusieurs fichiers avec du code
-
-- `createTweetLi.js`
-- `createTweetsOl.js`
-- `createTrackingButton.js`
-- `fetchJson.js`
-- `main.js`
-
-et les charger avec `<script src="...">` dans le `<head>`.
-
 ## À l'ancienne
+
+On peut "importer" des scripts dans les HTML, via les balises `<script>`, soit en inline, soit en "script-src".
 
 ```html
 <!DOCTYPE html>
@@ -24,6 +16,19 @@ et les charger avec `<script src="...">` dans le `<head>`.
     <script src="code6.js"></script>
   </head>
   <body></body>
+</html>
+```
+
+Il y a une vieille habitude de mettre les scripts à la fin du `<body>`. Pourquoi ?
+
+```html
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <main>My content</main>
+    <script src="iTakeMyTime.js"></script>
+  </body>
 </html>
 ```
 
@@ -53,10 +58,21 @@ et les charger avec `<script src="...">` dans le `<head>`.
 </html>
 ```
 
-Problèmes :
+---
 
-- Performance (6 requêtes HTTP max en parallèle)
-- Dépendances entre scripts implicites
+# **_À vos claviers !!!_**
+
+Dans le dossier `src/vanilla`, créer plusieurs fichiers avec du code
+
+- `createTweetLi.js`
+- `createTweetsOl.js`
+- `createTrackingButton.js`
+- `fetchJson.js`
+- `main.js`
+
+et les charger avec `<script src="...">` dans le `<head>`.
+
+---
 
 ## Dépendances explicites
 
@@ -66,7 +82,7 @@ On souhaite rendre claires les relations entre fichiers, afin de savoir sans éq
 
 On veut donc rendre les dépendances entre fichiers **explicites**.
 
-## Origines: CommonJS (Node.js)
+## Origine des modules: CommonJS (Node.js)
 
 ```js
 'use strict';
@@ -76,7 +92,7 @@ var dep2 = require('./fichier.js'); // fichier local au projet
 
 // code
 
-module.exports = function(a) {
+module.exports = function (a) {
   var h = dep1(48);
   return h + dep2(a);
 };
@@ -98,7 +114,7 @@ On peut exporter des valeurs, des objets, des fonctions...
 
 ```js
 // export par défaut, n'a pas besoin de nom
-export default function() {
+export default function () {
   // ....
 }
 
@@ -181,7 +197,7 @@ Enlever tous les `<script>` et les remplacer par `<script defer src="bundle.js">
 import createTweetsOl from './createTweetsOl.js';
 import createTimeButton from './createTimeButton.js';
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   // ... createTweetsOl() ...
   // ... createTimeButton() ...
 });
@@ -190,7 +206,7 @@ document.addEventListener('DOMContentLoaded', function() {
 `createTweetsOl.js`
 
 ```js
-export default function(tweets) {
+export default function (tweets) {
   // ...
 }
 ```

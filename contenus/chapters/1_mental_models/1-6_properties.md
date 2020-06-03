@@ -17,7 +17,7 @@ salameche.type = 'water';
 salameche.owner.name = 'pierre';
 ```
 
-### _<span style="color:royalblue">Dessiner ce que vous imaginez qu'il se passe dans les lignes précédentes, et répondez aux questions suivantes:</span>_
+### _<span style="color:royalblue">D'après vous, que devraient afficher les lignes suivantes ?</span>_
 
 ```js
 console.log(pikachu.type); // ?
