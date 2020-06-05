@@ -1,0 +1,35 @@
+{
+  "name": "js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bundle.js",
+  "scripts": {
+    "build": "npx browserify src/advanced/main.js -o bundle.js -t [ babelify --presets [ @babel/env ] ] -d",
+    "watch": "npx watchify src/advanced/main.js -o bundle.js -t [ babelify --presets [ @babel/env ] ] -d -v",
+    "watch:jsx": "npx watchify src/react/index.jsx -o bundle.js -t [ babelify ] -d -v"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iOiurson/formation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iOiurson/formation/issues"
+  },
+  "homepage": "https://github.com/iOiurson/formation#readme",
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-react": "^7.10.1",
+    "babelify": "^10.0.0",
+    "browserify": "^16.5.1",
+    "watchify": "^3.11.1"
+  },
+  "dependencies": {
+    "moment": "^2.26.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
