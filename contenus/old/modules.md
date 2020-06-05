@@ -181,8 +181,8 @@ npm init -y
 npm install browserify watchify --save-dev
 npm i babelify @babel/core @babel/preset-env --save-dev
 
-npx browserify src/vanilla/main.js -o bundle.js -t [ babelify --presets [ @babel/env ] ] -d
-# npx watchify src/vanilla/main.js -o bundle.js -t [ babelify --presets [ @babel/env ] ] -d -v
+npx browserify src/advanced/main.js -o bundle.js -t [ babelify --presets [ @babel/env ] ] -d
+# npx watchify src/advanced/main.js -o bundle.js -t [ babelify --presets [ @babel/env ] ] -d -v
 ```
 
 ### Étape 3: changer le HTML
