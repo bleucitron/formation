@@ -48,7 +48,7 @@ Et ce résultat n'a pas grand chose à voir avec l'immutabilité des valeurs pri
 
 Les variables ne sont pas des valeurs.
 
-**Les variables pointent vers des valeurs**
+**Les variables pointent vers des valeurs**.
 
 Il est possible de faire 2 choses avec une variable:
 
@@ -81,7 +81,7 @@ Ici, on ne passe pas la variable à `console.log`.
 - "Quelle est la valeur pointée par `name` ?"
 - "`'romain'`"
 
-**Les mots sont importants.**
+**Les mots sont importants**.
 
 Surtout dans votre modèle mental.
 
