@@ -15,11 +15,29 @@ document.addEventListener(
         // ### Projet Touitter ###
         // Attention: toucher au DOM coûte cher, utiliser le moins possible les APIs du DOM
 
-        // [1] créer une fonction, qui pour un tweet en entrée, crée et retourne un <li> contenant le texte du tweet
+        function createLi(t) {
+          const li = document.createElement('li');
+          li.textContent = t.text;
 
-        // [2] créer et ajouter un <ol> à la page, puis y ajouter les <li> de tweets en utilisant [1]
+          return li;
+        }
+
+        const ol = document.createElement('ol');
+        document.body.append(ol);
+
+        tweets.forEach(function (tw) {
+          const li = createLi(tw);
+          ol.append(li);
+        });
 
         // créer et ajouter un <button> qui quand on clique dessus affiche 'click' dans la console.
+        const button = document.createElement('button');
+        button.addEventListener('click', function () {
+          console.log('click');
+        });
+
+        button.textContent = 'Click';
+        document.body.append(button);
 
         // [3] modifier le bouton pour que quand on clique dessus, ne garde que les tweets en français
 
