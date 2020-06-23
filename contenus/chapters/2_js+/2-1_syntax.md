@@ -231,8 +231,8 @@ De manière illustrée, ça donne [ça](https://twitter.com/steveluscher/status/
 ```js
 const array = [1, 2, 3, 4];
 
-array.forEach(function (element, index, arr) {
-  // les arguments i et a sont optionnels
+array.forEach(function (element, index, originalArray) {
+  // les arguments index et originalArray sont optionnels
   console.log(element * index);
 });
 
