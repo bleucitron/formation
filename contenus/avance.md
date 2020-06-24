@@ -13,8 +13,8 @@
 ## 2. Utiliser Javascript
 
 - #### [Un peu plus de syntaxe](./chapters/2_js+/2-1_syntax.md)
-- #### [Le DOM](./chapters/2_js+/2-2_dom.md)
-- #### [L'asynchrone](./chapters/2_js+/2-3_xxx_async.md)
+- #### [Le DOM](./chapters/2_js+/2-2_xxx_dom.md)
+- #### [L'asynchrone](./chapters/2-3_xxx_async.md)
 - #### [ES6+](./chapters/2_js+/2-3_es6+.md)
 
 ## 3. Outillage

@@ -28,7 +28,10 @@ document.addEventListener(
         /* [5] créer une fonction, qui pour un tableau tweets en entrée, crée et retourne un <ol> rempli de <li>
     et l'utiliser à [2], [3], [4] */
 
-        // [6] Créer un bouton qui active le tracking de la position de la souris (event.clientX, event.clientY), et le désactive quand on reclique dessus
+        /* [6] Créer un bouton qui, quand on clique dessus:
+            - active le tracking de la souris: la console affiche position de la souris (event.clientX, event.clientY) quand la souris bouge
+            - désactive le tracking quand on reclique dessus
+        */
 
         // ### BONUS 1: LOCALSTORAGE ###
         // [1] Rajouter un bouton "fav" à chaque li
