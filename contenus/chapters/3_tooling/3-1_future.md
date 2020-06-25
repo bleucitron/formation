@@ -45,3 +45,5 @@ maFonctionDuFuture() // ok
 ## dans mes scripts métier
 maFonctionDuFuture() // ok
 ```
+
+## À suivre: [Modules](../../old/modules.md)

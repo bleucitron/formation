@@ -34,6 +34,16 @@ Il y a une vieille habitude de mettre les scripts à la fin du `<body>`. Pourquo
 
 ### Defer
 
+`defer` permet de dire au navigateur de différer le téléchargement du script.
+
+Le navigateur va alors attendre d'avoir lu tout le HTML et d'avoir construit le DOM avant de télécharger le script `defer`.
+
+L'ordre des scripts déclarés avec `defer` est conservé.
+
+L'évènement `DOMContentLoaded` ne sera généré que lorsque tous les scripts `defer` auront été chargés et exécutés.
+
+Il est intéressant d'utiliser `defer` lorsque vous avez besoin de conserver l'ordre des scripts, ou d'utiliser de faire appel au DOM.
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -46,6 +56,14 @@ Il y a une vieille habitude de mettre les scripts à la fin du `<body>`. Pourquo
 ```
 
 ### Async
+
+`async` permet de télécharger et d'exécuter un script sans bloquer la suite de l'analyse du HTML.
+
+Les scripts `async` seront donc chargés et exécutés en parallèle.
+
+Néanmoins, un script `async` s'éxecutera dès qu'il sera téléchargé, ce qui signifie que l'ordre des scripts ne sera pas garanti.
+
+Il est intéressant d'utiliser `async` lorsque vous avez des scripts qui fonctionnent en autonomie, comme des scripts d'analytics par exemple.
 
 ```html
 <!DOCTYPE html>
