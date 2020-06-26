@@ -1,6 +1,4 @@
-'use strict';
-
-function fetchJson(url) {
+export default function (url) {
   const promesseDeLaReponse = fetch(url);
 
   const promesseDesTweets = promesseDeLaReponse.then(resp => resp.json());

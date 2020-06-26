@@ -1,4 +1,7 @@
-'use strict';
+import fetchJson from './fetchJson';
+import createTrackingButton from './createTrackingButton';
+import createFilterButton from './createFilterButton';
+import createOl from './createOl';
 
 const urls = [
   'https://raw.githubusercontent.com/iOiurson/formation/correction/data/tweets.json',

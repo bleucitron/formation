@@ -1,6 +1,6 @@
-'use strict';
+import createLi from './createLi';
 
-function createOl(tableauDeTweets) {
+export default function (tableauDeTweets) {
   const ol = document.createElement('ol');
 
   tableauDeTweets.forEach(tweet => {

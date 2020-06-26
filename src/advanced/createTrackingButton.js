@@ -1,12 +1,10 @@
-'use strict';
-
 function track(event) {
   const { clientX, clientY } = event;
 
   console.log('X', clientX, 'Y', clientY);
 }
 
-function createTrackingButton() {
+export default function () {
   const trackingButton = document.createElement('button');
   trackingButton.textContent = 'Track';
 
