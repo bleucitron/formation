@@ -31,6 +31,23 @@
 
 const colors = ['blue', 'red', 'green', 'black', 'grey', 'orange', 'purple'];
 
+const exo1 = document.getElementById('exo1');
+
+function createColorDiv(color) {
+  const colorDiv = document.createElement('div');
+  colorDiv.textContent = color;
+  colorDiv.classList.add(color);
+  colorDiv.addEventListener('click', function () {
+    console.log(color);
+  });
+
+  return colorDiv;
+}
+
+colors.map(createColorDiv).forEach(function (colorDiv) {
+  exo1.append(colorDiv);
+});
+
 // -------------------------------
 
 /* Exercice 2: Taille
@@ -38,6 +55,20 @@ const colors = ['blue', 'red', 'green', 'black', 'grey', 'orange', 'purple'];
     - Lui ajouter un listener au mousemove, qui change sa hauteur/largeur
     en fonction de la position de la souris à l'écran (event.clientX, event.clientY)
 */
+
+const exo2 = document.createElement('section');
+exo2.id = 'exo2';
+
+document.body.append(exo2);
+
+const square = document.createElement('div');
+square.classList.add('square');
+exo2.append(square);
+
+square.addEventListener('mousemove', function (event) {
+  square.style.width = event.clientX + 'px';
+  square.style.height = event.clientY + 'px';
+});
 
 // -------------------------------
 
@@ -49,6 +80,35 @@ const colors = ['blue', 'red', 'green', 'black', 'grey', 'orange', 'purple'];
 
 const names = ['Harry', 'Hermione', 'Ron', 'Sirius', 'Hagrid', 'Albus'];
 
+const exo3 = document.createElement('section');
+exo3.id = 'exo3';
+document.body.append(exo3);
+
+function random(nb) {
+  return Math.floor(Math.random() * nb);
+}
+
+function createCharacter(name) {
+  const character = document.createElement('div');
+  character.classList.add('wizard');
+  character.textContent = name;
+
+  character.addEventListener('click', function () {
+    const indice = random(names.length);
+    const newName = names[indice];
+
+    const newCharacter = createCharacter(newName);
+
+    character.replaceWith(newCharacter);
+  });
+
+  return character;
+}
+
+const firstCharacter = createCharacter(names[0]);
+
+exo3.append(firstCharacter);
+
 // -------------------------------
 
 /* Exercice 4: Tracking de la souris
@@ -56,3 +116,32 @@ const names = ['Harry', 'Hermione', 'Ron', 'Sirius', 'Hagrid', 'Albus'];
     - Lui ajouter un listener qui active/désactive le tracking
     de la position de la souris dans la fenêtre (event.clientX, event.clientY)
 */
+
+const exo4 = document.createElement('section');
+exo4.id = 'exo4';
+document.body.append(exo4);
+
+const button = document.createElement('button');
+button.textContent = 'Track !';
+exo4.append(button);
+
+let isTracking = false;
+
+function track(event) {
+  console.log(event.clientX, event.clientY);
+}
+
+button.addEventListener('click', function () {
+  isTracking = !isTracking;
+  console.log(isTracking);
+
+  if (isTracking) {
+    console.log('Tracking !');
+    button.textContent = 'Stop tracking';
+    window.addEventListener('mousemove', track);
+  } else {
+    console.log('Stop tracking');
+    button.textContent = 'Track !';
+    window.removeEventListener('mousemove', track);
+  }
+});

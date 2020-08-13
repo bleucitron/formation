@@ -3,3 +3,61 @@ h1 {
   font-weight: bold;
   text-align: center;
 }
+
+section {
+  background: lightgrey;
+  min-height: 2rem;
+  margin: 1rem 0;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+#exo1 div {
+  width: 50px;
+  height: 50px;
+  margin: 1rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.green {
+  background-color: green;
+}
+
+.black {
+  background-color: black;
+}
+
+.grey {
+  background-color: grey;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.purple {
+  background-color: purple;
+}
+
+.square {
+  width: 200px;
+  height: 200px;
+  background: black;
+}
+
+.wizard {
+  border: 2px solid black;
+  padding: 1rem;
+}
