@@ -11,15 +11,17 @@ var T = new Twit({
   app_only_auth: true,
 });
 
-const users = ['r_ourson', 'jub0bs', 'TB_sojinchoi', 'reactjs', 'fipradio'];
+const users = ['r_ourson', 'jub0bs', 'TB_Choi12', 'reactjs', 'fipradio'];
 
 const tweetsPs = users.map(user => {
-  return T.get('statuses/user_timeline', { screen_name: user, count: 50 }).then(
-    result => {
-      console.log(`${user} ${result.data.length} ${chalk.green('\u2713')}`);
-      return result;
-    },
-  );
+  return T.get('statuses/user_timeline', {
+    screen_name: user,
+    count: 100,
+    tweet_mode: 'extended',
+  }).then(result => {
+    console.log(`${user} ${result.data.length} ${chalk.green('\u2713')}`);
+    return result;
+  });
 });
 
 Promise.all(tweetsPs).then(([tweets, ...tweets2]) => {
